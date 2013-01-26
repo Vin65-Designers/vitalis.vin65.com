@@ -154,7 +154,7 @@ hr {
 	width: 100%;
 	z-index: 100;
 	@media screen #{$break-min-tablet} {
-		height: 220px;
+		height: 180px;
 		position: relative;	
 	}
 }
@@ -246,7 +246,7 @@ hr {
 			}
 
 		li{
-			margin: 0 20px;
+			margin: 0;
 			padding: 0;
 			height: 45px;
 			line-height: 45px;
@@ -269,14 +269,20 @@ hr {
 
 			a{
 				color: $outsideFontColor;
-				display: inline-block;
+				display:block;
 				height: 44px;
-				line-height: 32px;
-				margin: 0;
-				padding: 0;
+				line-height: 44px;
+				margin: 0 12px;
+				padding: 0 8px;
 				position: relative;
 				text-decoration: none;
-				@media screen #{$break-min-tablet}{height:32px;}
+				@media screen #{$break-min-tablet}{
+					height:32px;
+					line-height: 32px;
+					display: inline-block;
+					margin: 0;
+					padding: 0;
+					}
 
 				&:hover{
 					color: $outsideFontColorHover;
@@ -389,7 +395,11 @@ hr {
 			}
 
 			a{ 
-				@media screen #{$break-max-tablet}{font-size:1em; line-height:3em;}
+				@media screen #{$break-max-tablet}{
+					display:block;
+					font-size:1em; 
+					line-height:3em;
+				}
 
 
 				&:hover{
@@ -610,6 +620,10 @@ hr {
 		display:none;
 		padding:0;
 		@media screen #{$break-min-tablet}{
+			width:auto;
+			display: block;
+		}
+		@media screen #{$break-min-desktop}{
 			display: block;
 			float: left;
 			padding: 0 25px 0 0;
@@ -618,8 +632,12 @@ hr {
 	}
 
 	.blogFilterRight { 
-		display:none; 
+		display:none;
 		@media screen #{$break-min-tablet}{
+			width:auto;
+			display: block;
+		} 
+		@media screen #{$break-min-desktop}{
 			display: block;
 			float: left;
 			width: 150px;
@@ -1064,5 +1082,18 @@ form#v65-checkBilling .v65-additionalComments {
 			display:none;
 		}
 	}
+}
+
+.twitterWrapper {
+ 	width: 300px;
+  	float: left;
+  	margin: 0 0 20px 20px;
+  	clear: both;
+
+  	@media screen #{$break-max-tablet}{
+	  	width: 90%;
+	    margin: 0 auto;
+	    padding: 5%;
+	  }
 }
 

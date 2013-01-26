@@ -244,8 +244,9 @@ $break-min-desktop: "and (min-width : 1024px)";
 /* b. Product & Blog Pagination
 -------------------------------------------------------------- */
 
+.v65-product-pagination {float:right; }
+
 .v65-product-pagination, .v65-Paging {
-	float: right; 
 	text-align: right; 
 	width: 50%; 
 	@media screen #{$break-max-tablet}{
@@ -281,6 +282,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 				text-decoration: underline; 	
 			}	
 		}
+	
+		&.border {
+			&:first-child {
+				@media screen #{$break-max-tablet}{
+					margin:5px;
+					padding:7px 20px;
+				}
+			}
+		} 
 
 		&.border{
 			border-right: 1px solid #000; 
@@ -290,9 +300,16 @@ $break-min-desktop: "and (min-width : 1024px)";
 				background-color: #909090;
 				border:0;
 				display: inline-block;
-				padding:0 15px;
 				border-radius: 5px;
-				margin:5px 0;
+				margin:5px 0 5px 5px;
+
+
+			}
+
+			a { 
+				@media screen #{$break-max-tablet}{
+					background:none;
+				}	
 			}	
 		}	
 	}
@@ -390,22 +407,26 @@ $break-min-desktop: "and (min-width : 1024px)";
 }
 
 	.v65-avatar {
-		position: absolute; 
-		top:0; 
-		left: 0; 
-		width: 48px; 
-		height: 48px; 
-		margin: 0; 
-		padding: 0; 
-
-	 	@media screen #{$break-max-mobile}{
-			display: none;
+		display: none;
+	 	@media screen #{$break-min-tablet}{
+	 		display: block;
+	 		position: absolute; 
+			top:0; 
+			left: 0; 
+			width: 48px; 
+			height: 48px; 
+			margin: 0; 
+			padding: 0; 	
 		}
 
 		img{ 
+			display: none;
+			@media screen #{$break-min-tablet}{
+			display: block;
 			border: 1px solid #999; 
 			padding: 2px; 
 			background-color: #fff; 
+			}
 		}
 	}
 
@@ -413,7 +434,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 	position: relative;
 	margin-left: 64px;
 	padding-bottom: 1.5em;
-	@media screen #{$break-max-mobile}{
+	@media screen #{$break-max-tablet}{
 		margin:0;
 	}
 }
@@ -968,63 +989,113 @@ $break-min-desktop: "and (min-width : 1024px)";
 	/* e. Store Locator
 	-------------------------------------------------------------- */
 	#v65-businessLocator { 
-		position: relative;
+		width:100%;
 		overflow: hidden;
 		margin: 0 0 1.4em;
 		padding: 0 0 1em;
+		@media screen #{$break-min-tablet}{
+				position: relative; 
+			}
+
+		.defaultBtn{
+			@media screen #{$break-max-tablet}{
+				width:100%;
+			}
+		}
+		input, select{
+			@media screen #{$break-max-tablet}{
+				width:100%;
+			}
+		}
+
+		input[type="text"]{
+			@media screen #{$break-max-tablet}{
+				margin-bottom: 10px;
+			}
+		}
 	}
 		
 		#v65-businessLocatorSelectByCity {
-			width: 200px; 
 			overflow: hidden;
+			@media screen #{$break-min-tablet}{
+			width: 200px; 	
+			}
 		}
 		#v65-businessLocatorCategory {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorCountryCode {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorStateCode {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorCity {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorSelectByZipCode {
-			width: 200px;
 			overflow: hidden;
+			@media screen #{$break-min-tablet}{
+			width: 200px; 	
+			}
 		}
 		#v65-businessLocatorCategoryBottom {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorZipCode {
-			width: 60px;
+			@media screen #{$break-min-tablet}{width: 60px;}
 		}
 		#v65-businessLocatorRadius {
-			width: 80px;
+			@media screen #{$break-min-tablet}{width: 80px;}
 		}
 		#v65-BusinessList {
-			position: relative;
-			margin: 0 400px 0 0;
-			padding: 0;
+			margin:0;
+			@media screen #{$break-min-tablet}{
+				position: relative;
+				margin: 0 400px 0 0;
+				padding: 0;
+			}
 
-			ol {
+			ol {	
+
 				li {
 					margin: 0 0 12px 0;
+					@media screen #{$break-max-tablet}{
+						border-top:1px solid #CCC;
+						padding-top:8px;
+
+						&:last-child{
+							@media screen #{$break-max-tablet}{
+								border-bottom:1px solid #CCC;
+								padding-bottom:8px;
+							}	
+						}
+					}	
 				}	
 			}	
 		}
 		
 		#v65-map_canvas {
-			position: absolute;
+			position: relative;
+			width: 100%;
+			height: 300px;
 			top: 0;
 			right: 0;
 			margin: 0;
 			padding: 0;
-			width: 390px;
-			height: 300px;
 			background-color:#eee;
 			border: 1px solid #ccc;
+			@media screen #{$break-min-tablet}{
+				position: absolute;
+				width: 390px;
+				height: 300px;
+				top: 0;
+				right: 0;
+				margin: 0;
+				padding: 0;
+				background-color:#eee;
+			border: 1px solid #ccc;
+			}
 		}
 	
 	/* f. Table of Contents
@@ -1255,6 +1326,13 @@ $break-min-desktop: "and (min-width : 1024px)";
 	@media screen #{$break-min-tablet}{ 
 		right: 0;
 		width: auto;
+	}
+
+	a {
+		@media screen #{break-max-mobile}{
+			display:block;
+			width:100%;
+		}
 	}	 
 }
 
@@ -1271,7 +1349,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 	
 	@media screen #{$break-min-tablet}{
 		top: 32px;
-		width: 272px;
+		width: 282px;
 	} 
 }
 
@@ -1280,7 +1358,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		border: 1px solid #333; 
 		border-bottom: 5px solid #333;
 		color: #000; 
-		font-size: 0.917em; 
+		font-size: 1em; 
 		padding: 10px; 
 
 		p{ 
@@ -1289,9 +1367,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 		a{ 
 			color: #000;
-			@media screen #{break-max-mobile}{
+			width:auto;
+			display:inline-block;
+			font-size: 1em;
+			@media screen #{$break-max-mobile}{
+				display:block;
 				width:100%;
-				font-size: 1.3em;
 				&.modalLinkBtn{
 					margin-top: 8px;
 				}
@@ -1300,8 +1381,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 			&:hover{ 
 				color: #000; 
 			}
-		}
-			a{
 		}
 	}
 		
@@ -1559,7 +1638,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		float: left; 
 		height: 22px; 
 		margin-right: 5px; 
-		padding: 0; 
+		padding: 0;
 	}
 
 	.v65-socialMediaBar-Twitter { 
@@ -3199,18 +3278,18 @@ $break-min-desktop: "and (min-width : 1024px)";
 	border: 1px solid #eeeeee; 
 	overflow: hidden;
 
-	@media screen and (max-width : 810px) {
+	@media screen and (max-width:950px) {
 		float: right;
 		position: relative;
-		width: 34%;
+		width: 42%;
 	}
 
-	@media screen and (max-width : 725px) {
+	@media screen and (max-width: 725px) {
 		float: none;
 		margin: 0 0 1em;
 		right: 0;
 		top: 0;
-		width: 96.5%;
+		width: 96%;
 	} 
 }
 
@@ -3221,7 +3300,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		padding: 0; 
 		font-size: 11px;
 
-		@media screen and (max-width : 810px) {
+		@media screen and (max-width : 900px) {
 			float: none;
 			width: 100%;
 		} 
@@ -3256,14 +3335,14 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 140px; 
 		font-size: 11px;
 
-		@media screen and (max-width : 810px) {
+		@media screen and (max-width : 900px) {
 			float: none;
 			width: 100%;
 		} 
 	}
 
 	/* Add Shipping and Add Gift Wrapping Forms */
-	#v65-couponFormWrapper {
+	#v65-couponFormWrapper, #v65-giftCardFormWrapper {
 		form{}
 		fieldset {}
 		legend { 
@@ -3274,7 +3353,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 		@media screen and (max-width : 725px) {
 			fieldset{
 				margin: 0 0 1em;
-				width: 98%;
 			}
 
 			form{
@@ -3325,7 +3403,11 @@ $break-min-desktop: "and (min-width : 1024px)";
 /* b. Main Form
 -------------------------------------------------------------- */	
 #v65-checkoutFormWrapper{
-	
+	width: 100%;
+	@media screen #{$break-mobile}{
+		width: 98%;	
+	}
+
 	form { 
 		width: 100%; 
 	}
@@ -3362,11 +3444,24 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 400px; 
 	}
 
+	#v65-fieldset-shippingOptions { 
+		width: 400px; 
+	}
+
+	#v65-fieldset-sourceCode {
+		width: 400px;  
+	}
+
 	#v65-fieldset-billingInfo, #v65-fieldset-shippingInfo, 
-	#v65-fieldset-shippingOptions, #v65-fieldset-paymentMethod{
-		@media screen and (max-width : 725px) {
+	#v65-fieldset-shippingOptions, #v65-fieldset-paymentMethod, #v65-fieldset-sourceCode{
+		@media screen and (max-width:950px) {
+			float: left;
+			width: 50%;
+		}
+
+		@media screen and (max-width:725px) {
 			margin: 0 0 1em;
-			width: 98%;
+			width: 99%;
 
 			input{
 				width: 99% !important;
@@ -3374,16 +3469,9 @@ $break-min-desktop: "and (min-width : 1024px)";
 		}
 	}
 	
-	#v65-fieldset-shippingOptions { 
-		width: 400px; 
-	}
-	
-	#v65-fieldset-sourceCode { 
-		width: 400px; 
-	}
-	
 	#v65-fieldset-paymentMethod {
 		p {}
+		div { clear:both;}
 	}
 	
 	#v65-checkout-OrderNotes {}
@@ -3396,8 +3484,10 @@ $break-min-desktop: "and (min-width : 1024px)";
 		}
 
 		.v65-additionalComments { 
-			float: right; 
-			width: 380px; 
+				@media screen and (max-width:950px) {
+					width:95%;
+					clear:both;
+				}
 		}
 
 		select{
@@ -3829,90 +3919,147 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 
 	/* b. Main Form
 	-------------------------------------------------------------- */		
-#v65-memberFormWrapper { 
+#v65-memberFormWrapper {
 
 	form { 
 		text-align: left; 
-		width: 400px; 
+		// width: 400px;
+		@media screen #{$break-min-tablet}{
+			width:400px;
+		} 
 	}
-
+	
 	legend { 
 		font-size: 1.4em; 
 		letter-spacing: 1px; 
 	}
 
 	fieldset{ 
-		width: 400px; 
-		border: 1px solid #ccc; 
+		// width: 400px; 
+		border: 1px solid #ccc;
+		@media screen #{$break-min-tablet}{
+			width:400px;
+		}  
 	}
-
-	@media screen and (max-width : 725px) {
-		form{
-			width: 100%;
-		}
-
-		fieldset{
-			width: 97%;
-		}
-
-		textarea{
-			width: 99% !important;
-		}
-
-		input, select{
-			height: 44px;
-			min-width: 44px;
-			width: 99% !important;
-		}
-
-		button.modalBtn{
-			font-size: 12px;
-			height: 44px;
-			width: auto;
-			min-width: 44px;
-		}
-
-		select{
-			width: 99.9%;
-		}
-	}
-	div{
-			margin: 0 0 4px 0;
-			overflow: hidden;
-			padding: 2px 5px 5px 5px;
-	}
-
-	.v65-additionalComments {
-		float: right;
-		width: 380px;
-	}
-	/* Member SignUp Form Elements */
-	select[name=BirthMonth] {
-		width:80px
-	}
-	select[name=BirthDay], select[name=BirthYear] {
-		width:60px;
-	}
-	input[name=FirstName], input[name=LastName], input[name=Company], input[name=City], input[name=MainPhone], input[name=Email], input[name=Username], input[name=Password], input[name=confirmPassword] {
-		width: 175px;
-	}  
-}	
-		
-		
-		
-		
-		#v65-memberFormWrapper input[name=Address] { width: 250px; margin-bottom: 8px; }
-		#v65-memberFormWrapper input[name=Address2] { width: 250px; }
-		
-		#v65-memberFormWrapper select[name=StateCode] { width: 180px; }
-		
-		#v65-memberFormWrapper input[name=ZipCode] { width: 100px; }
-		
-		#v65-memberFormWrapper select[name=CardExpiryMo] { width: 120px; } 
-		#v65-memberFormWrapper select[name=CardExpiryYr] { width: 80px; } 
-		#v65-memberFormWrapper input[type=checkbox] { float: left; margin: 0.3em 0.3em 0 0.3em; }
 	
-	/* c. Club List
+	div{ 
+		margin: 0 0 4px 0; 
+		overflow: hidden; 
+		padding: 2px 5px 5px 5px; 
+	}
+	
+	.v65-additionalComments { 
+		float: right; 
+		// width: 380px; 
+	}
+	
+	/* Member SignUp Form Elements */
+	select{
+		&[name="BirthDay"], &[name="BirthYear"],
+		&[name="BirthMonth"]{
+			width: 32%;
+		}
+
+		&[name="BirthDay"]{
+			margin: 0 1%;
+		}
+
+		&[name="CardExpiryMo"]{
+			width: 49%;
+		}
+
+		&[name="CardExpiryYr"]{
+			margin-left: 1%;
+			width: 48%;
+		}
+
+		@media screen #{$break-min-tablet}{
+			&[name=BirthMonth] {
+				width:80px;
+			} 
+
+			&[name=BirthDay], &[name=BirthYear] {
+				width:60px;
+			} 
+
+			&[name=StateCode] { 
+				width: 180px; 
+			}
+			
+			&[name=CardExpiryMo] { 
+				width: 120px; 
+			}
+			
+			&[name=CardExpiryYr] { 
+				width: 80px;
+			}
+		}
+	}
+
+	input{
+		@media screen #{$break-max-mobile}{
+			width: 98%;
+			margin:0;
+			padding:0;
+
+			&[type=checkbox] {
+				float: left;
+				width: 22px;
+				margin: 0.3em 0.3em 0 0.3em; 
+				@media screen #{$break-max-mobile}{
+					float: left; 
+					margin: 0.3em 0.3em 0 0.3em;
+				} 
+			}
+		}
+
+		&[name=Address], &[name=captchaText] { 
+			margin-bottom: 0.667em;
+		}
+		
+		@media screen #{$break-min-tablet}{
+			&[name=FirstName], &[name=LastName], &[name=Company], 
+			&[name=City], &[name=MainPhone], &[name=Email], 
+			&[name=Username], &[name=Password], &[name=confirmPassword] { 
+				width: 175px; 
+			}
+
+			&[name=Address] { 
+				width: 250px; 
+				margin-bottom: 8px; 
+			}
+			
+			&[name=Address2] { 
+				width: 250px; 
+			}
+
+			&[name=ZipCode] { 
+				width: 100px; 
+			}
+			
+			&[type=checkbox] { 
+				float: left; 
+				margin: 0.3em 0.3em 0 0.3em; 
+			}
+		}
+	}
+
+	label{
+		@media screen #{$break-max-mobile}{
+			height:22px;
+			line-height: 22px;
+			margin: 0.3em 0.3em 0 0.3em;
+		}
+	}
+
+	button.defaultBtn{
+		@media screen #{$break-max-mobile}{
+			width: 100%;
+		}		
+	}
+}
+
+/* c. Club List
 	-------------------------------------------------------------- */
 	.v65-memberClubDescription { padding-left: 20px; }
 
@@ -4017,7 +4164,14 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	top: 20%;
 	margin: 0 0 0 -237px;
 	width: 474px;
-	z-index: 103; 
+	z-index: 103;
+
+	@media screen #{$break-max-tablet}{
+		left: 0;
+		top: 0;
+		width: 100%;
+		margin: 0;
+	} 
 }
 
 #v65-modalContentWrapperLarge {
@@ -4033,24 +4187,34 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	
 	#v65-modalContentHeader {
 		background-color: #777;
-		/*width: 464px;*/
-		height: 27px;
+		/*width: 464px;*/	
 		overflow: hidden;
 		text-align: right;
-		padding: 6px 10px 0 0; 
+		padding:10px;
+
 		margin: 0;
+			@media screen #{$break-min-tablet}{
+				height: 27px;
+				padding: 6px 10px 0 0; 
+			}
 	}
 
 	#v65-modalContent {
 		padding: 15px;
 		margin: 0px;
+			
+		.defaultBtn{
+			@media screen #{$break-max-mobile}{
+				width: 100%;
+			}
+		}  
 	}
 	
 	/*Modal Site Login*/
 	#v65-siteLoginForm {
 		width: 212px;
 		margin: 0 20px 0 0;
-		float: left;  
+		float: left;
 	}
 
 	#v65-siteLoginRightContent {
@@ -4264,6 +4428,10 @@ a {
 		padding: 0;
 		position: relative;
 
+		@media screen #{$break-max-mobile}{
+			width:100%;
+		}
+
 		span{
 			display: block;
 			padding: 0 0.7em; /* 0 8px; */
@@ -4320,9 +4488,11 @@ a {
 	}
 	
 	&.modalLinkBtn, &.modalLinkAltBtn{
-		font-size: 0.833em; /* 10px; */
-		
+		@media screen #{$break-max-mobile}{
+			margin-bottom:10px;
+		}
 		@media screen #{$break-min-tablet}{
+			font-size: 0.833em; /* 10px; */
 			height: 1.7em;
 			line-height: 1.7em;
 		}

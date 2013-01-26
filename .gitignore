@@ -40,3 +40,5 @@ parsed/
 ###
 
 settings.ini
+config.rb
+sass-cache/

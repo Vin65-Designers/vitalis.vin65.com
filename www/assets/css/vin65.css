@@ -1,4 +1,3 @@
-
 /* CSS Document */
 /* ====================================================================================================                                                                
 
@@ -372,8 +371,11 @@ caption {
 
 /* b. Product & Blog Pagination
 -------------------------------------------------------------- */
-.v65-product-pagination, .v65-Paging {
+.v65-product-pagination {
   float: right;
+}
+
+.v65-product-pagination, .v65-Paging {
   text-align: right;
   width: 50%;
 }
@@ -412,6 +414,12 @@ caption {
 .v65-product-pagination li a:hover, .v65-Paging li a:hover {
   text-decoration: underline;
 }
+@media screen and (max-width: 767px) {
+  .v65-product-pagination li.border:first-child, .v65-Paging li.border:first-child {
+    margin: 5px;
+    padding: 7px 20px;
+  }
+}
 .v65-product-pagination li.border, .v65-Paging li.border {
   border-right: 1px solid #000;
   padding: 0 5px;
@@ -421,9 +429,13 @@ caption {
     background-color: #909090;
     border: 0;
     display: inline-block;
-    padding: 0 15px;
     border-radius: 5px;
-    margin: 5px 0;
+    margin: 5px 0 5px 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .v65-product-pagination li.border a, .v65-Paging li.border a {
+    background: none;
   }
 }
 
@@ -506,23 +518,30 @@ caption {
 }
 
 .v65-avatar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 48px;
-  height: 48px;
-  margin: 0;
-  padding: 0;
+  display: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
   .v65-avatar {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
   }
 }
 .v65-avatar img {
-  border: 1px solid #999;
-  padding: 2px;
-  background-color: #fff;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .v65-avatar img {
+    display: block;
+    border: 1px solid #999;
+    padding: 2px;
+    background-color: #fff;
+  }
 }
 
 .v65-blogPost {
@@ -530,7 +549,7 @@ caption {
   margin-left: 64px;
   padding-bottom: 1.5em;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .v65-blogPost {
     margin: 0;
   }
@@ -1012,15 +1031,16 @@ caption {
   line-height: 1.8em;
 }
 #v65-SiteMap li {
-  line-height: 2.5em;
-  font-size: 1.167em;
+  line-height: 44px;
+  font-size: 1.3em;
   font-weight: bold;
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
   #v65-SiteMap li {
-    line-height: 44px;
-    font-size: 1.3em;
-    border-bottom: 1px solid #e4e4e4;
+    line-height: inherit;
+    line-height: 2.5em;
+    font-size: 1.167em;
+    border: none;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1033,31 +1053,20 @@ caption {
   padding: 0;
   margin: 0 0 0 0.8em;
 }
-@media screen and (max-width: 480px) {
-  #v65-SiteMap li ul {
-    border-bottom: 1px solid #e4e4e4;
-  }
-}
 #v65-SiteMap li ul li {
   font-size: 0.858em;
+}
+@media screen and (max-width: 480px) {
+  #v65-SiteMap li ul li {
+    border-bottom: 1px solid #CCC;
+  }
 }
 #v65-SiteMap li ul li ul {
   list-style: none;
 }
-@media screen and (max-width: 480px) {
-  #v65-SiteMap li ul li ul {
-    border-top: 1px solid #e4e4e4;
-    margin: 0;
-  }
-}
 #v65-SiteMap li ul li ul li {
   font-weight: normal;
   font-size: 0.917em;
-}
-@media screen and (max-width: 480px) {
-  #v65-SiteMap li ul li ul li {
-    border-top: 1px solid #e4e4e4;
-  }
 }
 
 /* e. Store Locator
@@ -1177,8 +1186,8 @@ caption {
 
 #v65-map_canvas {
   position: relative;
-  width: 300px;
-  height: 240px;
+  width: 100%;
+  height: 300px;
   top: 0;
   right: 0;
   margin: 0;
@@ -1188,6 +1197,7 @@ caption {
 }
 @media screen and (min-width: 768px) {
   #v65-map_canvas {
+    position: absolute;
     width: 390px;
     height: 300px;
     top: 0;
@@ -1196,13 +1206,6 @@ caption {
     padding: 0;
     background-color: #eee;
     border: 1px solid #ccc;
-  }
-}
-@media screen and (min-width: 950px) {
-  #v65-map_canvas {
-    position: absolute;
-    width: 390px;
-    height: 300px;
   }
 }
 
@@ -1254,13 +1257,6 @@ caption {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   text-align: right;
-}
-@media screen and (max-width: 480px) {
-  .v65-tweetDetails a {
-    height: 32px;
-    line-height: 32px;
-    padding: 0 10px;
-  }
 }
 
 /* i. Search Widget
@@ -1442,6 +1438,12 @@ ul.ui-autocomplete li a span {
     width: auto;
   }
 }
+@media screen break-max-mobile {
+  #v65-modalCart a {
+    display: block;
+    width: 100%;
+  }
+}
 
 #v65-modalCartDropdown {
   position: absolute;
@@ -1457,7 +1459,7 @@ ul.ui-autocomplete li a span {
 @media screen and (min-width: 768px) {
   #v65-modalCartDropdown {
     top: 32px;
-    width: 272px;
+    width: 282px;
   }
 }
 
@@ -1466,7 +1468,7 @@ ul.ui-autocomplete li a span {
   border: 1px solid #333;
   border-bottom: 5px solid #333;
   color: #000;
-  font-size: 0.917em;
+  font-size: 1em;
   padding: 10px;
 }
 #v65-modalCartBody p {
@@ -1474,11 +1476,14 @@ ul.ui-autocomplete li a span {
 }
 #v65-modalCartBody a {
   color: #000;
+  width: auto;
+  display: inline-block;
+  font-size: 1em;
 }
-@media screen break-max-mobile {
+@media screen and (max-width: 480px) {
   #v65-modalCartBody a {
+    display: block;
     width: 100%;
-    font-size: 1.3em;
   }
   #v65-modalCartBody a.modalLinkBtn {
     margin-top: 8px;
@@ -2074,16 +2079,6 @@ ul.ui-autocomplete li a span {
   /* Product Add To Cart */
   /*Product Review Stats*/
 }
-@media screen and (max-width: 620px) {
-  .v65-product3Up {
-    width: 45%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .v65-product3Up {
-    width: 90%;
-  }
-}
 .v65-product3Up .v65-product-photo img {
   max-width: 45%;
 }
@@ -2119,28 +2114,6 @@ ul.ui-autocomplete li a span {
   width: 18%;
   /* Product Add To Cart */
   /*Product Review Stats*/
-}
-@media screen and (max-width: 900px) {
-  .v65-product5Up {
-    width: 23%;
-  }
-}
-@media screen and (max-width: 685px) {
-  .v65-product5Up {
-    width: 31%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .v65-product5Up {
-    width: 46%;
-    margin: 2%;
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .v65-product5Up {
-    width: 90%;
-    margin: 5%;
-  }
 }
 .v65-product5Up .v65-product-photo img {
   max-width: 65%;
@@ -2222,76 +2195,16 @@ ul.ui-autocomplete li a span {
 }
 .v65-product1UpStore .v65-product-photo {
   float: left;
-  margin-right: 5%;
-  width: 30%;
-}
-@media screen and (min-width: 768px) {
-  .v65-product1UpStore .v65-product-photo {
-    width: 15%;
-    margin-right: 2%;
-  }
+  width: 15%;
+  margin-right: 2%;
 }
 .v65-product1UpStore .v65-product-photo img {
   max-width: 100%;
 }
 .v65-product1UpStore .v65-product-infoWrapper {
-  float: right;
-  width: 65%;
-}
-@media screen and (min-width: 768px) {
-  .v65-product1UpStore .v65-product-infoWrapper {
-    float: left;
-    margin-right: 3%;
-    width: 37%;
-  }
-}
-.v65-product1UpStore .v65-product-commerceWrapper {
-  clear: both;
-}
-@media screen and (min-width: 500px) {
-  .v65-product1UpStore .v65-product-commerceWrapper {
-    clear: none;
-    float: right;
-    width: 65%;
-  }
-}
-.v65-product1UpStore .v65-product-addToCart-priceWrapper {
-  display: block;
-}
-@media screen and (min-width: 500px) {
-  .v65-product1UpStore .v65-product-addToCart-priceWrapper {
-    display: inline-block;
-  }
-}
-@media screen and (min-width: 770px) {
-  .v65-product1UpStore .v65-product-addToCart-priceWrapper {
-    display: inline;
-  }
-}
-.v65-product1UpStore .v65-product-addToCart-quantity {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 500px) {
-  .v65-product1UpStore .v65-product-addToCart-quantity {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-}
-@media screen and (min-width: 770px) {
-  .v65-product1UpStore .v65-product-addToCart-quantity {
-    height: auto;
-    line-height: normal;
-  }
-}
-.v65-product1UpStore .v65-product-addToCart-button {
-  display: inline-block;
-  margin-left: 3%;
-  width: 77%;
-}
-@media screen and (min-width: 500px) {
-  .v65-product1UpStore .v65-product-addToCart-button {
-    width: auto;
-  }
+  float: left;
+  width: 37%;
+  margin-right: 3%;
 }
 .v65-product1UpStore .v65-product-title {
   font-size: 1.2em;
@@ -2329,11 +2242,9 @@ ul.ui-autocomplete li a span {
   margin-right: 5px;
   font-size: 0.9em;
 }
-@media screen and (min-width: 768px) {
-  .v65-product1UpStore .v65-product-commerceWrapper {
-    float: left;
-    width: 43%;
-  }
+.v65-product1UpStore .v65-product-commerceWrapper {
+  float: left;
+  width: 43%;
 }
 
 .v65-productCharacteristics {
@@ -3175,11 +3086,11 @@ ul.ui-autocomplete li a span {
   border: 1px solid #eeeeee;
   overflow: hidden;
 }
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 950px) {
   #v65-checkoutCartSummaryWrapper {
     float: right;
     position: relative;
-    width: 34%;
+    width: 42%;
   }
 }
 @media screen and (max-width: 725px) {
@@ -3188,7 +3099,7 @@ ul.ui-autocomplete li a span {
     margin: 0 0 1em;
     right: 0;
     top: 0;
-    width: 96.5%;
+    width: 96%;
   }
 }
 
@@ -3199,7 +3110,7 @@ ul.ui-autocomplete li a span {
   padding: 0;
   font-size: 11px;
 }
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 900px) {
   #v65-checkoutCartSummaryMini {
     float: none;
     width: 100%;
@@ -3233,7 +3144,7 @@ ul.ui-autocomplete li a span {
   width: 140px;
   font-size: 11px;
 }
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 900px) {
   #v65-checkCartSummaryMoreOptions {
     float: none;
     width: 100%;
@@ -3241,35 +3152,34 @@ ul.ui-autocomplete li a span {
 }
 
 /* Add Shipping and Add Gift Wrapping Forms */
-#v65-couponFormWrapper legend {
+#v65-couponFormWrapper legend, #v65-giftCardFormWrapper legend {
   font-size: 12px;
   letter-spacing: normal;
 }
 @media screen and (max-width: 725px) {
-  #v65-couponFormWrapper fieldset {
+  #v65-couponFormWrapper fieldset, #v65-giftCardFormWrapper fieldset {
     margin: 0 0 1em;
-    width: 98%;
   }
-  #v65-couponFormWrapper form {
+  #v65-couponFormWrapper form, #v65-giftCardFormWrapper form {
     width: 100%;
   }
-  #v65-couponFormWrapper input {
+  #v65-couponFormWrapper input, #v65-giftCardFormWrapper input {
     width: 60% !important;
   }
-  #v65-couponFormWrapper button.modalBtn {
+  #v65-couponFormWrapper button.modalBtn, #v65-giftCardFormWrapper button.modalBtn {
     margin-right: 0;
     width: 35%;
   }
 }
 @media screen and (max-width: 385px) {
-  #v65-couponFormWrapper input {
+  #v65-couponFormWrapper input, #v65-giftCardFormWrapper input {
     width: 55% !important;
   }
-  #v65-couponFormWrapper button.modalBtn {
+  #v65-couponFormWrapper button.modalBtn, #v65-giftCardFormWrapper button.modalBtn {
     width: auto;
   }
 }
-#v65-couponFormWrapper div {
+#v65-couponFormWrapper div, #v65-giftCardFormWrapper div {
   font-size: 11px;
 }
 
@@ -3284,6 +3194,14 @@ ul.ui-autocomplete li a span {
 
 /* b. Main Form
 -------------------------------------------------------------- */
+#v65-checkoutFormWrapper {
+  width: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  #v65-checkoutFormWrapper {
+    width: 98%;
+  }
+}
 #v65-checkoutFormWrapper form {
   width: 100%;
 }
@@ -3307,30 +3225,42 @@ ul.ui-autocomplete li a span {
 #v65-checkoutFormWrapper #v65-fieldset-shippingInfo {
   width: 400px;
 }
-@media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-fieldset-billingInfo, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo,
-  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod {
-    margin: 0 0 1em;
-    width: 98%;
-  }
-  #v65-checkoutFormWrapper #v65-fieldset-billingInfo input, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo input,
-  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions input, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod input {
-    width: 99% !important;
-  }
-}
 #v65-checkoutFormWrapper #v65-fieldset-shippingOptions {
   width: 400px;
 }
 #v65-checkoutFormWrapper #v65-fieldset-sourceCode {
   width: 400px;
 }
+@media screen and (max-width: 950px) {
+  #v65-checkoutFormWrapper #v65-fieldset-billingInfo, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo,
+  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod, #v65-checkoutFormWrapper #v65-fieldset-sourceCode {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 725px) {
+  #v65-checkoutFormWrapper #v65-fieldset-billingInfo, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo,
+  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod, #v65-checkoutFormWrapper #v65-fieldset-sourceCode {
+    margin: 0 0 1em;
+    width: 99%;
+  }
+  #v65-checkoutFormWrapper #v65-fieldset-billingInfo input, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo input,
+  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions input, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod input, #v65-checkoutFormWrapper #v65-fieldset-sourceCode input {
+    width: 99% !important;
+  }
+}
+#v65-checkoutFormWrapper #v65-fieldset-paymentMethod div {
+  clear: both;
+}
 #v65-checkoutFormWrapper #v65-checkBilling legend {
   font-size: 1.4em;
   letter-spacing: 1px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling .v65-additionalComments {
-  float: right;
-  width: 380px;
+@media screen and (max-width: 950px) {
+  #v65-checkoutFormWrapper #v65-checkBilling .v65-additionalComments {
+    width: 95%;
+    clear: both;
+  }
 }
 #v65-checkoutFormWrapper #v65-checkBilling select[name=BillBirthMonth] {
   width: 80px;
@@ -3686,39 +3616,22 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 #v65-memberFormWrapper form {
   text-align: left;
-  width: 400px;
+}
+@media screen and (min-width: 768px) {
+  #v65-memberFormWrapper form {
+    width: 400px;
+  }
 }
 #v65-memberFormWrapper legend {
   font-size: 1.4em;
   letter-spacing: 1px;
 }
 #v65-memberFormWrapper fieldset {
-  width: 400px;
   border: 1px solid #ccc;
 }
-@media screen and (max-width: 725px) {
-  #v65-memberFormWrapper form {
-    width: 100%;
-  }
+@media screen and (min-width: 768px) {
   #v65-memberFormWrapper fieldset {
-    width: 97%;
-  }
-  #v65-memberFormWrapper textarea {
-    width: 99% !important;
-  }
-  #v65-memberFormWrapper input, #v65-memberFormWrapper select {
-    height: 44px;
-    min-width: 44px;
-    width: 99% !important;
-  }
-  #v65-memberFormWrapper button.modalBtn {
-    font-size: 12px;
-    height: 44px;
-    width: auto;
-    min-width: 44px;
-  }
-  #v65-memberFormWrapper select {
-    width: 99.9%;
+    width: 400px;
   }
 }
 #v65-memberFormWrapper div {
@@ -3728,50 +3641,92 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 #v65-memberFormWrapper .v65-additionalComments {
   float: right;
-  width: 380px;
 }
-#v65-memberFormWrapper select[name=BirthMonth] {
-  width: 80px;
+#v65-memberFormWrapper select[name="BirthDay"], #v65-memberFormWrapper select[name="BirthYear"], #v65-memberFormWrapper select[name="BirthMonth"] {
+  width: 32%;
 }
-#v65-memberFormWrapper select[name=BirthDay], #v65-memberFormWrapper select[name=BirthYear] {
-  width: 60px;
+#v65-memberFormWrapper select[name="BirthDay"] {
+  margin: 0 1%;
 }
-#v65-memberFormWrapper input[name=FirstName], #v65-memberFormWrapper input[name=LastName], #v65-memberFormWrapper input[name=Company], #v65-memberFormWrapper input[name=City], #v65-memberFormWrapper input[name=MainPhone], #v65-memberFormWrapper input[name=Email], #v65-memberFormWrapper input[name=Username], #v65-memberFormWrapper input[name=Password], #v65-memberFormWrapper input[name=confirmPassword] {
-  width: 175px;
+#v65-memberFormWrapper select[name="CardExpiryMo"] {
+  width: 49%;
 }
-
-#v65-memberFormWrapper input[name=Address] {
-  width: 250px;
-  margin-bottom: 8px;
+#v65-memberFormWrapper select[name="CardExpiryYr"] {
+  margin-left: 1%;
+  width: 48%;
 }
-
-#v65-memberFormWrapper input[name=Address2] {
-  width: 250px;
+@media screen and (min-width: 768px) {
+  #v65-memberFormWrapper select[name=BirthMonth] {
+    width: 80px;
+  }
+  #v65-memberFormWrapper select[name=BirthDay], #v65-memberFormWrapper select[name=BirthYear] {
+    width: 60px;
+  }
+  #v65-memberFormWrapper select[name=StateCode] {
+    width: 180px;
+  }
+  #v65-memberFormWrapper select[name=CardExpiryMo] {
+    width: 120px;
+  }
+  #v65-memberFormWrapper select[name=CardExpiryYr] {
+    width: 80px;
+  }
 }
-
-#v65-memberFormWrapper select[name=StateCode] {
-  width: 180px;
+@media screen and (max-width: 480px) {
+  #v65-memberFormWrapper input {
+    width: 98%;
+    margin: 0;
+    padding: 0;
+  }
+  #v65-memberFormWrapper input[type=checkbox] {
+    float: left;
+    width: 22px;
+    margin: 0.3em 0.3em 0 0.3em;
+  }
 }
-
-#v65-memberFormWrapper input[name=ZipCode] {
-  width: 100px;
+@media screen and (max-width: 480px) and (max-width: 480px) {
+  #v65-memberFormWrapper input[type=checkbox] {
+    float: left;
+    margin: 0.3em 0.3em 0 0.3em;
+  }
 }
-
-#v65-memberFormWrapper select[name=CardExpiryMo] {
-  width: 120px;
+#v65-memberFormWrapper input[name=Address], #v65-memberFormWrapper input[name=captchaText] {
+  margin-bottom: 0.667em;
 }
-
-#v65-memberFormWrapper select[name=CardExpiryYr] {
-  width: 80px;
+@media screen and (min-width: 768px) {
+  #v65-memberFormWrapper input[name=FirstName], #v65-memberFormWrapper input[name=LastName], #v65-memberFormWrapper input[name=Company], #v65-memberFormWrapper input[name=City], #v65-memberFormWrapper input[name=MainPhone], #v65-memberFormWrapper input[name=Email], #v65-memberFormWrapper input[name=Username], #v65-memberFormWrapper input[name=Password], #v65-memberFormWrapper input[name=confirmPassword] {
+    width: 175px;
+  }
+  #v65-memberFormWrapper input[name=Address] {
+    width: 250px;
+    margin-bottom: 8px;
+  }
+  #v65-memberFormWrapper input[name=Address2] {
+    width: 250px;
+  }
+  #v65-memberFormWrapper input[name=ZipCode] {
+    width: 100px;
+  }
+  #v65-memberFormWrapper input[type=checkbox] {
+    float: left;
+    margin: 0.3em 0.3em 0 0.3em;
+  }
 }
-
-#v65-memberFormWrapper input[type=checkbox] {
-  float: left;
-  margin: 0.3em 0.3em 0 0.3em;
+@media screen and (max-width: 480px) {
+  #v65-memberFormWrapper label {
+    height: 22px;
+    line-height: 22px;
+    margin: 0.3em 0.3em 0 0.3em;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-memberFormWrapper button.defaultBtn {
+    width: 100%;
+  }
 }
 
 /* c. Club List
--------------------------------------------------------------- */
+	-------------------------------------------------------------- */
 .v65-memberClubDescription {
   padding-left: 20px;
 }
@@ -4066,6 +4021,14 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   width: 474px;
   z-index: 103;
 }
+@media screen and (max-width: 767px) {
+  #v65-modalContentWrapper {
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+  }
+}
 
 #v65-modalContentWrapperLarge {
   border: 1px solid #666;
@@ -4081,16 +4044,26 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 #v65-modalContentHeader {
   background-color: #777;
   /*width: 464px;*/
-  height: 27px;
   overflow: hidden;
   text-align: right;
-  padding: 6px 10px 0 0;
+  padding: 10px;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  #v65-modalContentHeader {
+    height: 27px;
+    padding: 6px 10px 0 0;
+  }
 }
 
 #v65-modalContent {
   padding: 15px;
   margin: 0px;
+}
+@media screen and (max-width: 480px) {
+  #v65-modalContent .defaultBtn {
+    width: 100%;
+  }
 }
 
 /*Modal Site Login*/
@@ -4292,6 +4265,11 @@ a.largeLinkBtn, a.linkBtn, a.modalLinkBtn, a.linkAltBtn, a.modalLinkAltBtn {
   padding: 0;
   position: relative;
 }
+@media screen and (max-width: 480px) {
+  a.largeLinkBtn, a.linkBtn, a.modalLinkBtn, a.linkAltBtn, a.modalLinkAltBtn {
+    width: 100%;
+  }
+}
 a.largeLinkBtn span, a.linkBtn span, a.modalLinkBtn span, a.linkAltBtn span, a.modalLinkAltBtn span {
   display: block;
   padding: 0 0.7em;
@@ -4342,12 +4320,15 @@ a.linkBtn, a.linkAltBtn {
     line-height: 2em;
   }
 }
-a.modalLinkBtn, a.modalLinkAltBtn {
-  font-size: 0.833em;
-  /* 10px; */
+@media screen and (max-width: 480px) {
+  a.modalLinkBtn, a.modalLinkAltBtn {
+    margin-bottom: 10px;
+  }
 }
 @media screen and (min-width: 768px) {
   a.modalLinkBtn, a.modalLinkAltBtn {
+    font-size: 0.833em;
+    /* 10px; */
     height: 1.7em;
     line-height: 1.7em;
   }
