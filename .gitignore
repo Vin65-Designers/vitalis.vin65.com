@@ -42,3 +42,6 @@ parsed/
 settings.ini
 config.rb
 sass-cache/
+*.scssc
+
+*.scssc

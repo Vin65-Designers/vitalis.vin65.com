@@ -2038,6 +2038,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 	float: left;
 	width: 31%;
 	margin: 0 3% 1.5em 0;
+
+	@media screen and (max-width:600px){
+		width:47%;
+	}
+
+	@media screen and (max-width:480px){
+		width:100%;
+		margin:0;
+	}
 	
 	.v65-product-photo img { 
 		max-width: 45%;
@@ -2083,6 +2092,23 @@ $break-min-desktop: "and (min-width : 1024px)";
 	float: left;
 	margin: 0 2% 1.5em 0;
 	width: 18%;
+
+	@media screen and (max-width:840px){
+		width:23%;
+	}
+
+	@media screen and (max-width:720px){
+		width:31%;
+	}
+
+	@media screen and (max-width:600px){
+		width:47%;
+	}
+
+	@media screen and (max-width:480px){
+		width:100%;
+		margin:0;
+	}
 
 	.v65-product-photo img { 
 		max-width: 65%;
@@ -2200,6 +2226,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 		float: left;
 		width: 37%;
 		margin-right: 3%;
+
+		@media screen and (max-width:700px){
+			float:right;
+			width:83%;
+			margin:0;
+		}
 	}
 
 	.v65-product-title { 
@@ -2249,6 +2281,11 @@ $break-min-desktop: "and (min-width : 1024px)";
 	.v65-product-commerceWrapper {
 		float: left;
 		width: 43%;
+
+		@media screen and (max-width:700px){
+			float:right;
+			width:83%;
+		}
 	}
 }
 				
@@ -3236,7 +3273,17 @@ $break-min-desktop: "and (min-width : 1024px)";
 	
 #v65-checkoutFooter { 
 	overflow: hidden;
-	clear: both; 
+	clear: both;
+	.floatRight {
+		@media screen and (max-width : 640px){
+			float:none;
+		}
+	}
+	button{
+		@media screen and (max-width : 640px) {
+			width: 100%;
+		}
+	} 
 }
 
 	#v65-checkoutSecure { 
@@ -3412,9 +3459,17 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 100%; 
 	}
 
+}
 
 	
 	#v65-checkBilling{
+		@media screen #{$break-min-tablet}{
+			width:60%;
+		}
+		@media screen #{$break-min-desktop}{
+			width:400px;
+		}
+
 		fieldset{}
 	}
 
@@ -3432,28 +3487,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 	}
 
-	#v65-fieldset-wholesalerInfo { 
-		width: 400px; 
-	}
-	
-	#v65-fieldset-billingInfo { 
-		width: 400px; 
-	}
-	
-	#v65-fieldset-shippingInfo { 
-		width: 400px; 
-	}
+	#v65-fieldset-wholesalerInfo, #v65-fieldset-billingInfo, 
+	#v65-fieldset-shippingInfo, #v65-fieldset-shippingOptions, 
+	#v65-fieldset-paymentMethod, #v65-fieldset-sourceCode, 
+	#v65-fieldset-usernamePassword{
+		width: 400px;
 
-	#v65-fieldset-shippingOptions { 
-		width: 400px; 
-	}
-
-	#v65-fieldset-sourceCode {
-		width: 400px;  
-	}
-
-	#v65-fieldset-billingInfo, #v65-fieldset-shippingInfo, 
-	#v65-fieldset-shippingOptions, #v65-fieldset-paymentMethod, #v65-fieldset-sourceCode{
 		@media screen and (max-width:950px) {
 			float: left;
 			width: 50%;
@@ -3623,7 +3662,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 			padding: 5px 0 !important;
 		}
 	} 
-}
 		
 /* c. Review Screen
 -------------------------------------------------------------- */	
@@ -3699,17 +3737,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 100%; 
 	}
 
-	fieldset {}
-
+	fieldset {}	
 }	
 	
 	#v65-fieldset-clubOptions { 
 		width: 400px; 
-	} 
-
-	#v65-fieldset-usernamePassword { 
-		width: 400px; 
-	} 
+	}  
 	
 	#v65-clubCreditCard {} 
 	
@@ -3792,14 +3825,26 @@ $break-min-desktop: "and (min-width : 1024px)";
 /* c. Sign Up Screen
 -------------------------------------------------------------- */	
 #v65-signUpClubSummaryWrapper {
-	position: absolute;
-	top: 9px;
-	right: 1px;
-	padding: 10px;
-	width: 350px;
+	margin: 0 0 1em;
+	width: 95%;
+	padding: 5%;
 	background-color: #f7f7f7;
 	border: 1px solid #eeeeee;
 	overflow: hidden;
+	clear:both;
+
+	@media screen and (min-width:725px) {
+		width: 42%;
+		position: absolute;
+		top: 9px;
+		right: 1px;
+		padding: 10px;
+	}
+
+	@media screen #{$break-min-desktop}{	
+		width: 350px;
+	}
+
 }
 #v65-clubOptionsDrilldown {
 
@@ -4247,7 +4292,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		display: block;
 		padding: 0 5px 10px 5px; 
 		margin: 0 0 12px 0; 
-		border: 1px solid #ccc; 
+		border: 1px solid #ccc;
+
+		@media screen #{$break-max-mobile}{
+			padding:0;
+		} 
 
 		div {
 			overflow: hidden; 
