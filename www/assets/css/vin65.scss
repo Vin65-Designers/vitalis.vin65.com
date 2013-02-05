@@ -128,7 +128,13 @@ $break-min-desktop: "and (min-width : 1024px)";
 	.strikethru 	{ text-decoration: line-through; font-weight: normal; }
 
 	.right 			{ text-align: right; }
-	.floatRight 	{ float: right; }
+	.floatRight 	{ 
+		float: right;
+		
+		@media screen and (max-width : 640px){
+			float:none;//this is added to remove the float in the review your order screen on mobile
+		} 
+	}
 
 	.left 			{ text-align: left; }
 	.floatLeft 		{ float: left; }
@@ -606,6 +612,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 		.v65-product-title { 
 			font-size: 1.3em;
+			font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 		}
 
 		.v65-product-subtitle { 
@@ -1453,7 +1460,8 @@ $break-min-desktop: "and (min-width : 1024px)";
 .v65-product-title {
 	font-size: 2em;
 	line-height: 1em;
-	margin-bottom: 0.3em;	
+	margin-bottom: 0.3em;
+	font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;	
 }
 	
 .v65-product-subtitle {
@@ -2697,7 +2705,8 @@ $break-min-desktop: "and (min-width : 1024px)";
 	padding-bottom: 1em;
 		@media screen #{$break-max-tablet}{ 
 			padding:1.5em;
-		}	
+
+	}	
 		
 	/*Product Left Photos*/
 	.v65-product-photo-wrapper{
@@ -2739,6 +2748,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 			width: 50%;
 				@media screen #{$break-min-tablet}{
 					width: 33%;
+					padding:0;
 
 				img { 
 					max-width: 100%; 
@@ -2770,6 +2780,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 					font-size: 1.8em;
 					margin: 0 0 1em;
 					text-align: center;
+					font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;	
 						@media screen #{$break-max-tablet}{ 
 							text-align:left; 
 						}
@@ -2790,6 +2801,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 					}	
 				}
 			}
+		}
+	}
+
+	.v65-wine-profile {
+
+		.v65-wine-profile-title{
+			font-size: 1.8em;
+			margin: 0 0 1em;
+			font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;	
 		}
 	}
 
@@ -3291,6 +3311,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 300px;
 	}
 
+	form.v65ProcessOrder{
+		@media screen and (max-width : 640px){
+
+			button{
+				width: 100%;
+			}
+		}
+	}
+
 	#v65-continueOrder { 
 		float: right; 
 		width: 300px; 
@@ -3532,10 +3561,18 @@ $break-min-desktop: "and (min-width : 1024px)";
 		select{
 			&[name=BillBirthMonth] {
 				width:80px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			}
 
 			&[name=BillBirthDay], &[name=BillBirthYear] {
 				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			}
 
 			&[name=BillStateCode] { 
@@ -3543,11 +3580,19 @@ $break-min-desktop: "and (min-width : 1024px)";
 			}
 
 			&[name=ShipBirthMonth] { 
-				width:80px; 
+				width:80px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				}  
 			}
 
 			&[name=ShipBirthDay], &[name=ShipBirthYear] { 
-				width:60px; 
+				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				}  
 			} 
 
 			&[name=shipStateCode] { 
@@ -3800,12 +3845,20 @@ $break-min-desktop: "and (min-width : 1024px)";
 				width: 80px; 
 			}
 			
-			&[name=ShipBirthMonth] { 
+			&[name=BirthMonth], &[name=ShipBirthMonth] { 
 				width:80px; 
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				}
 			}  
 			
-			&[name=ShipBirthDay], &[name=ShipBirthYear] { 
-				width:60px; 
+			&[name=BirthDay], &[name=BirthYear], &[name=ShipBirthDay], &[name=ShipBirthYear] { 
+				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			} 
 			
 			&[name=shipStateCode] { 
@@ -3826,7 +3879,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 -------------------------------------------------------------- */	
 #v65-signUpClubSummaryWrapper {
 	margin: 0 0 1em;
-	width: 95%;
+	width: 90%;
 	padding: 5%;
 	background-color: #f7f7f7;
 	border: 1px solid #eeeeee;
@@ -3969,8 +4022,9 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	form { 
 		text-align: left; 
 		// width: 400px;
-		@media screen #{$break-min-tablet}{
-			width:400px;
+		width:400px;
+		@media screen #{$break-max-mobile}{
+			width:100%;
 		} 
 	}
 	
@@ -4021,10 +4075,18 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		@media screen #{$break-min-tablet}{
 			&[name=BirthMonth] {
 				width:80px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			} 
 
 			&[name=BirthDay], &[name=BirthYear] {
 				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			} 
 
 			&[name=StateCode] { 
@@ -4106,73 +4168,267 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 
 /* c. Club List
 	-------------------------------------------------------------- */
-	.v65-memberClubDescription { padding-left: 20px; }
+.v65-memberClubDescription { 
+	padding-left: 20px; 
+}
 
-	/* Member Address Book */	
-	#v65-memberAddressBook { margin-bottom: 1em; }
-		#v65-memberAddressBook th{	background-color:#ccc; color: #333; font-weight: bold; font-size: 0.95em; padding: 3px; border-bottom: 1px solid #bbb; }	
-		#v65-memberAddressBook td{ font-size: 0.95em; padding: 3px; border-bottom: 1px solid #bbb;	}		
-			#v65-memberAddressBook td.a{ color: #000; text-decoration: none; }
-			#v65-memberAddressBook td.a:hover{	color: #000; text-decoration: none;	}		
-			#v65-memberAddressBook tr:hover{ background-color: #FFC; }				
-			#v65-memberAddressBook tr.alt{	background-color: #efefef; }			
-				#v65-memberAddressBook tr.alt:hover{ background-color: #FFC; }
+/* Member Address Book */	
+#v65-memberAddressBook { 
+	margin-bottom: 1em; 
+
+	th{
+		background-color:#ccc; 
+		color: #333; 
+		font-weight: bold; 
+		font-size: 0.95em; 
+		padding: 3px; 
+		border-bottom: 1px solid #bbb; 
+	}
+
+	td{ 
+		font-size: 0.95em; 
+		padding: 3px; 
+		border-bottom: 1px solid #bbb;
+
+		a{ 
+			color: #000; 
+			text-decoration: none;
+
+			&:hover{
+				color: #000; 
+				text-decoration: none;
+			}
+		}
+	}
+
+	tr{
+		&:hover { 
+			background-color: #FFC; 
+		}
+		
+		.alt {
+			background-color: #efefef;
+
+			&:hover{ 
+				background-color: #FFC; 
+			}
+		}
+	}
+}
 			
 	/* d. Member Orders
 	-------------------------------------------------------------- */	
-	#v65-memberOrders { margin-bottom: 1em; }
-		
-		#v65-memberOrders th{ background-color:#ccc; color:#333; font-weight: bold;	font-size: 0.95em; padding: 3px; border-bottom: 1px solid #bbb;	}	
-		#v65-memberOrders td{ font-size: 0.95em; padding: 2px; border-bottom: 1px solid #bbb; }		
-			#v65-memberOrders td.a{ color: #000; text-decoration: none; }			
-			#v65-memberOrders td.a:hover{ color: #000; text-decoration: none; }		
-			#v65-memberOrders tr:hover{ background-color: #FFC; }				
-			#v65-memberOrders tr.alt{ background-color: #efefef; }			
-				#v65-memberOrders tr.alt:hover{	background-color: #FFC; }
+	#v65-memberOrders {
+	margin-bottom: 1em; 
+
+	th{ 
+		background-color:#ccc; 
+		color:#333; 
+		font-weight: bold;
+		font-size: 0.95em; 
+		padding: 3px; 
+		border-bottom: 1px solid #bbb;
+	}
+	
+	td{
+		font-size: 0.95em; 
+		padding: 2px; 
+		border-bottom: 1px solid #bbb; 
+
+		a{ 
+			color: #000; 
+			text-decoration: none; 
+
+			&:hover{ 
+				color: #000; text-decoration: none; 
+			}
+		}
+	}
+
+	tr{
+		&:hover{ 
+			background-color: #FFC; 
+		}
+
+		.alt{ 
+			background-color: #efefef; 
+
+			&:hover{	
+				background-color: #FFC; 
+			}
+		}
+	}
+}
 
 	/* e. Member Orders Drilldown
 	-------------------------------------------------------------- */	
-	#v65-memberOrderSummaryWrapper { overflow: hidden; width: 100%; padding: 0 0 1em 0; }
-		#v65-memberbillingSummary { float: left; width: 49%; padding: 0; margin: 0; overflow: hidden; }
-		#v65-memberShippingSummary { float: left; width: 49%; padding: 0; margin: 0; overflow: hidden; }
-	
+#v65-memberOrderSummaryWrapper { 
+	overflow: hidden; 
+	width: 100%; 
+	padding: 0 0 1em 0; 
+}
+
+	#v65-memberbillingSummary { 
+		float: left; 
+		width: 49%; 
+		padding: 0; 
+		margin: 0;
+		overflow: hidden; 
+	}
+
+	#v65-memberShippingSummary { 
+		float: left; 
+		width: 49%; 
+		padding: 0; 
+		margin: 0; 
+		overflow: hidden; 
+	}
+
 	/* f. Member Allocations
 	-------------------------------------------------------------- */
-	.v65-memberAllocationWrapper { overflow: hidden; border-bottom: 1px solid #999; margin: 0 0 1em; padding: 0 0 1em; }
-		.v65-memberAllocationDetails { position: relative; margin: 0 0 1em; padding: 0; overflow: hidden; min-height: 216px; }
-		.v65-memberAllocationImage { position: absolute; top: 0; left: 0; width: 120px; text-align: center; overflow: hidden; }
-		.v65-memberAllocationTeaser { position: relative; margin: 0 0 0 140px; padding: 0; }
-		
-		.v65-storeAllocationSKU { font-size: 11px; color: #333; }
-		
-		.v65-memberAllocationTable { float: right; border: 1px solid #ccc; margin: 0 0 1.5em; padding: 4px; font-size: 10px; width: 250px; }
-		.v65-memberAllocationTable th { font-weight: bold; vertical-align: bottom; text-align:center; }
-		.v65-memberAllocationTable td { padding: 5px; border-bottom: 1px solid #eee; vertical-align: middle; text-align:center; }
-		.v65-memberAllocationTable td.label { font-weight: bold; text-align: right; }
-		.v65-memberAllocationTable td.lastRow { border-bottom: 0; }
-		
-		.v65-memberAllocationTable input { text-align: center; }
-		
-		#v65-memberAllocationMinimumOrder {  } /*minium quantity row*/
+.v65-memberAllocationWrapper { 
+	overflow: hidden; 
+	border-bottom: 1px solid #999; 
+	margin: 0 0 1em; 
+	padding: 0 0 1em; 
+}
+
+	.v65-memberAllocationDetails { 
+		position: relative;
+		margin: 0 0 1em;
+		padding: 0;
+		overflow: hidden;
+		min-height: 216px;
+	}
+
+	.v65-memberAllocationImage { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 120px;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.v65-memberAllocationTeaser { 
+		position: relative;
+		margin: 0 0 0 140px;
+		padding: 0;
+	}
+	
+	.v65-storeAllocationSKU { 
+		font-size: 11px;
+		color: #333;
+	}
+	
+	.v65-memberAllocationTable { 
+		float: right;
+		border: 1px solid #ccc;
+		margin: 0 0 1.5em;
+		padding: 4px;
+		font-size: 10px;
+		width: 250px;
+
+		th { 
+			font-weight: bold;
+			vertical-align: bottom;
+			text-align:center;
+		}
+
+		td { 
+			padding: 5px;
+			border-bottom: 1px solid #eee;
+			vertical-align: middle;
+			text-align:center;
+
+			.label { 
+				font-weight: bold;
+				text-align: right;
+			}
+
+			.lastRow { 
+				border-bottom: 0;
+			}
+		}
+
+		input { 
+			text-align: center;
+		}
+	}
+
+	#v65-memberAllocationMinimumOrder {} /*minium quantity row*/
 	
 	/* g. Member Allocations History
 	-------------------------------------------------------------- */
-	.v65-memberAllocationHistoryWrapper { overflow: hidden; border-bottom: 1px solid #999; margin: 0 0 1.5em; padding: 0 0 0.5em; }
-		
-		.v65-memberAllcoationHistoryTitle { font-size: 1.6em; margin: 0 0 0.2em; color: #333; }
-		
-		.v65-memberAllcoationHistoryDates { margin: 0 0 0.5em; }
-			.v65-memberAllcoationHistoryStartDate { display: inline-block; margin-right: 8px; border-right: 1px solid #ccc; }
-			.v65-memberAllcoationHistoryEndDate { display: inline-block; }
-				.v65-memberAllcoationHistoryDateLabel { display: inline-block; margin-right: 3px; }
-				.v65-memberAllcoationHistoryDateValue { font-weight: bold; margin-right: 8px; }
-						
-		
-		.v65-memberAllocationHistoryTable { width: 100%; margin: 0; padding: 6px; font-size: 10px; }
-		.v65-memberAllocationHistoryTable th { padding: 5px; border-bottom: 1px solid #ccc; font-weight: bold; vertical-align: bottom; text-align:center; background-color: #efefef; color: #555; }
-		.v65-memberAllocationHistoryTable td { padding: 5px; border-bottom: 1px solid #eee; vertical-align: middle; text-align:center; }
-		.v65-memberAllocationHistoryTable td.label { font-weight: bold; text-align: right; }
-		.v65-memberAllocationHistoryTable td.lastRow { border-bottom: 0; }
+.v65-memberAllocationHistoryWrapper { 
+	overflow: hidden; 
+	border-bottom: 1px solid #999; 
+	margin: 0 0 1.5em; 
+	padding: 0 0 0.5em; 
+}
+	
+	.v65-memberAllcoationHistoryTitle { 
+		font-size: 1.6em; 
+		margin: 0 0 0.2em; 
+		color: #333; 
+	}
+	
+	.v65-memberAllcoationHistoryDates {
+		margin: 0 0 0.5em; 
+	}
+
+		.v65-memberAllcoationHistoryStartDate {
+			display: inline-block;
+			margin-right: 8px;
+			border-right: 1px solid #ccc;			
+		}
+
+		.v65-memberAllcoationHistoryEndDate {
+			display: inline-block; 
+		}
+
+			.v65-memberAllcoationHistoryDateLabel {
+				display: inline-block;
+				margin-right: 3px; 
+			}
+
+			.v65-memberAllcoationHistoryDateValue {
+				font-weight: bold;
+				margin-right: 8px; 
+			}
+	
+	.v65-memberAllocationHistoryTable {
+		width: 100%;
+		margin: 0;
+		padding: 6px;
+		font-size: 10px;
+
+		th {
+			padding: 5px;
+			border-bottom: 1px solid #ccc;
+			font-weight: bold;
+			vertical-align: bottom;
+			text-align:center;
+			background-color: #efefef;
+			color: #555; 
+		}
+
+		td {
+			padding: 5px;
+			border-bottom: 1px solid #eee;
+			vertical-align: middle;
+			text-align:center; 
+
+			.label {
+				font-weight: bold; 
+				text-align: right; 
+			}
+
+			.lastRow {
+				border-bottom: 0; 
+			}
+		}
+	}
 	
 /*   ===================================================================================================                                                                
      28. Modal PopUp Layout
@@ -4285,8 +4541,12 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 
 /* This wrapper provides: Outline, position, margin, padding, alignment to a form built using the formbuilder */
 .v65-form { 
-	// width: 250px;
-	margin: 0 0 1em; 
+	width: 250px;
+	margin: 0 0 1em;
+
+	@media screen #{$break-max-mobile}{
+			width: 100%;
+		} 
 
 	fieldset { 
 		display: block;
@@ -4324,7 +4584,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 				font-family: Tahoma, Geneva, sans-serif;
 				line-height: 1.5;
 				width: 155px;
-				font-size: 1em; 
+				font-size: 1em;
+
+				@media screen #{$break-max-mobile}{
+					width: 99%;
+				}  
 			}
 		}
 	} /*Margin + Block are there for checkout area.*/
@@ -4353,7 +4617,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		&[type=text], &[type=password] {
 			padding: 0;
 			margin: 0;
-			width: 220px; 
+			width: 220px;
+
+			@media screen #{$break-max-mobile}{
+				width: 99%;
+			} 
 		}
 	}	
 	
@@ -4362,6 +4630,10 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		line-height: 1.5;
 		width: 225px;
 		font-size: 1em;
+
+		@media screen #{$break-max-mobile}{
+			width: 99%;
+		} 
 	}
 }
 

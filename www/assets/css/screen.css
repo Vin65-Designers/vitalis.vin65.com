@@ -1,4 +1,3 @@
-@charset "utf-8";
 /* CSS Document */
 /* ====================================================================================================
 	Table of Content
@@ -27,7 +26,6 @@
 /*   ===================================================================================================
      2. Typography - These get copied into the admin.css
 ======================================================================================================== */
-/* line 65, screen.scss */
 body {
   background-color: white;
   font-size: 12px;
@@ -36,28 +34,23 @@ body {
   line-height: 1.5em;
 }
 
-/* line 73, screen.scss */
 a {
   color: #900;
   text-decoration: none;
 }
-/* line 76, screen.scss */
 a:hover, a:focus, a:active {
   text-decoration: underline;
 }
 
-/* line 81, screen.scss */
 h1, h2, h3, h4, h5, h6, p, table, ul, ol {
   margin-top: 0;
   padding-top: 0;
 }
 
-/* line 86, screen.scss */
 ul, ol, dl, p, table, pre {
   margin-bottom: 1em;
 }
 
-/* line 90, screen.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #333;
   font-family: "Times New Roman", Times, serif;
@@ -65,61 +58,51 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* line 97, screen.scss */
 h1 {
   font-size: 32px;
   line-height: 1.2;
   margin-bottom: 0.6em;
 }
 
-/* line 103, screen.scss */
 h2 {
   font-size: 26px;
   line-height: 1.2;
   margin: 0.25em  0 0.5em;
 }
 
-/* line 109, screen.scss */
 h3 {
   font-size: 22px;
   line-height: 1.2;
   margin-bottom: 0.6em;
 }
 
-/* line 115, screen.scss */
 h4 {
   font-size: 18px;
   line-height: 1.2;
 }
 
-/* line 120, screen.scss */
 h5 {
   font-size: 14px;
   line-height: 1.5;
 }
 
-/* line 125, screen.scss */
 h6 {
   font-size: 14px;
   line-height: 1.5;
 }
 
-/* line 130, screen.scss */
 img {
   border: none;
 }
 
-/* line 134, screen.scss */
 form {
   margin-bottom: 1em;
 }
 
-/* line 138, screen.scss */
 legend {
   color: #111;
 }
 
-/* line 142, screen.scss */
 hr {
   background-color: #666;
   border: 0;
@@ -130,20 +113,17 @@ hr {
 /*   ===================================================================================================
      3. Header
 ======================================================================================================== */
-/* line 153, screen.scss */
 .header {
   width: 100%;
   z-index: 100;
 }
 @media screen and (min-width: 768px) {
-  /* line 153, screen.scss */
   .header {
     height: 180px;
     position: relative;
   }
 }
 
-/* line 162, screen.scss */
 .logo {
   height: auto;
   display: block;
@@ -152,7 +132,6 @@ hr {
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* line 162, screen.scss */
   .logo {
     height: 160px;
     float: left;
@@ -161,7 +140,6 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 162, screen.scss */
   .logo {
     height: 160px;
     float: left;
@@ -169,7 +147,6 @@ hr {
     text-align: left;
   }
 }
-/* line 181, screen.scss */
 .logo img {
   max-width: 100%;
 }
@@ -178,12 +155,10 @@ hr {
      4. Navigation
 ======================================================================================================== */
 /* ----- Link to footer navigation ----- */
-/* line 193, screen.scss */
 .menuLink {
   display: none;
 }
 @media screen and (max-width: 767px) {
-  /* line 193, screen.scss */
   .menuLink {
     color: #000;
     display: block;
@@ -195,13 +170,11 @@ hr {
     text-shadow: 0 1px 3px rgba(220, 220, 220, 0.5);
   }
 }
-/* line 206, screen.scss */
 .menuLink:hover, .menuLink:focus, .menuLink:active {
   text-decoration: none;
 }
 
 /* ----- a. Main Menu ----- */
-/* line 214, screen.scss */
 .mainMenu {
   font-size: 13px;
   height: 100%;
@@ -209,14 +182,12 @@ hr {
   z-index: 101;
 }
 @media screen and (max-width: 767px) {
-  /* line 214, screen.scss */
   .mainMenu {
     clear: both;
     text-align: center;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* line 214, screen.scss */
   .mainMenu {
     float: right;
     height: 24px;
@@ -226,7 +197,6 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 214, screen.scss */
   .mainMenu {
     float: right;
     height: 24px;
@@ -235,7 +205,6 @@ hr {
     margin: 80px 0 30px;
   }
 }
-/* line 238, screen.scss */
 .mainMenu ul {
   margin: 0;
   padding: 0;
@@ -248,14 +217,12 @@ hr {
   			}*/
 }
 @media screen and (min-width: 768px) {
-  /* line 238, screen.scss */
   .mainMenu ul {
     float: right;
     margin: 0;
     text-align: left;
   }
 }
-/* line 248, screen.scss */
 .mainMenu ul li {
   margin: 0;
   padding: 0;
@@ -264,7 +231,6 @@ hr {
   display: inline-block;
 }
 @media screen and (min-width: 768px) {
-  /* line 248, screen.scss */
   .mainMenu ul li {
     float: left;
     height: 28px;
@@ -276,7 +242,6 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 248, screen.scss */
   .mainMenu ul li {
     float: left;
     margin: 0 0 0 55px;
@@ -284,7 +249,6 @@ hr {
     display: inline;
   }
 }
-/* line 270, screen.scss */
 .mainMenu ul li a {
   color: black;
   display: block;
@@ -296,7 +260,6 @@ hr {
   text-decoration: none;
 }
 @media screen and (min-width: 768px) {
-  /* line 270, screen.scss */
   .mainMenu ul li a {
     height: 32px;
     line-height: 32px;
@@ -305,12 +268,10 @@ hr {
     padding: 0;
   }
 }
-/* line 287, screen.scss */
 .mainMenu ul li a:hover {
   color: #333333;
   text-decoration: none;
 }
-/* line 293, screen.scss */
 .mainMenu ul li:hover ul {
   display: none;
   background-color: #fff;
@@ -318,12 +279,10 @@ hr {
   font-size: 12px;
 }
 @media screen and (min-width: 768px) {
-  /* line 293, screen.scss */
   .mainMenu ul li:hover ul {
     display: block;
   }
 }
-/* line 302, screen.scss */
 .mainMenu ul li ul {
   background-color: #fff;
   display: none;
@@ -332,7 +291,6 @@ hr {
   top: 32px;
   width: 180px;
 }
-/* line 310, screen.scss */
 .mainMenu ul li ul li {
   background-color: #fff;
   display: block;
@@ -341,7 +299,6 @@ hr {
   text-align: left;
   width: 180px;
 }
-/* line 318, screen.scss */
 .mainMenu ul li ul li a {
   background-color: #fff;
   color: #666;
@@ -355,39 +312,32 @@ hr {
   text-transform: none;
   width: 170px;
 }
-/* line 331, screen.scss */
 .mainMenu ul li ul li a:hover {
   color: #000;
 }
-/* line 341, screen.scss */
 .mainMenu ul li.v65-home {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  /* line 341, screen.scss */
   .mainMenu ul li.v65-home {
     display: inline-block;
   }
 }
-/* line 345, screen.scss */
 .mainMenu ul li.v65-pageAParent {
   color: black;
 }
-/* line 348, screen.scss */
 .mainMenu ul li.v65-selected {
   font-weight: bold;
   text-decoration: underline;
 }
 
 /* ----- b. Sub Menu ----- */
-/* line 361, screen.scss */
 .subMenu {
   height: 100%;
   width: 100%;
   clear: both;
 }
 @media screen and (min-width: 768px) {
-  /* line 361, screen.scss */
   .subMenu {
     border-right: 1px solid #ccc;
     float: left;
@@ -397,7 +347,6 @@ hr {
     clear: left;
   }
 }
-/* line 374, screen.scss */
 .subMenu ul {
   font-size: 11px;
   margin: 0;
@@ -406,46 +355,39 @@ hr {
   width: 100%;
 }
 @media screen and (max-width: 767px) {
-  /* line 374, screen.scss */
   .subMenu ul {
     border-top: 1px solid #999;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 374, screen.scss */
   .subMenu ul {
     margin: 0 0 2% 1%;
     padding: 0;
   }
 }
-/* line 385, screen.scss */
 .subMenu ul li {
   margin: 0;
   padding: 0;
 }
 @media screen and (max-width: 767px) {
-  /* line 385, screen.scss */
   .subMenu ul li {
     border-bottom: 1px solid #999;
     text-align: center;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 385, screen.scss */
   .subMenu ul li {
     line-height: 2;
     display: list-item;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 397, screen.scss */
   .subMenu ul li a {
     display: block;
     font-size: 1em;
     line-height: 3em;
   }
 }
-/* line 409, screen.scss */
 .subMenu ul li ul {
   margin: 0;
   padding: 0;
@@ -454,24 +396,20 @@ hr {
   border-bottom: 3px solid #CCC;
 }
 @media screen and (min-width: 768px) {
-  /* line 409, screen.scss */
   .subMenu ul li ul {
     margin-left: 10px;
     width: 160px;
     border: none;
   }
 }
-/* line 422, screen.scss */
 .subMenu ul li .v65-pageAParent {
   color: #000;
 }
-/* line 425, screen.scss */
 .subMenu ul li .v65-leftSelected {
   color: #000;
   font-weight: bold;
 }
 @media screen and (max-width: 767px) {
-  /* line 432, screen.scss */
   .subMenu h3 {
     display: none;
   }
@@ -480,53 +418,45 @@ hr {
 /*   ===================================================================================================
      5. Content
 ======================================================================================================== */
-/* line 443, screen.scss */
 .wrapper {
   margin: 0 auto;
   position: relative;
 }
 @media screen and (max-width: 1023px) {
-  /* line 443, screen.scss */
   .wrapper {
     width: 100%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* line 443, screen.scss */
   .wrapper {
     width: 90%;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 443, screen.scss */
   .wrapper {
     width: 950px;
   }
 }
 
 /* ----- a. Homepage Styles ----- */
-/* line 460, screen.scss */
 .homepageContent {
   background: #fff;
   box-shadow: 0 0 20px #cccccc;
 }
 
 @media screen and (max-width: 480px) {
-  /* line 465, screen.scss */
   .homepageText {
     padding: 3%;
     margin: 0;
   }
 }
 @media screen and (max-width: 1023px) {
-  /* line 465, screen.scss */
   .homepageText {
     padding: 3%;
     margin: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* line 465, screen.scss */
   .homepageText {
     float: left;
     width: 55%;
@@ -534,7 +464,6 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 465, screen.scss */
   .homepageText {
     float: left;
     width: 470px;
@@ -543,26 +472,22 @@ hr {
   }
 }
 
-/* line 487, screen.scss */
 .homepageProductGroup {
   border-left: 1px solid #ccc;
   margin: 75px 0 20px;
 }
 @media screen and (max-width: 480px) {
-  /* line 487, screen.scss */
   .homepageProductGroup {
     padding: 3%;
     margin: 0;
   }
 }
 @media screen and (max-width: 1023px) {
-  /* line 487, screen.scss */
   .homepageProductGroup {
     padding: 3%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* line 487, screen.scss */
   .homepageProductGroup {
     float: left;
     width: 33%;
@@ -570,44 +495,37 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 487, screen.scss */
   .homepageProductGroup {
     float: left;
     width: 400px;
     padding: 0 0 30px 20px;
   }
 }
-/* line 508, screen.scss */
 .homepageProductGroup .v65-product-photo {
   width: auto;
   text-align: left;
   margin: 0 auto 2em auto;
 }
 @media screen and (max-width: 1023px) {
-  /* line 508, screen.scss */
   .homepageProductGroup .v65-product-photo {
     float: left;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 508, screen.scss */
   .homepageProductGroup .v65-product-photo {
     float: left;
     text-align: center;
   }
 }
-/* line 521, screen.scss */
 .homepageProductGroup .v65-product-photo img {
   max-width: 60%;
 }
 @media screen and (max-width: 480px) {
-  /* line 526, screen.scss */
   .homepageProductGroup .v65-addToCartCase {
     display: none;
   }
 }
 
-/* line 534, screen.scss */
 #slider {
   height: 100%;
   overflow: hidden;
@@ -615,14 +533,12 @@ hr {
 }
 
 /* ----- b. Page Styles ----- */
-/* line 542, screen.scss */
 .content {
   background: #fff;
   box-shadow: 0 0 20px #cccccc;
   padding: 30px;
 }
 @media screen and (max-width: 767px) {
-  /* line 542, screen.scss */
   .content {
     box-shadow: none;
     padding: 0;
@@ -630,14 +546,12 @@ hr {
   }
 }
 
-/* line 553, screen.scss */
 .contentWide {
   background: #fff;
   box-shadow: 0 0 20px #cccccc;
   padding: 30px;
 }
 @media screen and (max-width: 767px) {
-  /* line 553, screen.scss */
   .contentWide {
     box-shadow: none;
     padding: 2%;
@@ -645,19 +559,16 @@ hr {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 563, screen.scss */
   .contentWide .subMenu {
     display: none;
   }
 }
 
-/* line 570, screen.scss */
 .pageContent {
   float: right;
   width: 75%;
 }
 @media screen and (max-width: 767px) {
-  /* line 570, screen.scss */
   .pageContent {
     width: 90%;
     padding: 5%;
@@ -667,13 +578,11 @@ hr {
 /*   ===================================================================================================
      6. Blog Template
 ======================================================================================================== */
-/* line 583, screen.scss */
 .blogContent {
   padding: 5%;
   width: 90%;
 }
 @media screen and (min-width: 768px) {
-  /* line 583, screen.scss */
   .blogContent {
     width: 65%;
     padding: 5%;
@@ -681,7 +590,6 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 583, screen.scss */
   .blogContent {
     width: 520px;
     padding: 20px 25px 0 0;
@@ -689,12 +597,10 @@ hr {
   }
 }
 
-/* line 599, screen.scss */
 .blogRightWrapper {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  /* line 599, screen.scss */
   .blogRightWrapper {
     display: block;
     width: 20%;
@@ -703,39 +609,33 @@ hr {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 599, screen.scss */
   .blogRightWrapper {
     float: right;
     padding: 20px 0 0 0;
     width: 325px;
   }
 }
-/* line 613, screen.scss */
 .blogRightWrapper ul {
   list-style: none;
   margin: 0 0 1em;
   padding: 0;
 }
-/* line 618, screen.scss */
 .blogRightWrapper ul li {
   font-size: 11px;
   margin: 0 0 0 10px;
 }
 
-/* line 625, screen.scss */
 .blogFilterLeft {
   display: none;
   padding: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 625, screen.scss */
   .blogFilterLeft {
     width: auto;
     display: block;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 625, screen.scss */
   .blogFilterLeft {
     display: block;
     float: left;
@@ -744,19 +644,16 @@ hr {
   }
 }
 
-/* line 640, screen.scss */
 .blogFilterRight {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  /* line 640, screen.scss */
   .blogFilterRight {
     width: auto;
     display: block;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 640, screen.scss */
   .blogFilterRight {
     display: block;
     float: left;
@@ -767,7 +664,6 @@ hr {
 /*   ===================================================================================================
      7. Print Template
 ======================================================================================================== */
-/* line 657, screen.scss */
 .printBody {
   background-color: #FFF;
   background-image: none;
@@ -775,28 +671,56 @@ hr {
   padding: 0;
 }
 
-/* line 664, screen.scss */
 .printWrapper {
   margin: 0 auto;
   width: 700px;
 }
+@media screen and (max-width: 767px) {
+  .printWrapper {
+    width: 90%;
+    padding: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .printWrapper {
+    font-size: 15px;
+    line-height: 1.5em;
+  }
+}
 
-/* line 669, screen.scss */
 .printHeader {
   height: 150px;
   width: 700px;
 }
+@media screen and (max-width: 767px) {
+  .printHeader {
+    width: 100%;
+    height: auto;
+  }
+  .printHeader img {
+    width: 100%;
+    height: auto;
+  }
+}
 
-/* line 674, screen.scss */
 .printContent {
   text-align: left;
   width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printContent {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .printContent #v65-cartTable td {
+    padding: 6px 4px;
+  }
 }
 
 /*   ===================================================================================================
      7. Buttons
 ======================================================================================================== */
-/* line 683, screen.scss */
 button.defaultBtn, button.modalBtn, button.largeBtn {
   background: #336699;
   border: 1px solid #163655;
@@ -806,16 +730,13 @@ button.defaultBtn, button.modalBtn, button.largeBtn {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   min-width: 3em;
 }
-/* line 691, screen.scss */
 button.defaultBtn span, button.modalBtn span, button.largeBtn span {
   color: #fff;
   border-radius: 0.385em;
 }
-/* line 695, screen.scss */
 button.defaultBtn:hover, button.modalBtn:hover, button.largeBtn:hover {
   background: #407fbf;
 }
-/* line 702, screen.scss */
 button.altBtn, button.altModalBtn, button.altLargeBtn {
   background: #cccccc;
   border: 1px solid #888;
@@ -824,21 +745,17 @@ button.altBtn, button.altModalBtn, button.altLargeBtn {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   min-width: 3em;
 }
-/* line 709, screen.scss */
 button.altBtn span, button.altModalBtn span, button.altLargeBtn span {
   background: #cccccc;
   border-radius: 0.385em;
 }
-/* line 713, screen.scss */
 button.altBtn:hover, button.altModalBtn:hover, button.altLargeBtn:hover {
   background: #e6e6e6;
 }
-/* line 715, screen.scss */
 button.altBtn:hover span, button.altModalBtn:hover span, button.altLargeBtn:hover span {
   background: #e6e6e6;
 }
 
-/* line 724, screen.scss */
 a.linkBtn, a.modalLinkBtn, a.largeLinkBtn, a.fullWidthBtn {
   background: #336699;
   border: 1px solid #163655;
@@ -848,22 +765,18 @@ a.linkBtn, a.modalLinkBtn, a.largeLinkBtn, a.fullWidthBtn {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   min-width: 3em;
 }
-/* line 732, screen.scss */
 a.linkBtn span, a.modalLinkBtn span, a.largeLinkBtn span, a.fullWidthBtn span {
   color: #fff;
   background: #336699;
   border-radius: 0.385em;
 }
-/* line 737, screen.scss */
 a.linkBtn:hover, a.modalLinkBtn:hover, a.largeLinkBtn:hover, a.fullWidthBtn:hover {
   background: #407fbf;
   text-decoration: none;
 }
-/* line 741, screen.scss */
 a.linkBtn:hover span, a.modalLinkBtn:hover span, a.largeLinkBtn:hover span, a.fullWidthBtn:hover span {
   background: #407fbf;
 }
-/* line 747, screen.scss */
 a.fullWidthBtn {
   display: block;
   font-size: 16px;
@@ -871,7 +784,6 @@ a.fullWidthBtn {
   text-align: center;
   width: 100%;
 }
-/* line 755, screen.scss */
 a.linkAltBtn, a.modalLinkAltBtn, a.modalLinkAltBtn {
   background: #cccccc;
   border: 1px solid #888;
@@ -879,21 +791,17 @@ a.linkAltBtn, a.modalLinkAltBtn, a.modalLinkAltBtn {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   min-width: 3em;
 }
-/* line 761, screen.scss */
 a.linkAltBtn span, a.modalLinkAltBtn span, a.modalLinkAltBtn span {
   background: #cccccc;
   border-radius: 0.385em;
   color: #000;
 }
-/* line 766, screen.scss */
 a.linkAltBtn:hover, a.modalLinkAltBtn:hover, a.modalLinkAltBtn:hover {
   background: #e6e6e6;
 }
-/* line 768, screen.scss */
 a.linkAltBtn:hover span, a.modalLinkAltBtn:hover span, a.modalLinkAltBtn:hover span {
   background: #e6e6e6;
 }
-/* line 774, screen.scss */
 a.modalLinkBtn, a.modalLinkAltBtn, a.modalLinkAltBtn {
   min-width: auto;
 }
@@ -901,12 +809,10 @@ a.modalLinkBtn, a.modalLinkAltBtn, a.modalLinkAltBtn {
 /*   ===================================================================================================
      9. Footer	
 ======================================================================================================== */
-/* line 783, screen.scss */
 .footer {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  /* line 783, screen.scss */
   .footer {
     color: black;
     padding: 1.5em 0;
@@ -914,24 +820,20 @@ a.modalLinkBtn, a.modalLinkAltBtn, a.modalLinkAltBtn {
   }
 }
 
-/* line 793, screen.scss */
 a {
   color: black;
 }
 
 /* Footer Nav
 -----------------------------------------------*/
-/* line 799, screen.scss */
 .footerNav {
   width: 100%;
 }
 @media screen and (max-width: 767px) {
-  /* line 799, screen.scss */
   .footerNav {
     background: none;
   }
 }
-/* line 806, screen.scss */
 .footerNav ul {
   border-top: 3px solid #ccc;
   list-style: none;
@@ -940,13 +842,11 @@ a {
   padding: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 806, screen.scss */
   .footerNav ul {
     border: none;
     text-align: center;
   }
 }
-/* line 817, screen.scss */
 .footerNav ul li {
   border-bottom: 1px solid #ccc;
   margin: 0;
@@ -956,28 +856,24 @@ a {
   background-color: #fff;
 }
 @media screen and (min-width: 768px) {
-  /* line 817, screen.scss */
   .footerNav ul li {
     display: inline;
     padding: 0 5px;
     border: none;
   }
 }
-/* line 830, screen.scss */
 .footerNav ul li a {
   font-size: 1em;
   line-height: 3em;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  /* line 830, screen.scss */
   .footerNav ul li a {
     color: black;
     display: inline-block;
     font-size: 0.917em;
     position: relative;
   }
-  /* line 839, screen.scss */
   .footerNav ul li a:hover {
     color: #333333;
   }
@@ -985,12 +881,10 @@ a {
 
 /* Mobile Footer Tools
 -----------------------------------------------*/
-/* line 850, screen.scss */
 .footerTools {
   background: #000;
   width: 100%;
 }
-/* line 854, screen.scss */
 .footerTools ul {
   border-top: 1px solid #555;
   list-style: none;
@@ -999,12 +893,10 @@ a {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  /* line 854, screen.scss */
   .footerTools ul {
     border: none;
   }
 }
-/* line 864, screen.scss */
 .footerTools ul li {
   line-height: 2.5em;
   margin: 0;
@@ -1013,82 +905,68 @@ a {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  /* line 864, screen.scss */
   .footerTools ul li {
     border: none;
   }
 }
-/* line 874, screen.scss */
 .footerTools ul li img {
   vertical-align: text-top;
 }
-/* line 878, screen.scss */
 .footerTools ul li a {
   line-height: 2.5em;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  /* line 878, screen.scss */
   .footerTools ul li a {
     display: inline-block;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 888, screen.scss */
   .footerTools ul li.phone, .footerTools ul li.email, .footerTools ul li.map {
     display: none;
   }
 }
-/* line 893, screen.scss */
 .footerTools ul li.legal {
   border-bottom: 0;
   font-size: 0.875em;
   line-height: 3em;
 }
 @media screen and (max-width: 767px) {
-  /* line 893, screen.scss */
   .footerTools ul li.legal {
     background-color: #000;
     color: #555;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 893, screen.scss */
   .footerTools ul li.legal {
     float: left;
     display: block;
   }
 }
-/* line 907, screen.scss */
 .footerTools ul li.accolade {
   font-size: 0.875em;
   line-height: 3em;
 }
 @media screen and (max-width: 767px) {
-  /* line 907, screen.scss */
   .footerTools ul li.accolade {
     background-color: #000;
     color: #555;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 907, screen.scss */
   .footerTools ul li.accolade {
     float: left;
     display: block;
   }
 }
-/* line 919, screen.scss */
 .footerTools ul li.accolade a {
   color: #555;
 }
 @media screen and (min-width: 768px) {
-  /* line 919, screen.scss */
   .footerTools ul li.accolade a {
     color: #000;
   }
 }
-/* line 930, screen.scss */
 .footerTools a {
   color: #ccc;
 }
@@ -1097,13 +975,11 @@ a {
      10. Vin65 Overrides
 ======================================================================================================== */
 /* ----- b. Homepage Product Group ----- */
-/* line 944, screen.scss */
 .homepageProductGroup .v65-productGroup-products {
   text-align: left;
   width: 100%;
 }
 
-/* line 949, screen.scss */
 .homepageProductGroup .v65-productGroup-title {
   color: #333;
   font-family: "Times New Roman", Times, serif;
@@ -1112,47 +988,40 @@ a {
   margin: 0.25em  0 0.5em;
 }
 
-/* line 957, screen.scss */
 .homepageProductGroup .v65-productGroup-teaser {
   float: none;
   margin: 0;
   width: 100%;
 }
 
-/* line 963, screen.scss */
 .homepageProductGroup .v65-productGroup-product {
   margin: 0 0 1em;
   width: 100%;
 }
 
 /* ----- c. Checkout Overrides ----- */
-/* line 976, screen.scss */
 #v65-signUpClubSummaryWrapper {
   margin-bottom: 20px;
 }
 
 /* ----- Fix for product sorting  ----- */
-/* line 984, screen.scss */
 .v65-product-sortBy {
   float: left;
   text-align: left;
   width: 50%;
 }
 
-/* line 990, screen.scss */
 .v65-product-sortBy form {
   padding: 0;
   margin: 0;
 }
 
-/* line 995, screen.scss */
 .v65-product-sortBy form select {
   width: 130px;
 }
 
 /* ----- Fix for overflow on FB sharing widget on mobile  ----- */
 @media screen and (max-width: 767px) {
-  /* line 1001, screen.scss */
   .v65-socialMediaBar-FacebookLike {
     width: 100%;
     overflow: hidden;
@@ -1160,29 +1029,24 @@ a {
 }
 
 @media screen and (max-width: 570px) {
-  /* line 1009, screen.scss */
   .v65-product2Up {
     width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 1039, screen.scss */
   .v65-product2Up .v65-product-inventoryMessage {
     display: none;
   }
 }
-/* line 1047, screen.scss */
 .v65-product2Up .v65-product-addToCart {
   clear: both;
 }
 @media screen and (max-width: 480px) {
-  /* line 1080, screen.scss */
   .v65-product2Up .v65-product-socialBar {
     display: none;
   }
 }
 
-/* line 1087, screen.scss */
 .twitterWrapper {
   width: 300px;
   float: left;
@@ -1190,7 +1054,6 @@ a {
   clear: both;
 }
 @media screen and (max-width: 767px) {
-  /* line 1087, screen.scss */
   .twitterWrapper {
     width: 90%;
     margin: 0 auto;
