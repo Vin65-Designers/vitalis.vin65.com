@@ -2201,10 +2201,25 @@ ul.ui-autocomplete li a span {
   padding: 5px;
   text-align: left;
 }
+@media screen and (max-width: 767px) {
+  .v65-productList th:nth-child(3), .v65-productList th:nth-child(4), .v65-productList th:nth-child(5), .v65-productList th:nth-child(6) {
+    display: none;
+  }
+}
 .v65-productList td {
   border-bottom: 1px solid #bbb;
   padding: 0 5px;
   vertical-align: middle;
+}
+@media screen and (max-width: 480px) {
+  .v65-productList td {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .v65-productList td:nth-child(3), .v65-productList td:nth-child(4), .v65-productList td:nth-child(5), .v65-productList td:nth-child(6) {
+    display: none;
+  }
 }
 .v65-productList td a {
   color: #000;
@@ -2222,6 +2237,16 @@ ul.ui-autocomplete li a span {
 }
 .v65-productList tr.alternatRow:hover {
   background-color: #FFC;
+}
+.v65-productList .v65-product-addToCart {
+  border: none;
+}
+@media screen and (max-width: 480px) {
+  .v65-productList .v65-product-addToCart .v65-product-addToCart-quantity input {
+    height: 40px;
+    padding: 0;
+    margin-right: 3px;
+  }
 }
 
 /*   ===================================================================================================                                                                
@@ -2938,6 +2963,11 @@ ul.ui-autocomplete li a span {
     width: 100%;
   }
 }
+@media screen and (max-width: 620px) {
+  .v65-cartCheckOutButtons a {
+    margin: 5px 0;
+  }
+}
 
 /* b. Cart Table
 -------------------------------------------------------------- */
@@ -2952,8 +2982,28 @@ ul.ui-autocomplete li a span {
   border-top: 1px solid #ccc;
   padding: 6px 8px;
 }
+@media screen and (max-width: 480px) {
+  #v65-cartTable th {
+    padding: 3px 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-cartTable th:nth-child(3n), #v65-cartTable th:nth-child(4n) {
+    display: none;
+  }
+}
 #v65-cartTable td {
   padding: 6px 10px;
+}
+@media screen and (max-width: 480px) {
+  #v65-cartTable td {
+    padding: 3px 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-cartTable td:nth-child(4n) {
+    display: none;
+  }
 }
 #v65-cartTable .v65-cartShippingItem {
   background-color: #e2dfd7;
@@ -2970,6 +3020,11 @@ ul.ui-autocomplete li a span {
 
 .v65-cartItem td {
   border-top: 1px solid #ccc;
+}
+@media screen and (max-width: 480px) {
+  .v65-cartItem td:nth-child(5n) {
+    display: none;
+  }
 }
 .v65-cartItem form {
   width: 80px;
@@ -3013,11 +3068,21 @@ ul.ui-autocomplete li a span {
   font-weight: bold;
   border-top: 1px solid #ccc;
 }
+@media screen and (max-width: 480px) {
+  #v65-cartSubtotal td:nth-child(2) {
+    display: none;
+  }
+}
 
 .v65-cartTax td {
   background-color: #f9f7f3;
   font-weight: normal;
   border-top: 0;
+}
+@media screen and (max-width: 480px) {
+  .v65-cartTax td:nth-child(2) {
+    display: none;
+  }
 }
 
 #v65-cartTotal td {
@@ -3025,6 +3090,11 @@ ul.ui-autocomplete li a span {
   font-weight: bold;
   border-top: 0;
   border-bottom: 1px solid #ccc;
+}
+@media screen and (max-width: 480px) {
+  #v65-cartTotal td:nth-child(2) {
+    display: none;
+  }
 }
 
 #v65-cartStateCode {
@@ -3886,6 +3956,12 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 3px;
   border-bottom: 1px solid #bbb;
 }
+@media screen and (max-width: 480px) {
+  #v65-memberAddressBook th {
+    font-size: 0.8em;
+    padding: 0;
+  }
+}
 #v65-memberAddressBook td {
   font-size: 0.95em;
   padding: 3px;
@@ -3922,10 +3998,34 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 3px;
   border-bottom: 1px solid #bbb;
 }
+@media screen and (max-width: 480px) {
+  #v65-memberOrders th:nth-child(1), #v65-memberOrders th:nth-child(4), #v65-memberOrders th:nth-child(5), #v65-memberOrders th:nth-child(6) {
+    display: none;
+  }
+}
 #v65-memberOrders td {
   font-size: 0.95em;
-  padding: 2px;
+  padding: 2px 0;
   border-bottom: 1px solid #bbb;
+}
+@media screen and (max-width: 480px) {
+  #v65-memberOrders td:nth-child(1), #v65-memberOrders td:nth-child(4), #v65-memberOrders td:nth-child(5), #v65-memberOrders td:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-memberOrders td:nth-child(2) {
+    width: 21%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-memberOrders td:nth-child(8) {
+    width: 50%;
+  }
+  #v65-memberOrders td:nth-child(8) a {
+    width: 43%;
+    margin: 5% 0;
+  }
 }
 #v65-memberOrders td a {
   color: #000;
@@ -3987,18 +4087,28 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 
 .v65-memberAllocationImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 120px;
   text-align: center;
   overflow: hidden;
 }
+@media screen and (min-width: 768px) {
+  .v65-memberAllocationImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+  }
+}
 
 .v65-memberAllocationTeaser {
-  position: relative;
-  margin: 0 0 0 140px;
-  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .v65-memberAllocationTeaser {
+    position: relative;
+    margin: 0 0 0 140px;
+    padding: 0;
+    width: inherit;
+  }
 }
 
 .v65-storeAllocationSKU {
@@ -4013,6 +4123,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 4px;
   font-size: 10px;
   width: 250px;
+}
+@media screen and (max-width: 480px) {
+  .v65-memberAllocationTable {
+    width: 100%;
+  }
 }
 .v65-memberAllocationTable th {
   font-weight: bold;
@@ -4413,7 +4528,7 @@ a.largeLinkBtn, a.linkBtn, a.modalLinkBtn, a.linkAltBtn, a.modalLinkAltBtn {
 }
 @media screen and (max-width: 480px) {
   a.largeLinkBtn, a.linkBtn, a.modalLinkBtn, a.linkAltBtn, a.modalLinkAltBtn {
-    width: 100%;
+    width: 99%;
   }
 }
 a.largeLinkBtn span, a.linkBtn span, a.modalLinkBtn span, a.linkAltBtn span, a.modalLinkAltBtn span {
