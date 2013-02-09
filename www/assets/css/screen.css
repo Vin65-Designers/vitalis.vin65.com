@@ -63,17 +63,32 @@ h1 {
   line-height: 1.2;
   margin-bottom: 0.6em;
 }
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+}
 
 h2 {
   font-size: 26px;
   line-height: 1.2;
   margin: 0.25em  0 0.5em;
 }
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 22px;
+  }
+}
 
 h3 {
   font-size: 22px;
   line-height: 1.2;
   margin-bottom: 0.6em;
+}
+@media screen and (max-width: 480px) {
+  h3 {
+    font-size: 20px;
+  }
 }
 
 h4 {
@@ -149,6 +164,12 @@ hr {
 }
 .logo img {
   max-width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .cart {
+    display: none;
+  }
 }
 
 /*   ===================================================================================================
@@ -254,8 +275,8 @@ hr {
   display: block;
   height: 44px;
   line-height: 44px;
-  margin: 0 12px;
-  padding: 0 8px;
+  margin: 0 8px;
+  padding: 0 6px;
   position: relative;
   text-decoration: none;
 }
@@ -554,7 +575,7 @@ hr {
 @media screen and (max-width: 767px) {
   .contentWide {
     box-shadow: none;
-    padding: 2%;
+    padding: 3%;
     border-top: 2px solid #CCC;
   }
 }
@@ -564,14 +585,27 @@ hr {
   }
 }
 
+.contentCart {
+  background: #fff;
+  box-shadow: 0 0 20px #cccccc;
+  padding: 30px;
+}
+@media screen and (max-width: 767px) {
+  .contentCart {
+    box-shadow: none;
+    padding: 0.2em;
+    border-top: 2px solid #CCC;
+  }
+}
+
 .pageContent {
   float: right;
   width: 75%;
 }
 @media screen and (max-width: 767px) {
   .pageContent {
-    width: 90%;
-    padding: 5%;
+    width: 94%;
+    padding: 3%;
   }
 }
 
@@ -980,12 +1014,18 @@ a {
   width: 100%;
 }
 
+/* Heading 2 Styling */
 .homepageProductGroup .v65-productGroup-title {
   color: #333;
   font-family: "Times New Roman", Times, serif;
   font-size: 26px;
   line-height: 1.2;
   margin: 0.25em  0 0.5em;
+}
+@media screen and (max-width: 480px) {
+  .homepageProductGroup .v65-productGroup-title {
+    font-size: 22px;
+  }
 }
 
 .homepageProductGroup .v65-productGroup-teaser {
@@ -1059,4 +1099,8 @@ a {
     margin: 0 auto;
     padding: 5%;
   }
+}
+
+.v65-clubTitle {
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }

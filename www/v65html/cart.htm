@@ -32,8 +32,32 @@
 
 <div class="wrapper v65-group">
 	
+	<!--header-->
+	<div class="header">
+
+		<!--user-tools-->
+		<div id="user-tools" class="cart">
+			<v65:modalCart></v65:modalCart>	
+			<v65:login></v65:login>
+		</div>
+		<!--/user-tools-->
+		
+		<!--logo-->
+		<a href="/" accesskey="h" class="logo"><img src="../assets/images/logo.png" alt="<v65:websiteName></v65:websiteName>"></a>
+		<!--/logo-->
+		
+		<!--mainMenu-->
+		<div class="mainMenu cart">
+			<a href="#footerNav" class="menuLink">&#9776;</a>
+			<v65:layoutHeaderNav depth="2"></v65:layoutHeaderNav>
+		</div>
+		<!--/mainMenu-->
+		
+	</div>
+	<!--/header-->
+	
 	<!--content-->
-	<div class="contentWide v65-group">		
+	<div class="contentCart v65-group">		
 		<v65:mainContent></v65:mainContent>		
 	</div>
 	<!--/content-->

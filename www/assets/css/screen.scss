@@ -98,18 +98,30 @@ ul, ol, dl, p, table, pre {
 		font-size: 32px;
 		line-height: 1.2;
 		margin-bottom: 0.6em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 26px;
+		}
 	}
 
 	h2 { 
 		font-size: 26px;
 		line-height: 1.2;
 		margin: 0.25em  0 0.5em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 22px;
+		}
 	}
 		
 	h3 { 
 		font-size: 22px;
 		line-height: 1.2;
 		margin-bottom: 0.6em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 20px;
+		}
 	}
 		
 	h4 { 
@@ -182,6 +194,12 @@ hr {
 				max-width: 100%;
 				@media screen #{$break-max-tablet}{ }
 			}
+	}
+
+	.cart {
+		@media screen #{$break-max-mobile}{
+			display: none;
+		}
 	}
 
 /*   ===================================================================================================
@@ -272,8 +290,8 @@ hr {
 				display:block;
 				height: 44px;
 				line-height: 44px;
-				margin: 0 12px;
-				padding: 0 8px;
+				margin: 0 8px;
+				padding: 0 6px;
 				position: relative;
 				text-decoration: none;
 				@media screen #{$break-min-tablet}{
@@ -556,8 +574,9 @@ hr {
 		padding: 30px;
 		@media screen #{$break-max-tablet}{
 			box-shadow: none;
-			padding:2%;
+			padding:3%;
 			border-top: 2px solid #CCC;
+
 		}
 
 		.subMenu{
@@ -567,12 +586,24 @@ hr {
 		}
 	}
 
+	.contentCart{
+		background: #fff;
+		box-shadow: 0 0 20px $boxShadowColor;
+		padding: 30px;
+		@media screen #{$break-max-tablet}{
+			box-shadow: none;
+			padding:0.2em;
+			border-top: 2px solid #CCC;
+
+		}
+	}
+
 	.pageContent{
 		float: right;
 		width: 75%; //650px
 			@media screen #{$break-max-tablet}{
-			width:90%;
-			padding:5%;
+			width:94%;
+			padding:3%;
 			}
 	}
 
@@ -980,12 +1011,17 @@ a{
 	width: 100%;
 }
 
+	/* Heading 2 Styling */
 	.homepageProductGroup .v65-productGroup-title{
 		color: #333;
 		font-family: "Times New Roman", Times, serif;
 		font-size: 26px;
 		line-height: 1.2;
 		margin: 0.25em  0 0.5em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 22px;
+		}
 	}
 
 	.homepageProductGroup .v65-productGroup-teaser{
@@ -1130,4 +1166,8 @@ form#v65-checkBilling .v65-additionalComments {
 	    padding: 5%;
 	  }
 }
+
+.v65-clubTitle {
+	 font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	}
 
