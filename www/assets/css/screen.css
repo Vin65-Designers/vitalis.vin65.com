@@ -369,6 +369,7 @@ hr {
   }
 }
 .subMenu ul {
+  font-size: 13px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -697,8 +698,62 @@ hr {
 /*   ===================================================================================================
      7. Print Template
 ======================================================================================================== */
+.printBody {
+  background-color: #FFF;
+  background-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+.printWrapper {
+  margin: 0 auto;
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printWrapper {
+    width: 90%;
+    padding: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .printWrapper {
+    font-size: 15px;
+    line-height: 1.5em;
+  }
+}
+
+.printHeader {
+  height: 150px;
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printHeader {
+    width: 100%;
+    height: auto;
+  }
+  .printHeader img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.printContent {
+  text-align: left;
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printContent {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .printContent #v65-cartTable td {
+    padding: 6px 4px;
+  }
+}
+
 /*   ===================================================================================================
-     8. Buttons
+     7. Buttons
 ======================================================================================================== */
 button.defaultBtn, button.modalBtn, button.largeBtn {
   background: #336699;

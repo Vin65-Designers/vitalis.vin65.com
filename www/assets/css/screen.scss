@@ -390,6 +390,7 @@ hr {
 	}
 
 	ul{
+		font-size: 13px;
 		margin:0;
 		padding:0;
 		list-style: none;
@@ -685,33 +686,63 @@ hr {
 ======================================================================================================== */
 
 .printBody { 
+	background-color: #FFF;
+	background-image: none;
+	margin: 0;
+	padding: 0;
 }
 	
 .printWrapper { 
+	margin: 0 auto;
+	width: 700px;
 
+	@media screen #{$break-max-tablet}{
+		width: 90%;
+		padding: 5%;
+	}
+
+	@media screen #{$break-max-mobile}{
+		font-size: 15px;
+		line-height: 1.5em;
+	}
 }
 	
 	.printHeader { 
-		
+		height: 150px;
+		width: 700px;
 
-		img{
-				
+		@media screen #{$break-max-tablet}{
+			width: 100%;
+			height: auto;
+
+			img{
+				width:100%;
+				height: auto;
+			}
 		}
 	}
 		
 	.printContent { 
+		text-align: left;
+		width: 700px;
+
+		@media screen #{$break-max-tablet}{
+			width: 100%;
 
 		}
 
 		#v65-cartTable{
 			
 			td{
-				
+				@media screen #{$break-max-mobile}{
+					padding:6px 4px;
+				}
 			}
-		} 	
+		} 
+	}	
 
 /*   ===================================================================================================
-     8. Buttons
+     7. Buttons
 ======================================================================================================== */
 button{
 	&.defaultBtn,  &.modalBtn,  &.largeBtn{
