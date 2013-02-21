@@ -67,6 +67,7 @@
 		a. Mini Cart Summary
 		b. Main Form
 		c. Review Screen
+		d. Print Receipt
 	26. Club
 		a. Club List Component
 		b. Main Form 
@@ -128,7 +129,13 @@ $break-min-desktop: "and (min-width : 1024px)";
 	.strikethru 	{ text-decoration: line-through; font-weight: normal; }
 
 	.right 			{ text-align: right; }
-	.floatRight 	{ float: right; }
+	.floatRight 	{ 
+		float: right;
+		
+		@media screen and (max-width : 640px){
+			float:none;//this is added to remove the float in the review your order screen on mobile
+		} 
+	}
 
 	.left 			{ text-align: left; }
 	.floatLeft 		{ float: left; }
@@ -151,13 +158,57 @@ $break-min-desktop: "and (min-width : 1024px)";
 	/* Images 
 	-------------------------------------------------------------- */
 
-	img.v65-featureRight { border: 1px solid #ccc; float: right; padding: 3px; margin: 0 0 1em 1em; }
-	img.v65-right { float: right; padding: 0; margin: 0 0 1em 1em; }
+	/* removing the floats on mobile */
 
-	img.v65-featureLeft { border: 1px solid #ccc; float: left; padding: 3px; margin: 0 1em 1em 0; }
-	img.v65-left { float: left; padding: 0; margin: 0 1em 1em 0; }
+	img.v65-featureRight { 
+		padding: 0;
+		margin: 0 0 1em 0; 
 
-	img.v65-border { border: 1px solid #ccc; padding: 3px; }
+		@media screen and (min-width:481px){
+			float: right;
+			border: 1px solid #ccc; 
+			padding: 3px;  
+			margin: 0 0 1em 1em;	
+		}
+
+	}
+
+	img.v65-right { 
+		padding: 0; 	
+		margin: 0 0 1em 0; 
+
+		@media screen and (min-width:481px){
+			float: right; 
+			margin: 0 0 1em 1em; 
+		}
+	}
+
+	img.v65-featureLeft {		
+		padding: 0;
+		margin: 0 0 1em 0;
+
+		@media screen and (min-width:481px){
+			float: left;
+			border: 1px solid #ccc;
+			padding: 3px;
+			margin: 0 1em 1em 0; 
+		}
+	}
+
+	img.v65-left {
+		padding: 0;
+		margin: 0 0 1em 0; 
+
+		@media screen and (min-width:481px){
+			float: left;
+			margin: 0 1em 1em 0;
+		}
+	}
+
+	img.v65-border { 
+		border: 1px solid #ccc; 
+		padding: 3px;
+	}
 
 
 	/*Pull Quotes
@@ -204,6 +255,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 		}
 	}
 
+	@media screen #{break-max-mobile}{
+
+		/* adjust this to the width of the content wrapper minus padding */
+		img{ 
+			max-width:100%; 
+			height:auto; 
+		}
+	}
+
 
 /*   ===================================================================================================                                                                
     2. Top Menu 
@@ -244,8 +304,9 @@ $break-min-desktop: "and (min-width : 1024px)";
 /* b. Product & Blog Pagination
 -------------------------------------------------------------- */
 
+.v65-product-pagination {float:right; }
+
 .v65-product-pagination, .v65-Paging {
-	float: right; 
 	text-align: right; 
 	width: 50%; 
 	@media screen #{$break-max-tablet}{
@@ -264,7 +325,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 	li{
 		display: inline; 
-		padding-left: 5px;
+		padding-left: 2px;
 
 		a {
 			text-decoration: none;
@@ -272,7 +333,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 			@media screen #{$break-max-tablet}{
 				background-color: #ccc;
 				display: inline-block;
-				padding:0 15px;
+				padding:0 12px;
 				border-radius: 5px;
 				margin:5px 0;
 			}
@@ -281,6 +342,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 				text-decoration: underline; 	
 			}	
 		}
+	
+		&.border {
+			&:first-child {
+				@media screen #{$break-max-tablet}{
+					margin:5px 2px;
+					padding:7px 16px;
+				}
+			}
+		} 
 
 		&.border{
 			border-right: 1px solid #000; 
@@ -290,9 +360,16 @@ $break-min-desktop: "and (min-width : 1024px)";
 				background-color: #909090;
 				border:0;
 				display: inline-block;
-				padding:0 15px;
 				border-radius: 5px;
-				margin:5px 0;
+				margin:5px 0 5px 2px;
+
+
+			}
+
+			a { 
+				@media screen #{$break-max-tablet}{
+					background:none;
+				}	
 			}	
 		}	
 	}
@@ -375,7 +452,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 -------------------------------------------------------------- */
 .v65-blogPostWrapper { 
 	position: relative; 
-	border-bottom: 1px solid #999; 
 	margin-bottom: 1.5em; 
 	padding: 0; 
 
@@ -390,22 +466,26 @@ $break-min-desktop: "and (min-width : 1024px)";
 }
 
 	.v65-avatar {
-		position: absolute; 
-		top:0; 
-		left: 0; 
-		width: 48px; 
-		height: 48px; 
-		margin: 0; 
-		padding: 0; 
-
-	 	@media screen #{$break-max-mobile}{
-			display: none;
+		display: none;
+	 	@media screen #{$break-min-tablet}{
+	 		display: block;
+	 		position: absolute; 
+			top:0; 
+			left: 0; 
+			width: 48px; 
+			height: 48px; 
+			margin: 0; 
+			padding: 0; 	
 		}
 
 		img{ 
+			display: none;
+			@media screen #{$break-min-tablet}{
+			display: block;
 			border: 1px solid #999; 
 			padding: 2px; 
 			background-color: #fff; 
+			}
 		}
 	}
 
@@ -413,7 +493,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 	position: relative;
 	margin-left: 64px;
 	padding-bottom: 1.5em;
-	@media screen #{$break-max-mobile}{
+	@media screen #{$break-max-tablet}{
 		margin:0;
 	}
 }
@@ -585,6 +665,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 		.v65-product-title { 
 			font-size: 1.3em;
+			font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 		}
 
 		.v65-product-subtitle { 
@@ -968,63 +1049,113 @@ $break-min-desktop: "and (min-width : 1024px)";
 	/* e. Store Locator
 	-------------------------------------------------------------- */
 	#v65-businessLocator { 
-		position: relative;
+		width:100%;
 		overflow: hidden;
 		margin: 0 0 1.4em;
 		padding: 0 0 1em;
+		@media screen #{$break-min-tablet}{
+				position: relative; 
+			}
+
+		.defaultBtn{
+			@media screen #{$break-max-tablet}{
+				width:100%;
+			}
+		}
+		input, select{
+			@media screen #{$break-max-tablet}{
+				width:100%;
+			}
+		}
+
+		input[type="text"]{
+			@media screen #{$break-max-tablet}{
+				margin-bottom: 10px;
+			}
+		}
 	}
 		
 		#v65-businessLocatorSelectByCity {
-			width: 200px; 
 			overflow: hidden;
+			@media screen #{$break-min-tablet}{
+			width: 200px; 	
+			}
 		}
 		#v65-businessLocatorCategory {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorCountryCode {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorStateCode {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorCity {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorSelectByZipCode {
-			width: 200px;
 			overflow: hidden;
+			@media screen #{$break-min-tablet}{
+			width: 200px; 	
+			}
 		}
 		#v65-businessLocatorCategoryBottom {
-			width: 150px;
+			@media screen #{$break-min-tablet}{width: 150px;}
 		}
 		#v65-businessLocatorZipCode {
-			width: 60px;
+			@media screen #{$break-min-tablet}{width: 60px;}
 		}
 		#v65-businessLocatorRadius {
-			width: 80px;
+			@media screen #{$break-min-tablet}{width: 80px;}
 		}
 		#v65-BusinessList {
-			position: relative;
-			margin: 0 400px 0 0;
-			padding: 0;
+			margin:0;
+			@media screen #{$break-min-tablet}{
+				position: relative;
+				margin: 0 400px 0 0;
+				padding: 0;
+			}
 
-			ol {
+			ol {	
+
 				li {
 					margin: 0 0 12px 0;
+					@media screen #{$break-max-tablet}{
+						border-top:1px solid #CCC;
+						padding-top:8px;
+
+						&:last-child{
+							@media screen #{$break-max-tablet}{
+								border-bottom:1px solid #CCC;
+								padding-bottom:8px;
+							}	
+						}
+					}	
 				}	
 			}	
 		}
 		
 		#v65-map_canvas {
-			position: absolute;
+			position: relative;
+			width: 100%;
+			height: 300px;
 			top: 0;
 			right: 0;
 			margin: 0;
 			padding: 0;
-			width: 390px;
-			height: 300px;
 			background-color:#eee;
 			border: 1px solid #ccc;
+			@media screen #{$break-min-tablet}{
+				position: absolute;
+				width: 390px;
+				height: 300px;
+				top: 0;
+				right: 0;
+				margin: 0;
+				padding: 0;
+				background-color:#eee;
+			border: 1px solid #ccc;
+			}
 		}
 	
 	/* f. Table of Contents
@@ -1255,6 +1386,13 @@ $break-min-desktop: "and (min-width : 1024px)";
 	@media screen #{$break-min-tablet}{ 
 		right: 0;
 		width: auto;
+	}
+
+	a {
+		@media screen #{break-max-mobile}{
+			display:block;
+			width:100%;
+		}
 	}	 
 }
 
@@ -1271,7 +1409,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 	
 	@media screen #{$break-min-tablet}{
 		top: 32px;
-		width: 272px;
+		width: 282px;
 	} 
 }
 
@@ -1280,7 +1418,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		border: 1px solid #333; 
 		border-bottom: 5px solid #333;
 		color: #000; 
-		font-size: 0.917em; 
+		font-size: 1em; 
 		padding: 10px; 
 
 		p{ 
@@ -1289,9 +1427,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 		a{ 
 			color: #000;
-			@media screen #{break-max-mobile}{
+			width:auto;
+			display:inline-block;
+			font-size: 1em;
+			@media screen #{$break-max-mobile}{
+				display:block;
 				width:100%;
-				font-size: 1.3em;
 				&.modalLinkBtn{
 					margin-top: 8px;
 				}
@@ -1300,8 +1441,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 			&:hover{ 
 				color: #000; 
 			}
-		}
-			a{
 		}
 	}
 		
@@ -1374,7 +1513,13 @@ $break-min-desktop: "and (min-width : 1024px)";
 .v65-product-title {
 	font-size: 2em;
 	line-height: 1em;
-	margin-bottom: 0.3em;	
+	margin-bottom: 0.3em;
+	font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;	
+
+		@media screen #{$break-max-mobile}{
+			font-size: 20px;
+		}
+
 }
 	
 .v65-product-subtitle {
@@ -1559,7 +1704,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		float: left; 
 		height: 22px; 
 		margin-right: 5px; 
-		padding: 0; 
+		padding: 0;
 	}
 
 	.v65-socialMediaBar-Twitter { 
@@ -1683,61 +1828,61 @@ $break-min-desktop: "and (min-width : 1024px)";
 	.v65-product-attributeValue {}
 
 	.cgProReview { 
-		background: url(/images/store/ico-CG.png);
+		background: url(/assets/images/store/ico-CG.png);
 		padding-left: 29px;
 		width: 20px;
 	}
 		
 	.jhProReview { 
-		background: url(/images/store/ico-JH.png);
+		background: url(/assets/images/store/ico-JH.png);
 		padding-left: 28px;
 		width: 18px;
 	}
 		
 	.rpProReview { 
-		background: url(/images/store/ico-RP.png);
+		background: url(/assets/images/store/ico-RP.png);
 		padding-left: 28px;
 		width: 19px;
 	}
 		
 	.stProReview { 
-		background: url(/images/store/ico-ST.png);
+		background: url(/assets/images/store/ico-ST.png);
 		padding-left: 29px;
 		width: 18px;
 	}
 	
 	.waProReview { 
-		background: url(/images/store/ico-WA.png);
+		background: url(/assets/images/store/ico-WA.png);
 		padding-left: 32px;
 		width: 19px;
 	}
 		
 	.wandsProReview { 
-		background: url(/images/store/ico-WandS.png);
+		background: url(/assets/images/store/ico-WandS.png);
 		padding-left: 38px;
 		width: 20px;
 	}
 		
 	.wbProReview { 
-		background: url(/images/store/ico-WB.png);
+		background: url(/assets/images/store/ico-WB.png);
 		padding-left: 32px;
 		width: 19px;
 	}	
 		
 	.weProReview {  
-		background: url(/images/store/ico-WE.png);
+		background: url(/assets/images/store/ico-WE.png);
 		padding-left: 30px;
 		width: 20px;
 	}
 		
 	.wnProReview { 
-		background: url(/images/store/ico-WN.png);
+		background: url(/assets/images/store/ico-WN.png);
 		padding-left: 32px;
 		width: 19px;
 	}
 		
 	.wsProReview {  
-		background: url(/images/store/ico-WS.png);
+		background: url(/assets/images/store/ico-WS.png);
 		padding-left: 31px;
 		width: 19px;
 	}
@@ -1777,7 +1922,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		display: inline;
 		float: none;	
 	}
-}
+
 
 	.v65-product-relatedProducts-title {
 		font-size: 2em;
@@ -1789,7 +1934,16 @@ $break-min-desktop: "and (min-width : 1024px)";
 		margin: 0 0 1.5em;
 		text-align: center;
 		width: 25%;
+
+		@media screen #{$break-max-tablet}{
+			width: 50%;
+		}
+
+		@media screen #{$break-max-mobile}{
+			width: 100%;
+		}
 	}
+}
 		
 
 /* i. Product Tabs
@@ -1803,17 +1957,27 @@ $break-min-desktop: "and (min-width : 1024px)";
 		padding: 0;
 		border-bottom: 1px solid #ccc;
 
+		@media screen #{$break-max-tablet}{
+			height:45px;
+		}
+
 		li{		
 			float: left;
+			height: 27px;
+			line-height: 27px;
 
 			a{
 				background: #eee;
 				border-left: 1px solid #ccc;
 				border-top: 1px solid #ccc;
 				display: inline-block;
-				height: 27px;
-				line-height: 27px;
 				padding: 0 15px;
+
+				@media screen #{$break-max-tablet}{
+					height: 44px;
+					line-height: 44px;
+					padding: 0 10px;
+				}
 
 				&:hover {
 					background: #f8f8f8;
@@ -1959,6 +2123,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 	float: left;
 	width: 31%;
 	margin: 0 3% 1.5em 0;
+
+	@media screen and (max-width:600px){
+		width:47%;
+	}
+
+	@media screen and (max-width:480px){
+		width:100%;
+		margin:0;
+	}
 	
 	.v65-product-photo img { 
 		max-width: 45%;
@@ -2004,6 +2177,23 @@ $break-min-desktop: "and (min-width : 1024px)";
 	float: left;
 	margin: 0 2% 1.5em 0;
 	width: 18%;
+
+	@media screen and (max-width:840px){
+		width:23%;
+	}
+
+	@media screen and (max-width:720px){
+		width:31%;
+	}
+
+	@media screen and (max-width:600px){
+		width:47%;
+	}
+
+	@media screen and (max-width:480px){
+		width:100%;
+		margin:0;
+	}
 
 	.v65-product-photo img { 
 		max-width: 65%;
@@ -2063,13 +2253,29 @@ $break-min-desktop: "and (min-width : 1024px)";
 			color:#333; 
 			font-weight: bold; 
 			padding: 5px;
-			text-align: left; 
+			text-align: left;
+
+			&:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6){
+				@media screen #{$break-max-tablet}{
+					display:none;
+				}
+			} 
 		}
 			
 		td { 
 			border-bottom: 1px solid #bbb;
 			padding: 0 5px;
-			vertical-align: middle;  
+			vertical-align: middle;
+
+			@media screen #{$break-max-mobile}{
+				padding:0;
+			} 
+
+			&:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6){
+				@media screen #{$break-max-tablet}{
+					display:none;
+				}
+			} 
 
 			a { 
 				color: #000; 
@@ -2095,6 +2301,22 @@ $break-min-desktop: "and (min-width : 1024px)";
 				}
 			}
 		}
+
+	.v65-product-addToCart {
+		border:none;
+
+		.v65-product-addToCart-quantity{
+			
+			input{
+
+				@media screen #{$break-max-mobile}{
+					height:40px;
+					padding:0;
+					margin-right:3px;
+				}
+			}
+		}
+	}	
 }
 
 
@@ -2121,6 +2343,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 		float: left;
 		width: 37%;
 		margin-right: 3%;
+
+		@media screen and (max-width:700px){
+			float:right;
+			width:83%;
+			margin:0;
+		}
 	}
 
 	.v65-product-title { 
@@ -2170,6 +2398,11 @@ $break-min-desktop: "and (min-width : 1024px)";
 	.v65-product-commerceWrapper {
 		float: left;
 		width: 43%;
+
+		@media screen and (max-width:700px){
+			float:right;
+			width:83%;
+		}
 	}
 }
 				
@@ -2208,7 +2441,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 	.v65-productGroup-products {
 		float: left;
 		text-align: center;
-		width: 80%;
+		width: 100%;
 	}
 	
 		.v65-productGroup-product {
@@ -2216,6 +2449,18 @@ $break-min-desktop: "and (min-width : 1024px)";
 			margin: 0 0 1em 2%;
 			position:relative;
 			width: 23%;
+
+			@media screen and (max-width:750px){
+				width: 30%;
+			}
+
+			@media screen and (max-width:600px){
+				width: 48%;
+			}
+
+			@media screen #{$break-max-mobile}{
+				width: 100%;
+			}
 
 			.v65-product-title {
 				font-size: 1.3em;
@@ -2231,13 +2476,18 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 			/* Product Add To Cart */
 			.v65-product-addToCart-priceWrapper {
-				display: inline;	
+				display: block;	
 				margin-bottom: 5px;
 			}
 
 			.v65-product-addToCart-quantity input {
-				}	
+				}
+
+			.v65-product-reviewStats{
+				height: inherit;
 			}
+
+		}
 
 /*   ===================================================================================================                                                                
     18. Related Products
@@ -2442,6 +2692,11 @@ $break-min-desktop: "and (min-width : 1024px)";
 			margin: 0 0 1.5em;
 			text-align: center;
 			width: 33%;
+
+			@media screen #{$break-max-tablet}{
+				width: 50%;
+			}
+
 		}
 		.v65-product-relatedProducts{
 
@@ -2507,11 +2762,36 @@ $break-min-desktop: "and (min-width : 1024px)";
 			.v65-product-leftCol {
 				float: left;
 				width: 15%;
+
+				.v65-product-photos { 
+					margin: 0 0 1em; 
+					@media screen and (max-width:550px){
+						display:none;
+					}
+
+					.v65-product-photos-photo { 
+						float: left; 
+						text-align: center; 
+						margin: 0 0 1.5em;
+						padding: 0 0 1.5em;
+						width: 50%;
+
+						@media screen #{$break-min-tablet}{
+							width: 33%;
+							padding:0;
+
+							img { 
+								max-width: 100%; 
+							}
+						} 
+					}
+				}
 			}
 				
 			.v65-product-rightCol {
 				float: left;
 				width: 80%;
+				margin-left:2%;
 			}
 				
 				.v65-product-infoWrapper {
@@ -2560,6 +2840,10 @@ $break-min-desktop: "and (min-width : 1024px)";
 					float: left;
 					margin-top: 0.5em;
 					width: 50%;
+
+					@media screen and (max-width:550px){
+						width:100%;
+					}
 				}
 		}
 				
@@ -2581,7 +2865,8 @@ $break-min-desktop: "and (min-width : 1024px)";
 	padding-bottom: 1em;
 		@media screen #{$break-max-tablet}{ 
 			padding:1.5em;
-		}	
+
+	}	
 		
 	/*Product Left Photos*/
 	.v65-product-photo-wrapper{
@@ -2623,6 +2908,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 			width: 50%;
 				@media screen #{$break-min-tablet}{
 					width: 33%;
+					padding:0;
 
 				img { 
 					max-width: 100%; 
@@ -2654,6 +2940,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 					font-size: 1.8em;
 					margin: 0 0 1em;
 					text-align: center;
+					font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;	
 						@media screen #{$break-max-tablet}{ 
 							text-align:left; 
 						}
@@ -2674,6 +2961,15 @@ $break-min-desktop: "and (min-width : 1024px)";
 					}	
 				}
 			}
+		}
+	}
+
+	.v65-wine-profile {
+
+		.v65-wine-profile-title{
+			font-size: 1.8em;
+			margin: 0 0 1em;
+			font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;	
 		}
 	}
 
@@ -2966,122 +3262,144 @@ $break-min-desktop: "and (min-width : 1024px)";
 	@media screen and (max-width : 620px) {
 		width: 100%;
 	}
+
+	a {
+		@media screen and (max-width : 620px){
+			margin:5px 0;
+		}	
+	}
 }
 	
 /* b. Cart Table
 -------------------------------------------------------------- */
-#v65-cartTable { 
-	width: 100%; 
-	margin: 0 0 12px 0; 
-	padding: 0;
-
-	th { font-weight: bold;
-		background-color: #f9f7f3;
-		border-top: 1px solid #ccc;
-		padding: 6px 8px;
-	}
-
-	td { 
-		padding: 6px 10px; 
-	}
-
-	.v65-cartShippingItem {
-		background-color: #e2dfd7;
-		text-align: right;
-	}
-	
-	.v65-cartShippingItemError { 
-		background-color: #f96361;
-		text-align: right;
-	}
-
-	.v65-cartShipping td { 
-		background-color: #f9f7f3;
-		border-top: 0;
-	}
+#v65-cartTable {
+        width: 100%;
+        margin: 0 0 1em;
+        padding: 0;
+ 
+        th {
+                font-weight: bold;
+                background-color: #f9f7f3;
+                border-top: 1px solid #ccc;
+                padding: 0.5em 0.667em;
+        }
+ 
+        td {
+                padding: 0.5em 0.667em;
+        }
+ 
+        .v65-cartShippingItem {
+                background-color: #e2dfd7;
+                text-align: right;
+        }
+       
+        .v65-cartShippingItemError {
+                background-color: #f96361;
+                text-align: right;
+        }
+ 
+        .v65-cartShipping td {
+                background-color: #f9f7f3;
+                border-top: 0;
+        }
+ 
+        .v65-cartItemImage{
+                min-width: 44px;
+        }
+ 
+        .center, .v65-cartSubtotal-1, .v65-cartTax-1,
+        .v65-cartTotal-1, th.center + th.right, .v65-cartItem .center + .right,
+        .v65-cartSubtotal-3, .v65-cartTax-3, .v65-cartTotal-3{
+                display: none;
+        }
+ 
+        @media screen and (min-width : 455px) {
+                th.center + th.right, .v65-cartItem .center + .right,
+                .v65-cartSubtotal-3, .v65-cartTax-3, .v65-cartTotal-3{
+                        display: table-cell;
+                }
+        }
+ 
+        @media screen and (min-width : 545px) {
+                .center, .v65-cartSubtotal-1, .v65-cartTax-1, .v65-cartTotal-1{
+                        display: table-cell;
+                }
+        }
 }
-		
-	.v65-cartItem{
-		td { 
-			border-top: 1px solid #ccc;
-		}
-
-		form {
-			width: 80px;
-			margin: 0 auto;
-		}
-
-		fieldset{ 
-			padding: 0;
-			margin: 0;
-			border: 0;
-		}
-	 }
-
-		.v65-cartItemAmount { 
-			width: 80px;
-			text-align: center;
-			overflow: hidden;
-			
-			.v65-qtyField { 
-				text-align: center;
-				margin: 0 0 4px;
-				width: 25px;
-			}
-			
-			button {
-				margin: 0;
-			}
-		}
-
-		.v65-cartItemImage { 
-			width: 60px;
-		 	text-align: center;
-		}
-		
-		.v65-cartItemDescription { 
-			line-height: 1.6em;
-		}
-
-		.v65-cartRemoveButton { 
-			margin-top: 5px;
-		}			
-			
-	#v65-cartSubtotal{
-		td { 
-			background-color: #f9f7f3;
-			font-weight: bold;
-			border-top: 1px solid #ccc;
-		} 
-	}		
-			
-	.v65-cartTax {
-		td { 
-			background-color: #f9f7f3;
-			font-weight: normal;
-			border-top: 0;
-		}
-	}
-
-	#v65-cartTotal {
-		td {	
-			background-color: #f8f1de;
-			font-weight: bold;
-			border-top: 0;
-			border-bottom: 1px solid #ccc;
-		}
-	}
-	
-		#v65-cartStateCode { 
-			width: 50px;
-		} /*state drop down select box*/
-	
-/* Cart Footer */	
-#v65-cartFooter { 
-	overflow: hidden; 
-	margin: 0; 
-	padding: 0 0 10px 0; 
-}
+               
+        .v65-cartItem{
+                td {
+                        border-top: 1px solid #ccc;
+                }
+ 
+                form {
+                        width: 80px;
+                        margin: 0 auto;
+                }
+ 
+                fieldset{
+                        padding: 0;
+                        margin: 0;
+                        border: 0;
+                }
+         }
+ 
+                .v65-cartItemAmount {
+                        text-align: center;
+                        overflow: hidden;
+                       
+                        .v65-qtyField {
+                                text-align: center;
+                                margin: 0 0 0.333em;
+                                width: 2em;
+                        }
+                       
+                        button {
+                                margin: 0;
+                        }
+                }
+ 
+                .v65-cartItemImage {
+                        width: 60px;
+                        text-align: center;
+                }
+               
+                .v65-cartItemDescription {
+                        line-height: 1.6em;
+                }
+ 
+                .v65-cartRemoveButton {
+                        margin-top: 0.5em;
+                }                      
+                       
+        #v65-cartSubtotal{
+                td {
+                        background-color: #f9f7f3;
+                        font-weight: bold;
+                        border-top: 1px solid #ccc;
+                }
+        }              
+                       
+        .v65-cartTax {
+                td {
+                        background-color: #f9f7f3;
+                        font-weight: normal;
+                        border-top: 0;
+                }
+        }
+ 
+        #v65-cartTotal {
+                td {   
+                        background-color: #f8f1de;
+                        font-weight: bold;
+                        border-top: 0;
+                        border-bottom: 1px solid #ccc;
+                }
+        }
+       
+                #v65-cartStateCode {
+                        width: 50px;
+                } /*state drop down select box*/
 
 	#v65-cartPaymentOptions { 
 		float: left; 
@@ -3157,12 +3475,35 @@ $break-min-desktop: "and (min-width : 1024px)";
 	
 #v65-checkoutFooter { 
 	overflow: hidden;
-	clear: both; 
+	clear: both;
+	.floatRight {
+		@media screen and (max-width : 640px){
+			float:none;
+		}
+	}
+	button{
+		@media screen and (max-width : 640px) {
+			width: 100%;
+		}
+	} 
 }
 
 	#v65-checkoutSecure { 
 		float: left; 
 		width: 300px;
+
+		@media screen and (max-width : 640px){
+			margin-bottom:15px;
+		}
+	}
+
+	form.v65ProcessOrder{
+		@media screen and (max-width : 640px){
+
+			button{
+				width: 100%;
+			}
+		}
 	}
 
 	#v65-continueOrder { 
@@ -3199,18 +3540,18 @@ $break-min-desktop: "and (min-width : 1024px)";
 	border: 1px solid #eeeeee; 
 	overflow: hidden;
 
-	@media screen and (max-width : 810px) {
+	@media screen and (max-width:950px) {
 		float: right;
 		position: relative;
-		width: 34%;
+		width: 42%;
 	}
 
-	@media screen and (max-width : 725px) {
+	@media screen and (max-width: 725px) {
 		float: none;
 		margin: 0 0 1em;
 		right: 0;
 		top: 0;
-		width: 96.5%;
+		width: 96%;
 	} 
 }
 
@@ -3221,7 +3562,7 @@ $break-min-desktop: "and (min-width : 1024px)";
 		padding: 0; 
 		font-size: 11px;
 
-		@media screen and (max-width : 810px) {
+		@media screen and (max-width : 900px) {
 			float: none;
 			width: 100%;
 		} 
@@ -3256,14 +3597,14 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 140px; 
 		font-size: 11px;
 
-		@media screen and (max-width : 810px) {
+		@media screen and (max-width : 900px) {
 			float: none;
 			width: 100%;
 		} 
 	}
 
 	/* Add Shipping and Add Gift Wrapping Forms */
-	#v65-couponFormWrapper {
+	#v65-couponFormWrapper, #v65-giftCardFormWrapper {
 		form{}
 		fieldset {}
 		legend { 
@@ -3274,7 +3615,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 		@media screen and (max-width : 725px) {
 			fieldset{
 				margin: 0 0 1em;
-				width: 98%;
 			}
 
 			form{
@@ -3325,14 +3665,26 @@ $break-min-desktop: "and (min-width : 1024px)";
 /* b. Main Form
 -------------------------------------------------------------- */	
 #v65-checkoutFormWrapper{
-	
+	width: 100%;
+	@media screen #{$break-mobile}{
+		width: 98%;	
+	}
+
 	form { 
 		width: 100%; 
 	}
 
+}
 
 	
 	#v65-checkBilling{
+		@media screen #{$break-min-tablet}{
+			width:60%;
+		}
+		@media screen #{$break-min-desktop}{
+			width:400px;
+		}
+
 		fieldset{}
 	}
 
@@ -3350,23 +3702,20 @@ $break-min-desktop: "and (min-width : 1024px)";
 
 	}
 
-	#v65-fieldset-wholesalerInfo { 
-		width: 400px; 
-	}
-	
-	#v65-fieldset-billingInfo { 
-		width: 400px; 
-	}
-	
-	#v65-fieldset-shippingInfo { 
-		width: 400px; 
-	}
+	#v65-fieldset-wholesalerInfo, #v65-fieldset-billingInfo, 
+	#v65-fieldset-shippingInfo, #v65-fieldset-shippingOptions, 
+	#v65-fieldset-paymentMethod, #v65-fieldset-sourceCode, 
+	#v65-fieldset-usernamePassword{
+		width: 400px;
 
-	#v65-fieldset-billingInfo, #v65-fieldset-shippingInfo, 
-	#v65-fieldset-shippingOptions, #v65-fieldset-paymentMethod{
-		@media screen and (max-width : 725px) {
+		@media screen and (max-width:950px) {
+			float: left;
+			width: 50%;
+		}
+
+		@media screen and (max-width:725px) {
 			margin: 0 0 1em;
-			width: 98%;
+			width: 99%;
 
 			input{
 				width: 99% !important;
@@ -3374,16 +3723,9 @@ $break-min-desktop: "and (min-width : 1024px)";
 		}
 	}
 	
-	#v65-fieldset-shippingOptions { 
-		width: 400px; 
-	}
-	
-	#v65-fieldset-sourceCode { 
-		width: 400px; 
-	}
-	
 	#v65-fieldset-paymentMethod {
 		p {}
+		div { clear:both;}
 	}
 	
 	#v65-checkout-OrderNotes {}
@@ -3396,17 +3738,27 @@ $break-min-desktop: "and (min-width : 1024px)";
 		}
 
 		.v65-additionalComments { 
-			float: right; 
-			width: 380px; 
+				@media screen and (max-width:950px) {
+					width:95%;
+					clear:both;
+				}
 		}
 
 		select{
 			&[name=BillBirthMonth] {
 				width:80px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			}
 
 			&[name=BillBirthDay], &[name=BillBirthYear] {
 				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			}
 
 			&[name=BillStateCode] { 
@@ -3414,11 +3766,19 @@ $break-min-desktop: "and (min-width : 1024px)";
 			}
 
 			&[name=ShipBirthMonth] { 
-				width:80px; 
+				width:80px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				}  
 			}
 
 			&[name=ShipBirthDay], &[name=ShipBirthYear] { 
-				width:60px; 
+				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				}  
 			} 
 
 			&[name=shipStateCode] { 
@@ -3533,7 +3893,6 @@ $break-min-desktop: "and (min-width : 1024px)";
 			padding: 5px 0 !important;
 		}
 	} 
-}
 		
 /* c. Review Screen
 -------------------------------------------------------------- */	
@@ -3568,6 +3927,67 @@ $break-min-desktop: "and (min-width : 1024px)";
 		border: 1px solid #eeeeee; 
 		overflow: hidden; 
 	}
+
+/* c. Print Receipt
+-------------------------------------------------------------- */
+
+.printBody { 
+	background-color: #FFF;
+	background-image: none;
+	margin: 0;
+	padding: 0;
+}
+	
+.printWrapper { 
+	margin: 0 auto;
+	width: 700px;
+
+	@media screen #{$break-max-tablet}{
+		width: 90%;
+		padding: 5%;
+	}
+
+	@media screen #{$break-max-mobile}{
+		font-size: 15px;
+		line-height: 1.5em;
+	}
+}
+	
+	.printHeader { 
+		height: 150px;
+		width: 700px;
+
+		@media screen #{$break-max-tablet}{
+			width: 100%;
+			height: auto;
+
+			img{
+				width:100%;
+				height: auto;
+			}
+		}
+	}
+		
+	.printContent { 
+		text-align: left;
+		width: 700px;
+
+		@media screen #{$break-max-tablet}{
+			width: 100%;
+
+		}
+
+		#v65-cartTable{
+			
+			td{
+				@media screen #{$break-max-mobile}{
+					padding:6px 4px;
+				}
+			}
+
+			.center{display:block;}
+		} 
+	}	
 	
 	
 /*   ===================================================================================================                                                                
@@ -3585,6 +4005,10 @@ $break-min-desktop: "and (min-width : 1024px)";
 	margin-bottom: 12px; 
 	padding: 0 0 12px 10px; 
 	border-bottom: 1px solid #ccc; 
+
+	@media screen #{$break-max-mobile}{
+		padding: 0 0 12px 0; 	
+	}
 }
 
 .v65-clubJoin {
@@ -3609,17 +4033,12 @@ $break-min-desktop: "and (min-width : 1024px)";
 		width: 100%; 
 	}
 
-	fieldset {}
-
+	fieldset {}	
 }	
 	
 	#v65-fieldset-clubOptions { 
 		width: 400px; 
-	} 
-
-	#v65-fieldset-usernamePassword { 
-		width: 400px; 
-	} 
+	}  
 	
 	#v65-clubCreditCard {} 
 	
@@ -3677,12 +4096,20 @@ $break-min-desktop: "and (min-width : 1024px)";
 				width: 80px; 
 			}
 			
-			&[name=ShipBirthMonth] { 
+			&[name=BirthMonth], &[name=ShipBirthMonth] { 
 				width:80px; 
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				}
 			}  
 			
-			&[name=ShipBirthDay], &[name=ShipBirthYear] { 
-				width:60px; 
+			&[name=BirthDay], &[name=BirthYear], &[name=ShipBirthDay], &[name=ShipBirthYear] { 
+				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
 			} 
 			
 			&[name=shipStateCode] { 
@@ -3702,14 +4129,26 @@ $break-min-desktop: "and (min-width : 1024px)";
 /* c. Sign Up Screen
 -------------------------------------------------------------- */	
 #v65-signUpClubSummaryWrapper {
-	position: absolute;
-	top: 9px;
-	right: 1px;
-	padding: 10px;
-	width: 350px;
+	margin: 0 0 1em;
+	width: 90%;
+	padding: 5%;
 	background-color: #f7f7f7;
 	border: 1px solid #eeeeee;
 	overflow: hidden;
+	clear:both;
+
+	@media screen and (min-width:725px) {
+		width: 42%;
+		position: absolute;
+		top: 9px;
+		right: 1px;
+		padding: 10px;
+	}
+
+	@media screen #{$break-min-desktop}{	
+		width: 350px;
+	}
+
 }
 #v65-clubOptionsDrilldown {
 
@@ -3776,6 +4215,17 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		padding: 0;
 		margin: 0;
 		overflow: hidden;
+
+		@media screen and (max-width:970px){
+			width:44%;
+			padding:2%;
+		}
+
+		@media screen #{$break-max-mobile}{
+			float:inherit;
+			width:90%;
+			padding: 5%;
+		}
 	}
 	#v65-clubShippingSummary {
 		float: left;
@@ -3783,6 +4233,17 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		padding: 0;
 		margin: 0;
 		overflow: hidden;
+
+		@media screen and (max-width:970px){
+			width:45%;
+			padding:2.5%;
+		}
+
+		@media screen #{$break-max-mobile}{
+			float:inherit;
+			width:90%;
+			padding: 5%;
+		}
 	}
 	#v65-reviewClubSummaryWrapper {
 		float: right;
@@ -3793,6 +4254,12 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		border: 1px solid #eee;
 		overflow: hidden;
 		font-size: 0.95em;
+
+		@media screen and (max-width:970px){
+			float:inherit;
+			width:90%;
+			padding: 5%;
+		}
 	}
 
 
@@ -3829,158 +4296,464 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 
 	/* b. Main Form
 	-------------------------------------------------------------- */		
-#v65-memberFormWrapper { 
+#v65-memberFormWrapper {
 
 	form { 
 		text-align: left; 
-		width: 400px; 
+		// width: 400px;
+		width:400px;
+		@media screen #{$break-max-mobile}{
+			width:100%;
+		} 
 	}
-
+	
 	legend { 
 		font-size: 1.4em; 
 		letter-spacing: 1px; 
 	}
 
 	fieldset{ 
-		width: 400px; 
-		border: 1px solid #ccc; 
+		// width: 400px; 
+		border: 1px solid #ccc;
+		@media screen #{$break-min-tablet}{
+			width:400px;
+		}  
 	}
-
-	@media screen and (max-width : 725px) {
-		form{
-			width: 100%;
-		}
-
-		fieldset{
-			width: 97%;
-		}
-
-		textarea{
-			width: 99% !important;
-		}
-
-		input, select{
-			height: 44px;
-			min-width: 44px;
-			width: 99% !important;
-		}
-
-		button.modalBtn{
-			font-size: 12px;
-			height: 44px;
-			width: auto;
-			min-width: 44px;
-		}
-
-		select{
-			width: 99.9%;
-		}
-	}
-	div{
-			margin: 0 0 4px 0;
-			overflow: hidden;
-			padding: 2px 5px 5px 5px;
-	}
-
-	.v65-additionalComments {
-		float: right;
-		width: 380px;
-	}
-	/* Member SignUp Form Elements */
-	select[name=BirthMonth] {
-		width:80px
-	}
-	select[name=BirthDay], select[name=BirthYear] {
-		width:60px;
-	}
-	input[name=FirstName], input[name=LastName], input[name=Company], input[name=City], input[name=MainPhone], input[name=Email], input[name=Username], input[name=Password], input[name=confirmPassword] {
-		width: 175px;
-	}  
-}	
-		
-		
-		
-		
-		#v65-memberFormWrapper input[name=Address] { width: 250px; margin-bottom: 8px; }
-		#v65-memberFormWrapper input[name=Address2] { width: 250px; }
-		
-		#v65-memberFormWrapper select[name=StateCode] { width: 180px; }
-		
-		#v65-memberFormWrapper input[name=ZipCode] { width: 100px; }
-		
-		#v65-memberFormWrapper select[name=CardExpiryMo] { width: 120px; } 
-		#v65-memberFormWrapper select[name=CardExpiryYr] { width: 80px; } 
-		#v65-memberFormWrapper input[type=checkbox] { float: left; margin: 0.3em 0.3em 0 0.3em; }
 	
-	/* c. Club List
-	-------------------------------------------------------------- */
-	.v65-memberClubDescription { padding-left: 20px; }
+	div{ 
+		margin: 0 0 4px 0; 
+		overflow: hidden; 
+		padding: 2px 5px 5px 5px; 
+	}
+	
+	.v65-additionalComments { 
+		float: right; 
+		// width: 380px; 
+	}
+	
+	/* Member SignUp Form Elements */
+	select{
+		&[name="BirthDay"], &[name="BirthYear"],
+		&[name="BirthMonth"]{
+			width: 32%;
+		}
 
-	/* Member Address Book */	
-	#v65-memberAddressBook { margin-bottom: 1em; }
-		#v65-memberAddressBook th{	background-color:#ccc; color: #333; font-weight: bold; font-size: 0.95em; padding: 3px; border-bottom: 1px solid #bbb; }	
-		#v65-memberAddressBook td{ font-size: 0.95em; padding: 3px; border-bottom: 1px solid #bbb;	}		
-			#v65-memberAddressBook td.a{ color: #000; text-decoration: none; }
-			#v65-memberAddressBook td.a:hover{	color: #000; text-decoration: none;	}		
-			#v65-memberAddressBook tr:hover{ background-color: #FFC; }				
-			#v65-memberAddressBook tr.alt{	background-color: #efefef; }			
-				#v65-memberAddressBook tr.alt:hover{ background-color: #FFC; }
+		&[name="BirthDay"]{
+			margin: 0 1%;
+		}
+
+		&[name="CardExpiryMo"]{
+			width: 49%;
+		}
+
+		&[name="CardExpiryYr"]{
+			margin-left: 1%;
+			width: 48%;
+		}
+
+		@media screen #{$break-min-tablet}{
+			&[name=BirthMonth] {
+				width:80px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
+			} 
+
+			&[name=BirthDay], &[name=BirthYear] {
+				width:60px;
+
+				@media screen #{$break-max-mobile}{
+					width:32%;
+				} 
+			} 
+
+			&[name=StateCode] { 
+				width: 180px; 
+			}
+			
+			&[name=CardExpiryMo] { 
+				width: 120px; 
+			}
+			
+			&[name=CardExpiryYr] { 
+				width: 80px;
+			}
+		}
+	}
+
+	input{
+		@media screen #{$break-max-mobile}{
+			width: 98%;
+			margin:0;
+			padding:0;
+
+			&[type=checkbox] {
+				float: left;
+				width: 22px;
+				margin: 0.3em 0.3em 0 0.3em; 
+				@media screen #{$break-max-mobile}{
+					float: left; 
+					margin: 0.3em 0.3em 0 0.3em;
+				} 
+			}
+		}
+
+		&[name=Address], &[name=captchaText] { 
+			margin-bottom: 0.667em;
+		}
+		
+		@media screen #{$break-min-tablet}{
+			&[name=FirstName], &[name=LastName], &[name=Company], 
+			&[name=City], &[name=MainPhone], &[name=Email], 
+			&[name=Username], &[name=Password], &[name=confirmPassword] { 
+				width: 175px; 
+			}
+
+			&[name=Address] { 
+				width: 250px; 
+				margin-bottom: 8px; 
+			}
+			
+			&[name=Address2] { 
+				width: 250px; 
+			}
+
+			&[name=ZipCode] { 
+				width: 100px; 
+			}
+			
+			&[type=checkbox] { 
+				float: left; 
+				margin: 0.3em 0.3em 0 0.3em; 
+			}
+		}
+	}
+
+	label{
+		@media screen #{$break-max-mobile}{
+			height:22px;
+			line-height: 22px;
+			margin: 0.3em 0.3em 0 0.3em;
+		}
+	}
+
+	button.defaultBtn{
+		@media screen #{$break-max-mobile}{
+			width: 100%;
+		}		
+	}
+}
+
+/* c. Club List
+	-------------------------------------------------------------- */
+.v65-memberClubDescription { 
+	padding-left: 20px; 
+}
+
+/* Member Address Book */	
+#v65-memberAddressBook { 
+	margin-bottom: 1em; 
+
+	th{
+		background-color:#ccc; 
+		color: #333; 
+		font-weight: bold; 
+		font-size: 0.95em; 
+		padding: 3px; 
+		border-bottom: 1px solid #bbb; 
+
+		@media screen #{$break-max-mobile}{
+			font-size: 0.8em;
+			padding: 0;   
+		}
+	}
+
+	td{ 
+		font-size: 0.95em; 
+		padding: 3px; 
+		border-bottom: 1px solid #bbb;
+
+		a{ 
+			color: #000; 
+			text-decoration: none;
+
+			&:hover{
+				color: #000; 
+				text-decoration: none;
+			}
+		}
+	}
+
+	tr{
+		&:hover { 
+			background-color: #FFC; 
+		}
+		
+		.alt {
+			background-color: #efefef;
+
+			&:hover{ 
+				background-color: #FFC; 
+			}
+		}
+	}
+}
 			
 	/* d. Member Orders
 	-------------------------------------------------------------- */	
-	#v65-memberOrders { margin-bottom: 1em; }
-		
-		#v65-memberOrders th{ background-color:#ccc; color:#333; font-weight: bold;	font-size: 0.95em; padding: 3px; border-bottom: 1px solid #bbb;	}	
-		#v65-memberOrders td{ font-size: 0.95em; padding: 2px; border-bottom: 1px solid #bbb; }		
-			#v65-memberOrders td.a{ color: #000; text-decoration: none; }			
-			#v65-memberOrders td.a:hover{ color: #000; text-decoration: none; }		
-			#v65-memberOrders tr:hover{ background-color: #FFC; }				
-			#v65-memberOrders tr.alt{ background-color: #efefef; }			
-				#v65-memberOrders tr.alt:hover{	background-color: #FFC; }
+	#v65-memberOrders {
+	margin-bottom: 1em; 
+
+	th{ 
+		background-color:#ccc; 
+		color:#333; 
+		font-weight: bold;
+		font-size: 0.95em; 
+		padding: 3px; 
+		border-bottom: 1px solid #bbb;
+
+		&:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6){
+			@media screen #{$break-max-mobile}{
+				display: none;
+			}
+		}
+	}
+	
+	td{
+		font-size: 0.95em; 
+		padding: 2px 0; 
+		border-bottom: 1px solid #bbb;
+
+		&:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6){
+			@media screen #{$break-max-mobile}{
+				display: none;
+			} 
+		}
+
+		&:nth-child(2){
+			@media screen #{$break-max-mobile}{
+				width:21%;
+			} 
+		}
+
+		&:nth-child(8){
+			@media screen #{$break-max-mobile}{
+				width:50%;
+
+				a{
+					width:43%;
+					margin:5% 0;
+				}
+
+			} 
+		}  
+
+		a{ 
+			color: #000; 
+			text-decoration: none; 
+
+			&:hover{ 
+				color: #000; text-decoration: none; 
+			}
+		}
+	}
+
+	tr{
+		&:hover{ 
+			background-color: #FFC; 
+		}
+
+		.alt{ 
+			background-color: #efefef; 
+
+			&:hover{	
+				background-color: #FFC; 
+			}
+		}
+	}
+}
 
 	/* e. Member Orders Drilldown
 	-------------------------------------------------------------- */	
-	#v65-memberOrderSummaryWrapper { overflow: hidden; width: 100%; padding: 0 0 1em 0; }
-		#v65-memberbillingSummary { float: left; width: 49%; padding: 0; margin: 0; overflow: hidden; }
-		#v65-memberShippingSummary { float: left; width: 49%; padding: 0; margin: 0; overflow: hidden; }
-	
+#v65-memberOrderSummaryWrapper { 
+	overflow: hidden; 
+	width: 100%; 
+	padding: 0 0 1em 0; 
+}
+
+	#v65-memberbillingSummary { 
+		float: left; 
+		width: 49%; 
+		padding: 0; 
+		margin: 0;
+		overflow: hidden; 
+	}
+
+	#v65-memberShippingSummary { 
+		float: left; 
+		width: 49%; 
+		padding: 0; 
+		margin: 0; 
+		overflow: hidden; 
+	}
+
 	/* f. Member Allocations
 	-------------------------------------------------------------- */
-	.v65-memberAllocationWrapper { overflow: hidden; border-bottom: 1px solid #999; margin: 0 0 1em; padding: 0 0 1em; }
-		.v65-memberAllocationDetails { position: relative; margin: 0 0 1em; padding: 0; overflow: hidden; min-height: 216px; }
-		.v65-memberAllocationImage { position: absolute; top: 0; left: 0; width: 120px; text-align: center; overflow: hidden; }
-		.v65-memberAllocationTeaser { position: relative; margin: 0 0 0 140px; padding: 0; }
-		
-		.v65-storeAllocationSKU { font-size: 11px; color: #333; }
-		
-		.v65-memberAllocationTable { float: right; border: 1px solid #ccc; margin: 0 0 1.5em; padding: 4px; font-size: 10px; width: 250px; }
-		.v65-memberAllocationTable th { font-weight: bold; vertical-align: bottom; text-align:center; }
-		.v65-memberAllocationTable td { padding: 5px; border-bottom: 1px solid #eee; vertical-align: middle; text-align:center; }
-		.v65-memberAllocationTable td.label { font-weight: bold; text-align: right; }
-		.v65-memberAllocationTable td.lastRow { border-bottom: 0; }
-		
-		.v65-memberAllocationTable input { text-align: center; }
-		
-		#v65-memberAllocationMinimumOrder {  } /*minium quantity row*/
+.v65-memberAllocationWrapper { 
+	overflow: hidden; 
+	border-bottom: 1px solid #999; 
+	margin: 0 0 1em; 
+	padding: 0 0 1em; 
+}
+
+	.v65-memberAllocationDetails { 
+		position: relative;
+		margin: 0 0 1em;
+		padding: 0;
+		overflow: hidden;
+		min-height: 216px;
+	}
+
+	.v65-memberAllocationImage { 
+		text-align: center;
+		overflow: hidden;
+
+		@media screen #{$break-min-tablet}{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 120px;
+		}
+	}
+
+	.v65-memberAllocationTeaser { 
+		width:100%;
+		@media screen #{$break-min-tablet}{
+			position: relative;
+			margin: 0 0 0 140px;
+			padding: 0;
+			width:inherit;
+		}
+	}
+	
+	.v65-storeAllocationSKU { 
+		font-size: 11px;
+		color: #333;
+	}
+	
+	.v65-memberAllocationTable { 
+		float: right;
+		border: 1px solid #ccc;
+		margin: 0 0 1.5em;
+		padding: 4px;
+		font-size: 10px;
+		width: 250px;
+
+		@media screen #{$break-max-mobile}{
+			width:100%;
+		}
+
+		th { 
+			font-weight: bold;
+			vertical-align: bottom;
+			text-align:center;
+		}
+
+		td { 
+			padding: 5px;
+			border-bottom: 1px solid #eee;
+			vertical-align: middle;
+			text-align:center;
+
+			.label { 
+				font-weight: bold;
+				text-align: right;
+			}
+
+			.lastRow { 
+				border-bottom: 0;
+			}
+		}
+
+		input { 
+			text-align: center;
+		}
+	}
+
+	#v65-memberAllocationMinimumOrder {} /*minium quantity row*/
 	
 	/* g. Member Allocations History
 	-------------------------------------------------------------- */
-	.v65-memberAllocationHistoryWrapper { overflow: hidden; border-bottom: 1px solid #999; margin: 0 0 1.5em; padding: 0 0 0.5em; }
-		
-		.v65-memberAllcoationHistoryTitle { font-size: 1.6em; margin: 0 0 0.2em; color: #333; }
-		
-		.v65-memberAllcoationHistoryDates { margin: 0 0 0.5em; }
-			.v65-memberAllcoationHistoryStartDate { display: inline-block; margin-right: 8px; border-right: 1px solid #ccc; }
-			.v65-memberAllcoationHistoryEndDate { display: inline-block; }
-				.v65-memberAllcoationHistoryDateLabel { display: inline-block; margin-right: 3px; }
-				.v65-memberAllcoationHistoryDateValue { font-weight: bold; margin-right: 8px; }
-						
-		
-		.v65-memberAllocationHistoryTable { width: 100%; margin: 0; padding: 6px; font-size: 10px; }
-		.v65-memberAllocationHistoryTable th { padding: 5px; border-bottom: 1px solid #ccc; font-weight: bold; vertical-align: bottom; text-align:center; background-color: #efefef; color: #555; }
-		.v65-memberAllocationHistoryTable td { padding: 5px; border-bottom: 1px solid #eee; vertical-align: middle; text-align:center; }
-		.v65-memberAllocationHistoryTable td.label { font-weight: bold; text-align: right; }
-		.v65-memberAllocationHistoryTable td.lastRow { border-bottom: 0; }
+.v65-memberAllocationHistoryWrapper { 
+	overflow: hidden; 
+	border-bottom: 1px solid #999; 
+	margin: 0 0 1.5em; 
+	padding: 0 0 0.5em; 
+}
+	
+	.v65-memberAllcoationHistoryTitle { 
+		font-size: 1.6em; 
+		margin: 0 0 0.2em; 
+		color: #333; 
+	}
+	
+	.v65-memberAllcoationHistoryDates {
+		margin: 0 0 0.5em; 
+	}
+
+		.v65-memberAllcoationHistoryStartDate {
+			display: inline-block;
+			margin-right: 8px;
+			border-right: 1px solid #ccc;			
+		}
+
+		.v65-memberAllcoationHistoryEndDate {
+			display: inline-block; 
+		}
+
+			.v65-memberAllcoationHistoryDateLabel {
+				display: inline-block;
+				margin-right: 3px; 
+			}
+
+			.v65-memberAllcoationHistoryDateValue {
+				font-weight: bold;
+				margin-right: 8px; 
+			}
+	
+	.v65-memberAllocationHistoryTable {
+		width: 100%;
+		margin: 0;
+		padding: 6px;
+		font-size: 10px;
+
+		th {
+			padding: 5px;
+			border-bottom: 1px solid #ccc;
+			font-weight: bold;
+			vertical-align: bottom;
+			text-align:center;
+			background-color: #efefef;
+			color: #555; 
+		}
+
+		td {
+			padding: 5px;
+			border-bottom: 1px solid #eee;
+			vertical-align: middle;
+			text-align:center; 
+
+			.label {
+				font-weight: bold; 
+				text-align: right; 
+			}
+
+			.lastRow {
+				border-bottom: 0; 
+			}
+		}
+	}
 	
 /*   ===================================================================================================                                                                
      28. Modal PopUp Layout
@@ -3993,7 +4766,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	width: 100%;
 	height: 100%;
 	z-index: 10000;
-	text-align: left; 
+	text-align: left;
+
+	@media screen #{$break-max-tablet}{
+		position:absolute;
+	} 
 }
 
 #v65-modalViel {
@@ -4002,11 +4779,14 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 1000%;
 	z-index: 102;
-	opacity:0.75;
-	filter: alpha(opacity=75);
-	-moz-opacity: 0.75; 
+
+	@media screen #{$break-min-tablet}{
+		opacity:0.75;
+		filter: alpha(opacity=75);
+		-moz-opacity: 0.75;
+	}  
 }
 
 #v65-modalContentWrapper {
@@ -4017,7 +4797,14 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	top: 20%;
 	margin: 0 0 0 -237px;
 	width: 474px;
-	z-index: 103; 
+	z-index: 103;
+
+	@media screen #{$break-max-tablet}{
+		left: 0;
+		top: 0;
+		width: 100%;
+		margin: 0;
+	} 
 }
 
 #v65-modalContentWrapperLarge {
@@ -4033,24 +4820,34 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 	
 	#v65-modalContentHeader {
 		background-color: #777;
-		/*width: 464px;*/
-		height: 27px;
+		/*width: 464px;*/	
 		overflow: hidden;
 		text-align: right;
-		padding: 6px 10px 0 0; 
+		padding:10px;
+
 		margin: 0;
+			@media screen #{$break-min-tablet}{
+				height: 27px;
+				padding: 6px 10px 0 0; 
+			}
 	}
 
 	#v65-modalContent {
 		padding: 15px;
 		margin: 0px;
+			
+		.defaultBtn{
+			@media screen #{$break-max-mobile}{
+				width: 100%;
+			}
+		}  
 	}
 	
 	/*Modal Site Login*/
 	#v65-siteLoginForm {
 		width: 212px;
 		margin: 0 20px 0 0;
-		float: left;  
+		float: left;
 	}
 
 	#v65-siteLoginRightContent {
@@ -4076,14 +4873,22 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 
 /* This wrapper provides: Outline, position, margin, padding, alignment to a form built using the formbuilder */
 .v65-form { 
-	// width: 250px;
-	margin: 0 0 1em; 
+	width: 250px;
+	margin: 0 0 1em;
+
+	@media screen #{$break-max-mobile}{
+			width: 100%;
+		} 
 
 	fieldset { 
 		display: block;
 		padding: 0 5px 10px 5px; 
 		margin: 0 0 12px 0; 
-		border: 1px solid #ccc; 
+		border: 1px solid #ccc;
+
+		@media screen #{$break-max-mobile}{
+			padding:0;
+		} 
 
 		div {
 			overflow: hidden; 
@@ -4111,7 +4916,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 				font-family: Tahoma, Geneva, sans-serif;
 				line-height: 1.5;
 				width: 155px;
-				font-size: 1em; 
+				font-size: 1em;
+
+				@media screen #{$break-max-mobile}{
+					width: 99%;
+				}  
 			}
 		}
 	} /*Margin + Block are there for checkout area.*/
@@ -4140,7 +4949,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		&[type=text], &[type=password] {
 			padding: 0;
 			margin: 0;
-			width: 220px; 
+			width: 220px;
+
+			@media screen #{$break-max-mobile}{
+				width: 99%;
+			} 
 		}
 	}	
 	
@@ -4149,6 +4962,10 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 		line-height: 1.5;
 		width: 225px;
 		font-size: 1em;
+
+		@media screen #{$break-max-mobile}{
+			width: 99%;
+		} 
 	}
 }
 
@@ -4159,9 +4976,14 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 
 .v65-formRight	{
-	float: right;
-	margin: 0 0 1em 1em;
-	width: 250px; 
+	margin: 0 0 1em 0;
+	width:100%;
+
+	@media screen and (min-width:500px){
+		float: right;
+		margin: 0 0 1em 1em;
+		width: 250px;
+	} 
 }
 
 .v65-formCenter { 
@@ -4264,6 +5086,10 @@ a {
 		padding: 0;
 		position: relative;
 
+		@media screen #{$break-max-mobile}{
+			width:99%;
+		}
+
 		span{
 			display: block;
 			padding: 0 0.7em; /* 0 8px; */
@@ -4320,9 +5146,11 @@ a {
 	}
 	
 	&.modalLinkBtn, &.modalLinkAltBtn{
-		font-size: 0.833em; /* 10px; */
-		
+		@media screen #{$break-max-mobile}{
+			margin-bottom:10px;
+		}
 		@media screen #{$break-min-tablet}{
+			font-size: 0.833em; /* 10px; */
 			height: 1.7em;
 			line-height: 1.7em;
 		}
