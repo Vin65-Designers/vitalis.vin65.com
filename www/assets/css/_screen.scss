@@ -1,0 +1,1269 @@
+@charset "utf-8";
+
+/* CSS Document */
+/* ====================================================================================================
+	Table of Content
+	
+	Theme Settings
+	
+	1. Typography
+	2. User Tools
+	3. Header
+	4. Navigation
+		a. Navigation
+		b. Sub Navigation
+	5. Content
+		a. Homepage Styles
+		b. Page Styles
+	6 Blog Template
+	7. Print Template
+	8. Buttons
+	9. Footer
+	10. Vin65 Overrides
+
+*/
+
+//   ===================================================================================================
+//   Theme Settings
+// =====================================================================================================
+
+//   ===================================================================================================
+//	 Global Variables
+//   ===================================================================================================
+$backtoTopColor: #fff;
+$backtoTopBackground: #333;
+$backtoTopBorder: #ccc; 
+
+//  ===================================================================================================
+//	Default Theme
+// =====================================================================================================
+
+$backgroundColor: #efefef;
+$linkColor: #369;
+
+$fontColor: #111;
+$fontFamily: sans-serif;
+
+$headingFontFamily: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
+$headingColor: #333;
+$headingAltColor: #000;
+
+$userToolsColor: #000;
+
+$navColor: #000;
+$navColorHover: #333;
+$navDropDownBackgroundColor: #fff;
+$navDropDownBorderColor: #ccc;
+$navDropDownColor: #333;
+$navDropDownColorHover: #000;
+
+$subNavBorder: #ccc;
+
+$contentBackground: #fff;
+
+$footerColor: #000;
+$footerColorHover: #333;
+
+$boxShadowColor: #ccc;
+
+$buttonColor: #369;
+$buttonFontColor: #fff;
+
+$altButtonColor: #aaa;
+$altButtonFontColor: #fff;
+
+$buttonFontFamily: sans-serif;
+
+//  ===================================================================================================
+//	Cream
+// =====================================================================================================
+
+//$backgroundColor: #fbf1ca;
+//$linkColor: #369;
+
+//$fontColor: #111;
+//$fontFamily: sans-serif;
+
+//$headingFontFamily: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
+//$headingColor: #333;
+//$headingAltColor: #000;
+
+//$userToolsColor: #000;
+
+//$navColor: #000;
+//$navColorHover: #333;
+//$navDropDownColor: #333;
+//$navDropDownColorHover: #000;
+//$navDropDownBackgroundColor: #fff;
+//$navDropDownBorderColor: #ccc;
+
+//$subNavBorder: #ccc;
+
+//$contentBackground: #fff;
+
+//$footerColor: #000;
+//$footerColorHover: #333;
+
+//$boxShadowColor: #ccc;
+
+//$buttonColor: #369;
+//$buttonFontColor: #fff;
+
+//$altButtonColor: #aaa;
+//$altButtonFontColor: #fff;
+
+//$buttonFontFamily: sans-serif;
+
+//  ===================================================================================================
+//	Red
+// =====================================================================================================
+
+//$backgroundColor: #790102;
+//$linkColor: #790102;
+
+//$fontColor: #111; 
+//$fontFamily: sans-serif;
+
+//$headingFontFamily: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
+//$headingColor: #333;
+//$headingAltColor: #000;
+
+//$userToolsColor: #fff;
+
+//$navColor: #eee;
+//$navColorHover: #fff;
+//$navDropDownColor: #111;
+//$navDropDownColorHover: #000;
+//$navDropDownBackgroundColor: #fff;
+//$navDropDownBorderColor: #5d0e0f;
+
+//$subNavBorder: #ccc;
+
+//$contentBackground: #fff;
+
+//$footerColor: #eee;
+//$footerColorHover: #fff;
+
+//$boxShadowColor: #5d0e0f;
+
+//$buttonColor: #790102;
+//$buttonFontColor: #fff;
+
+//$altButtonColor: #aaa;
+//$altButtonFontColor: #fff;
+
+//$buttonFontFamily: sans-serif;
+
+//  ===================================================================================================
+//	Black
+// =====================================================================================================
+
+//$backgroundColor: #000;
+//$linkColor: #666;
+
+//$fontColor: #111; 
+//$fontFamily: sans-serif;
+
+//$headingFontFamily: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
+//$headingColor: #333;
+//$headingAltColor: #000;
+
+//$userToolsColor: #fff;
+
+//$navColor: #eee;
+//$navColorHover: #fff;
+//$navDropDownColor: #111;
+//$navDropDownColorHover: #000;
+//$navDropDownBackgroundColor: #fff;
+//$navDropDownBorderColor: #5d0e0f;
+
+//$subNavBorder: #ccc;
+
+//$contentBackground: #fff;
+
+//$footerColor: #eee;
+//$footerColorHover: #fff;
+
+//$boxShadowColor: #666;
+
+//$buttonColor: #333;
+//$buttonFontColor: #fff;
+
+//$altButtonColor: #aaa;
+//$altButtonFontColor: #fff;
+
+//$buttonFontFamily: sans-serif;
+
+/*   ===================================================================================================
+     1. Typography - These get copied into the admin.css
+======================================================================================================== */
+html {
+    font-size: 75%;
+}
+
+body{
+	background-color: $backgroundColor;
+	color: $fontColor;
+	font-family: $fontFamily;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   	color: $headingColor;
+	font-family: $headingFontFamily;
+	font-style: italic;
+	font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3em;  // 3 * 12 = 36px
+    line-height: 1; // 1 * 36 = 36px
+    margin-bottom: 0.5em; // 0.5 * 36 = 18px
+}
+
+h2 {
+    font-size: 2.25em; // 2.25 * 12 = 27px
+    line-height: 1.3333333333333333; // 1.33 * 27px = 36px
+    margin-bottom: 0.6666666666666666em; // 0.66 * 27px = 18px
+}
+
+h3 {
+    font-size: 1.5em; // 1.5 * 12 = 18px
+    line-height: 1; // 1 * 18 = 18px
+    margin-bottom: 1em; // 1 * 18 = 18px
+}
+
+h4 {
+    font-size: 1.3125em; // 1.3125 * 12 = 15.75px
+    line-height: 1.1428571428571428; // 1.14 * 15.75 = 18px
+    margin-bottom: 1.1428571428571428em; // 1.14 * 15.75 = 18px
+}
+
+h5 {
+    font-size: 1.125em; // 1.125 * 12 = 13.5px
+    line-height: 1.3333333333333333; // 1.3333 * 13.5 = 18px
+    margin-bottom: 1.3333333333333333em; // 1.3333 * 13.5 = 18px
+}
+
+h6 {
+    font-size: 1em; // 1 * 12 = 12px
+    line-height: 1.5; // 1.5 * 12 = 18px
+    margin-bottom: 1.5em; // 1.5 * 12 = 18px
+}
+
+.v65-title { 
+    font-size: 2em; // 2 * 12 = 24px
+    line-height: 1; // 1 * 24 = 24px
+    margin-bottom: 0.5em; // 0.5 * 24 = 12px
+   	color: $headingColor;
+	font-family: $headingFontFamily;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.v65-subtitle { //36px
+    font-size: 1.5em; //18px
+    line-height: 1; //18px
+    margin-bottom: 1em; //18px
+   	color: $headingColor;
+	font-family: $headingFontFamily;
+	font-weight: normal;
+}
+
+p, blockquote {
+    margin: 0 0 1.5em;
+    line-height: 1.5;
+}
+
+dl, ol, ul {
+    margin: 0 0 1.5em;
+}
+
+dd, dt, li {
+    line-height: 1.5;
+    margin: 0;
+}
+
+a{
+	color: $linkColor;
+	text-decoration: none;
+	&:hover, &:focus, &:active{
+		text-decoration: underline;
+	}
+}
+
+img{
+	border:none;
+	height: auto !important;
+	max-width: 100%;
+}
+
+form {
+	margin-bottom: 1em;
+}
+
+legend {
+	color: $fontColor;
+}
+
+hr {
+	background-color: $fontColor;
+	border: 0;
+	color: $fontColor;
+	height: 1px;
+}
+
+.wrapper {
+	max-width: 970px;
+	margin: 0 auto;
+	width: 100%;
+
+	@media screen and (max-width : 970px) {
+		padding: 0 2%;
+		width: 96%;
+	}
+}
+
+.backtotop {
+	display: none;
+
+	@media screen and (max-width : 680px) {
+		position: fixed;
+		bottom: 1em;
+		right: 1em;
+		z-index: 900;
+
+		a {
+			color: $backtoTopColor;
+			background: $backtoTopBackground;
+			border: 1px solid $backtoTopBorder;
+			border-radius: 50%;
+			display: block;
+			line-height: 5em;
+			height: 5em;
+			width: 5em;
+			text-align: center;
+			text-decoration: none;
+		}
+	}
+	
+}
+
+/*   ===================================================================================================
+     2. User Tools
+======================================================================================================== */
+
+#user-tools {
+	color: $userToolsColor;
+
+	a {
+		color: $userToolsColor;
+		
+		&:hover, &:focus, &:active{
+			color: $userToolsColor;
+		}
+	}
+
+	@media screen and (max-width : 580px) {
+		height: 4em; 
+		line-height: 4em;
+	}
+
+}
+
+/*   ===================================================================================================
+     3. Header
+======================================================================================================== */
+
+.header{
+	width: 100%;
+	z-index: 100;
+	@media screen and (min-width : 768px) {
+		height: 180px;
+		position: relative;	
+	}
+}
+
+	.logo{
+		height: auto;
+		display: block;
+		text-align: center;
+		width:40%;
+		margin:0 auto;
+			@media screen and (min-width : 768px) and (max-width : 1023px) {
+				height: 160px;
+				float: left;
+				width: 240px;
+				text-align:left;	
+			}
+			@media screen and (min-width : 1024px) {
+				height: 160px;
+				float: left;
+				width: 240px;
+				text-align:left;	
+			}
+
+			img{
+				max-width: 100%;
+				@media screen and (max-width : 767px){ }
+			}
+	}
+
+	.cart {
+		@media screen and (max-width : 480px){
+			display: none;
+		}
+	}
+
+	#productSearch{
+		float:right;
+		margin:50px 0 0 0;
+		width:250px;
+
+		@media screen and (max-width : 767px){
+			width:100%;
+			margin:3% 0;
+		}
+
+		fieldset{
+			border:none;
+		}
+
+		#v65-searchWidgetInput{
+			input{
+				width:150px;
+				float:left;
+				margin:0 5px 0 0;
+
+				@media screen and (max-width : 767px){
+					width:65%;
+					margin:0 2%;
+				}
+			}
+		}
+
+		.defaultBtn{
+			@media screen and (max-width : 767px){
+				width:25%;
+			}
+		} 
+	}
+
+/*   ===================================================================================================
+     4. Navigation
+======================================================================================================== */
+	
+
+/* ----- Link to footer navigation ----- */
+.menuLink {
+	display:none;
+
+	@media screen and (max-width : 767px){
+		display: block;
+		float: left;
+		font-size: 16px;
+		height: 45px;
+		line-height: 45px;
+		padding-left: 15px;
+		text-shadow: 0 1px 3px rgba(220, 220, 220, 0.5)
+		}
+
+		&:hover, &:focus, &:active{
+			text-decoration: none;
+			}
+	}
+
+
+/* ----- a. Main Menu ----- */
+
+.mainMenu{
+	font-size: 13px;
+	height:100%;
+	width: 100%;
+	z-index: 101;
+		@media screen and (max-width : 767px){
+			clear:both;
+			text-align: center;
+			}
+		@media screen and (min-width : 768px) and (max-width : 1023px){
+			float:right;
+			height: 24px;
+			width: 65%;//640px
+			position: relative;
+			margin: 80px 0 30px;//27px if product search at top
+			}
+		@media screen and (min-width : 1024px){
+			float:right;
+			height: 24px;
+			width: 640px;
+			position: relative;
+			margin: 80px 0 30px;
+		}
+
+	ul{
+		margin: 0;
+		padding: 0;
+		display: inline;
+			@media screen and (min-width : 768px) {
+				float:right;
+				margin:0;
+				text-align: left;
+			}
+
+		li{
+			margin: 0;
+			padding: 0;
+			height: 45px;
+			line-height: 45px;
+			display: inline-block;
+			@media screen and (min-width : 768px) {
+				float:left;
+				height: 28px;
+				line-height: 28px;
+				margin: 0 25px;
+				margin: 0 0 0 35px;
+				position:relative;
+				display: inline;
+			}
+			@media screen and (min-width : 1024px){
+				float:left;
+				margin: 0 0 0 55px;
+				position:relative;
+				display: inline;
+			}
+
+			a{
+				color: $navColor;
+				display:block;
+				height: 44px;
+				line-height: 44px;
+				margin: 0 8px;
+				padding: 0 6px;
+				position: relative;
+				text-decoration: none;
+				@media screen and (min-width : 768px) {
+					height:32px;
+					line-height: 32px;
+					display: inline-block;
+					margin: 0;
+					padding: 0;
+					}
+
+				&:hover{
+					color: $navColorHover;
+					text-decoration: none;
+				}
+			}
+			// Drop Down
+			&:hover ul{
+				display:none;
+				background-color: $navDropDownBackgroundColor;
+				border: 1px solid $navDropDownBorderColor;
+				font-size: 12px;
+				@media screen and (min-width : 768px) {
+					display: block;
+				}
+			}
+			ul{
+				background-color: $navDropDownBackgroundColor;
+				display: none;
+				left: -10px;
+				position: absolute;
+				top: 32px;
+				width: 180px;
+
+				li{
+					background-color: $navDropDownBackgroundColor;
+					display: block;
+					float: none;
+					margin: 0;		
+					text-align: left;
+					width: 180px;
+
+					a{
+						background-color: $navDropDownBackgroundColor;
+						color: $navDropDownColor;
+						display: block;
+						float: none;
+						height: 28px;
+						line-height: 28px;
+						margin: 0;
+						padding: 0 0 0 10px;
+						text-align: left;
+						text-transform: none;
+						width: 170px;
+
+						&:hover{
+							color: $navDropDownColorHover;
+						}
+					}
+				}
+			}
+			// End Drop Down
+
+		}
+			/*home link is hidden for mobile*/
+			li.v65-home {
+				display: none;
+				@media screen and (min-width : 1024px){display:inline-block;}
+			}
+			li.v65-pageAParent{
+				color: $navColorHover;
+				font-weight: bold;
+			}
+			li.v65-selected{
+				color: $navColorHover;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+	}
+}
+
+/* ----- b. Sub Menu ----- */
+.subMenu{
+	height:100%;
+	width: 100%;
+	clear: both;
+	@media screen and (min-width : 768px) {
+		border-right: 1px solid $subNavBorder;
+		float: left;
+		margin: 6% 4% 0 0;
+		padding-right: 2%;
+		width: 17.8%;
+		clear: left;
+	}
+
+	ul{
+		margin:0;
+		padding:0;
+		list-style: none;
+		width: 100%; // 160px
+		@media screen and (max-width : 767px){border-top:1px solid #999;}	
+		@media screen and (min-width : 768px) {
+			margin: 0 0 2% 1%; //0 0 1em 10px
+			padding: 0;
+			}
+		li{
+			margin:0;
+			padding:0;
+			@media screen and (max-width : 767px){
+				border-bottom:1px solid $subNavBorder; 
+				text-align: center;
+			}
+			@media screen and (min-width : 1024px){
+				line-height: 2;
+				display: list-item;
+			}
+
+			a{ 
+				@media screen and (max-width : 767px){
+					display:block;
+					font-size:1em; 
+					line-height:3em;
+				}
+
+
+				&:hover{
+
+				}
+			}
+			ul{
+				margin:0;
+				padding:0;
+				list-style: none;
+				width: 100%; // 160px
+				border-bottom:3px solid $subNavBorder;		
+				@media screen and (min-width : 768px) {
+					margin-left: 10px;
+					width: 160px;
+					border:none;
+				}		
+			}
+
+			.v65-pageAParent {
+				font-weight: bold;
+			}
+			.v65-leftSelected{
+				font-weight: bold;
+			}
+		}
+	}
+
+	h3{
+		@media screen and (max-width : 767px){display:none;}
+	}
+}
+
+
+/*   ===================================================================================================
+     5. Content
+======================================================================================================== */
+
+
+.wrapper{
+	margin: 0 auto;
+	position: relative;
+		@media screen and (max-width : 1023px){
+		width:100%;
+	  	}
+	  	@media screen and (min-width : 768px) and (max-width : 1023px){
+		width:90%;
+	  	}
+	  	@media screen and (min-width : 1024px){
+		width:950px;
+	  	}
+
+}
+
+
+/* ----- a. Homepage Styles ----- */
+	.homepageContent{
+		background: $contentBackground;
+		box-shadow: 0 0 20px $boxShadowColor;
+	}
+
+	.homepageText{
+		  	@media screen  and (max-width : 480px){
+		  	padding: 3%;
+		  	margin: 0;
+		  	}
+		  	@media screen and (max-width : 1023px){
+		  	padding: 3%;
+		  	margin: 0;
+		  	}
+		  	@media screen and (min-width : 768px) and (max-width : 1023px){
+		  	float: left;
+			width: 55%;
+			padding: 3% 3% 3% 2%;
+		  	}
+		  	@media screen and (min-width : 1024px){
+		  	float: left;
+			width: 470px;
+			padding: 30px 30px 30px 20px;
+			margin: 0 0 20px;
+		  	}
+	}
+
+	.homepageProductGroup { 
+		border-left: 1px solid $subNavBorder;
+		margin: 75px 0 20px;
+			@media screen  and (max-width : 480px){
+		  	padding:3%;
+		  	margin: 0;
+		  	}
+		  	@media screen and (max-width : 1023px){
+		  	padding:3%;
+		  	}
+		  	@media screen and (min-width : 768px) and (max-width : 1023px){
+		  	float: left;
+			width: 33%;
+			padding: 0 3%;
+		  	}
+		  	@media screen and (min-width : 1024px){
+		  	float: left;
+			width: 400px;
+			padding: 0 0 30px 20px;
+		  	}		
+	
+		.v65-product-photo {
+			width: auto;
+			text-align: left;
+			margin:0 auto 2em auto; 
+			@media screen and (max-width : 1023px){
+				float:left;
+			}
+			
+			@media screen and (min-width : 1024px){
+				float:left;
+				text-align: center;
+			}
+
+			img {
+				max-width: 60%;
+			}
+		}
+
+		.v65-addToCartCase{
+			@media screen  and (max-width : 480px){
+				display:none;
+			}
+		}
+
+	}
+
+	#slider{
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
+	}
+
+/* ----- b. Page Styles ----- */
+
+	.content{
+		background: $contentBackground;
+		box-shadow: 0 0 20px $boxShadowColor;
+		padding: 30px;
+		@media screen and (max-width : 767px){
+			box-shadow: none;
+			padding:0;
+			border-top: 2px solid $subNavBorder;
+		}
+	}
+
+	.contentWide{
+		background: #fff;
+		box-shadow: 0 0 20px $boxShadowColor;
+		padding: 30px;
+		@media screen and (max-width : 767px){
+			box-shadow: none;
+			padding:3%;
+			border-top: 2px solid $subNavBorder;
+
+		}
+
+		.subMenu{
+			@media screen and (min-width : 768px) {
+				display:none;
+			}
+		}
+	}
+
+	.contentCart{
+		background: #fff;
+		box-shadow: 0 0 20px $boxShadowColor;
+		padding: 30px;
+		@media screen and (max-width : 767px){
+			box-shadow: none;
+			padding:0.2em;
+			border-top: 2px solid $subNavBorder;
+
+		}
+	}
+
+	.pageContent{
+		float: right;
+		width: 75%; //650px
+			@media screen and (max-width : 767px){
+			width:94%;
+			padding:3%;
+			}
+	}
+
+	.colWrapper {
+		margin-bottom: 2em;
+		width: 100%;
+	}
+
+		.colWrapper:before,.colWrapper:after { content:""; display:table; }
+		.colWrapper:after { clear:both; }
+
+
+		.col2 { 
+			float: left;
+			margin-left: 6%;
+			width: 47%;
+		}
+
+		.col2:first-child { 
+			float: left;
+			margin-left: 0%;
+			width: 47%;
+		}
+
+		.col3 { 
+			float: left;
+			margin-left: 5%;
+			width: 30%;
+		}
+
+		.col3:first-child { 
+			float: left;
+			margin-left: 0%;
+			width: 30%;
+		}
+
+		@media screen and (max-width: 580px) {
+
+			.col2 { 
+				float: none;
+				margin-left: 0;
+				margin-bottom: 1.5em;
+				width: 100%;
+			}
+
+			.col2:first-child { 
+				float: none;
+				width: 100%;
+			}
+
+			.col3 { 
+				float: none;
+				margin-left: 0;
+				margin-bottom: 1.5em;
+				width: 100%;
+			}
+
+			.col3:first-child { 
+				float: none;
+				width: 100%;
+			}
+
+		}
+
+/*   ===================================================================================================
+     6. Blog Template
+======================================================================================================== */
+
+	.blogContent{	
+		padding: 5%;
+		width: 90%;
+		@media screen and (min-width : 768px){
+		width: 65%;
+		padding: 5%;
+		float: left;
+		}
+		@media screen and (min-width : 1024px){
+		width: 520px;
+		padding: 20px 25px 0 0;
+		float: left;
+		}
+	
+	}
+
+	.blogRightWrapper { 
+		display:none;
+		@media screen and (min-width : 768px) {
+			display: block;
+			width: 20%;
+			padding: 20px 0 0 0;
+			float: right;
+		}
+		@media screen and (min-width : 1024px){
+			float: right;
+			padding: 20px 0 0 0;
+			width: 325px;
+		}
+
+		ul{
+			list-style: none;
+			margin: 0 0 1em;
+			padding: 0;
+
+			li{
+				font-size: 11px;
+				margin: 0 0 0 10px;
+			}
+		}
+	}
+
+	.blogFilterLeft {
+		display:none;
+		padding:0;
+		@media screen and (min-width : 768px) {
+			width:auto;
+			display: block;
+		}
+		@media screen and (min-width : 1024px){
+			display: block;
+			float: left;
+			padding: 0 25px 0 0;
+			width: 150px;
+		}			
+	}
+
+	.blogFilterRight { 
+		display:none;
+		@media screen and (min-width : 768px) {
+			width:auto;
+			display: block;
+		} 
+		@media screen and (min-width : 1024px){
+			display: block;
+			float: left;
+			width: 150px;
+		}		
+	}
+
+/*   ===================================================================================================
+     7. Print Template
+======================================================================================================== */
+	
+
+/*   ===================================================================================================
+     8. Buttons
+======================================================================================================== */
+button {
+	&.defaultBtn,  &.modalBtn,  &.largeBtn{
+		background: $buttonColor;
+		border-radius: 0.385em;
+		font-family: $buttonFontFamily;
+		span{
+			background: $buttonColor;
+			color: $buttonFontColor;
+			border-radius: 0.385em;
+		}
+		&:hover{
+			background:lighten($buttonColor, 10%);
+			span{
+			}
+		}
+	}
+
+	&.altBtn, &.altModalBtn, &.altLargeBtn{
+		background:$altButtonColor;
+		color: $buttonFontColor;
+		font-family: $buttonFontFamily;
+		span{
+			background:$altButtonColor;
+			color: $altButtonFontColor;
+			border-radius: 0.385em;
+		}
+		&:hover{
+			background: lighten($altButtonColor, 10%);
+			span{
+				background: lighten($altButtonColor, 10%);
+			}
+		}
+
+	}
+}
+
+a{
+	&.linkBtn, &.modalLinkBtn, &.largeLinkBtn, &.fullWidthBtn{
+		background:$buttonColor;
+		border-radius: 0.385em;
+		font-family: $buttonFontFamily;
+		span{
+			background:$buttonColor;
+			color: $buttonFontColor;
+			border-radius: 0.385em;
+		}
+		&:hover{
+			background:lighten($buttonColor, 10%);
+			text-decoration: none;
+
+			span{
+				background:lighten($buttonColor, 10%);
+			}
+		}
+	}
+
+	&.fullWidthBtn{
+		display: block;
+		font-size: 16px;
+		max-width: 100%;
+		text-align: center;
+		width: 100%;
+	}
+
+	&.linkAltBtn, &.modalLinkAltBtn, &.modalLinkAltBtn{
+		background:$altButtonColor;
+		border-radius: 0.385em; 
+		font-family: $buttonFontFamily;
+		span{
+			background:$altButtonColor;
+			border-radius: 0.385em; 
+			color: $altButtonFontColor;
+		}
+		&:hover{
+			background: lighten($altButtonColor, 10%);
+			span{
+				background: lighten($altButtonColor, 10%);
+			}
+		}
+	}
+
+	&.modalLinkBtn, &.modalLinkAltBtn, &.modalLinkAltBtn{
+		min-width: auto;
+	}
+}
+
+.v65-quickView-close {
+
+	a {
+		border-radius: 0.385em; 
+		background: lighten($altButtonColor, 10%);
+
+		&:hover{
+			background: lighten($altButtonColor, 10%);
+			
+		}
+		
+	}
+
+}
+
+/*   ===================================================================================================
+     9. Footer	
+======================================================================================================== */
+
+.footer{
+
+	width: 100%;
+
+	@media screen and (min-width : 768px) {
+		color: $footerColor;
+		padding: 1.5em 0;
+		text-align: center;
+		}
+
+		a {
+			color:$footerColor;
+
+			&:hover{
+				color: $footerColorHover;
+			} 
+		}
+
+}
+			
+/* Footer Nav
+-----------------------------------------------*/
+.footerNav {
+	
+	width: 100%;
+	@media screen and (max-width : 767px){
+		background: none;	
+	}  
+
+	ul{ 
+		list-style: none;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		
+		@media screen and (min-width : 768px){
+			border: none;
+			text-align: center;	
+			} 
+
+		li { 
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			width: 100%;
+			
+			@media screen and (min-width : 768px){
+				display: inline;
+				padding:0 5px;
+				border:none;
+				}
+
+			a { 
+				font-size: 1em;
+				line-height: 3em;
+				display: block;
+				
+				@media screen and (min-width : 768px){
+					color: $footerColor;
+					display: inline-block;
+					font-size: 0.917em;
+					position: relative;
+
+					&:hover{
+						color: $footerColorHover;
+					}  
+
+				}
+			}
+		}
+	}
+} 
+
+/* Mobile Footer Tools
+-----------------------------------------------*/
+.footerTools {
+	background: #000;
+	width: 100%;
+
+	ul{ 
+		border-top: 1px solid #555;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		 	@media screen and (min-width : 768px){
+		 		border:none;
+		 	}
+
+		li{ 
+			line-height: 2.5em; 
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			width: 100%;
+				@media screen and (min-width : 768px){
+		 		border:none;
+		 		} 
+
+				img {
+					vertical-align:text-top;
+				}
+
+				a { 
+					line-height: 2.5em;
+					display: block;
+						@media screen and (min-width : 768px){
+							display:inline-block;
+						} 
+				} 
+
+			}
+
+		li.phone, li.email, li.map{ 
+			@media screen and (min-width : 768px){
+				display:none;}
+			}
+
+		li.legal {
+			border-bottom: 0;
+			font-size: 0.875em;
+			line-height: 3em;
+				@media screen and (min-width : 768px) {
+					float:left;
+					display: block;
+				}
+			}
+
+		li.accolade {
+			font-size: 0.875em;
+			line-height: 3em;
+				
+				@media screen and (min-width : 768px){
+					float:left;
+					display: block;
+				}
+
+			}
+
+	}
+
+}
+
+
+/*   ===================================================================================================
+     10. Vin65 Overrides
+======================================================================================================== */
+
+/* ----- a. Homepage Product Group ----- */
+.homepageProductGroup .v65-productGroup-products{
+	text-align: left;
+	width: 100%;
+}
+
+	.homepageProductGroup .v65-productGroup-teaser{
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+	
+	.homepageProductGroup .v65-productGroup-product{
+		margin: 0 0 1em;
+		width: 100%;
+	}
+
+
