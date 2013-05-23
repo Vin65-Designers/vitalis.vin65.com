@@ -71,7 +71,7 @@ body{
 }
 
 a{ 
-	color: #900;
+	color: #369;
 	text-decoration: none;
 	&:hover, &:focus, &:active{
 		text-decoration: underline;
@@ -98,18 +98,30 @@ ul, ol, dl, p, table, pre {
 		font-size: 32px;
 		line-height: 1.2;
 		margin-bottom: 0.6em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 26px;
+		}
 	}
 
 	h2 { 
 		font-size: 26px;
 		line-height: 1.2;
 		margin: 0.25em  0 0.5em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 22px;
+		}
 	}
 		
 	h3 { 
 		font-size: 22px;
 		line-height: 1.2;
 		margin-bottom: 0.6em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 20px;
+		}
 	}
 		
 	h4 { 
@@ -184,6 +196,46 @@ hr {
 			}
 	}
 
+	.cart {
+		@media screen #{$break-max-mobile}{
+			display: none;
+		}
+	}
+
+	#productSearch{
+		float:right;
+		margin:50px 0 0 0;
+		width:250px;
+
+		@media screen #{$break-max-tablet}{
+			width:100%;
+			margin:3% 0;
+		}
+
+		fieldset{
+			border:none;
+		}
+
+		#v65-searchWidgetInput{
+			input{
+				width:150px;
+				float:left;
+				margin:0 5px 0 0;
+
+				@media screen #{$break-max-tablet}{
+					width:65%;
+					margin:0 2%;
+				}
+			}
+		}
+
+		.defaultBtn{
+			@media screen #{$break-max-tablet}{
+				width:25%;
+			}
+		} 
+	}
+
 /*   ===================================================================================================
      4. Navigation
 ======================================================================================================== */
@@ -225,7 +277,7 @@ hr {
 			height: 24px;
 			width: 65%;//640px
 			position: relative;
-			margin: 80px 0 30px;
+			margin: 80px 0 30px;//27px if product search at top
 			}
 		@media screen #{$break-min-desktop}{
 			float:right;
@@ -272,8 +324,8 @@ hr {
 				display:block;
 				height: 44px;
 				line-height: 44px;
-				margin: 0 12px;
-				padding: 0 8px;
+				margin: 0 8px;
+				padding: 0 6px;
 				position: relative;
 				text-decoration: none;
 				@media screen #{$break-min-tablet}{
@@ -372,7 +424,6 @@ hr {
 	}
 
 	ul{
-		font-size: 11px;
 		margin:0;
 		padding:0;
 		list-style: none;
@@ -556,8 +607,27 @@ hr {
 		padding: 30px;
 		@media screen #{$break-max-tablet}{
 			box-shadow: none;
-			padding:2%;
+			padding:3%;
 			border-top: 2px solid #CCC;
+
+		}
+
+		.subMenu{
+			@media screen #{$break-min-tablet}{
+				display:none;
+			}
+		}
+	}
+
+	.contentCart{
+		background: #fff;
+		box-shadow: 0 0 20px $boxShadowColor;
+		padding: 30px;
+		@media screen #{$break-max-tablet}{
+			box-shadow: none;
+			padding:0.2em;
+			border-top: 2px solid #CCC;
+
 		}
 	}
 
@@ -565,8 +635,8 @@ hr {
 		float: right;
 		width: 75%; //650px
 			@media screen #{$break-max-tablet}{
-			width:90%;
-			padding:5%;
+			width:94%;
+			padding:3%;
 			}
 	}
 
@@ -649,29 +719,33 @@ hr {
 ======================================================================================================== */
 
 .printBody { 
-	background-color: #FFF;
-	background-image: none;
-	margin: 0;
-	padding: 0;
 }
 	
 .printWrapper { 
-	margin: 0 auto;
-	width: 700px;
+
 }
 	
 	.printHeader { 
-		height: 150px;
-		width: 700px;
+		
+
+		img{
+				
+		}
 	}
 		
 	.printContent { 
-		text-align: left;
-		width: 700px;
-	}	
+
+		}
+
+		#v65-cartTable{
+			
+			td{
+				
+			}
+		} 	
 
 /*   ===================================================================================================
-     7. Buttons
+     8. Buttons
 ======================================================================================================== */
 button{
 	&.defaultBtn,  &.modalBtn,  &.largeBtn{
@@ -782,11 +856,13 @@ a{
 		text-align: center;
 		}
 
+		a{
+			color:$outsideFontColor;
+		}
+
 	}
 
-	a{
-		color:$outsideFontColor;
-	}
+
 			
 		/* Footer Nav
 		-----------------------------------------------*/
@@ -940,12 +1016,17 @@ a{
 	width: 100%;
 }
 
+	/* Heading 2 Styling */
 	.homepageProductGroup .v65-productGroup-title{
 		color: #333;
 		font-family: "Times New Roman", Times, serif;
 		font-size: 26px;
 		line-height: 1.2;
 		margin: 0.25em  0 0.5em;
+
+		@media screen #{$break-max-mobile}{
+			font-size: 22px;
+		}
 	}
 
 	.homepageProductGroup .v65-productGroup-teaser{
@@ -962,15 +1043,9 @@ a{
 /* ----- c. Checkout Overrides ----- */
 
 #v65-fieldset-paymentMethod{
-	float:left;
-	width:400px;
 }
 
 form#v65-checkBilling .v65-additionalComments {
-	float:none;
-	margin-left:10px;
-	padding:15px 0 0;
-	width:390px;
 }
  
 #v65-signUpClubSummaryWrapper {
@@ -1097,3 +1172,12 @@ form#v65-checkBilling .v65-additionalComments {
 	  }
 }
 
+.v65-clubTitle {
+	 font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	}
+
+.v65-productBadge {
+	position:absolute;
+	top:0;
+	left:0;
+}

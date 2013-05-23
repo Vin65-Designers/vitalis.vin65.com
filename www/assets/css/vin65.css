@@ -64,6 +64,7 @@
 		a. Mini Cart Summary
 		b. Main Form
 		c. Review Screen
+		d. Print Receipt
 	26. Club
 		a. Club List Component
 		b. Main Form 
@@ -183,6 +184,11 @@
 .floatRight {
   float: right;
 }
+@media screen and (max-width: 640px) {
+  .floatRight {
+    float: none;
+  }
+}
 
 .left {
   text-align: left;
@@ -228,30 +234,53 @@
 
 /* Images 
 -------------------------------------------------------------- */
+/* removing the floats on mobile */
 img.v65-featureRight {
-  border: 1px solid #ccc;
-  float: right;
-  padding: 3px;
-  margin: 0 0 1em 1em;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+@media screen and (min-width: 481px) {
+  img.v65-featureRight {
+    float: right;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin: 0 0 1em 1em;
+  }
 }
 
 img.v65-right {
-  float: right;
   padding: 0;
-  margin: 0 0 1em 1em;
+  margin: 0 0 1em 0;
+}
+@media screen and (min-width: 481px) {
+  img.v65-right {
+    float: right;
+    margin: 0 0 1em 1em;
+  }
 }
 
 img.v65-featureLeft {
-  border: 1px solid #ccc;
-  float: left;
-  padding: 3px;
-  margin: 0 1em 1em 0;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+@media screen and (min-width: 481px) {
+  img.v65-featureLeft {
+    float: left;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin: 0 1em 1em 0;
+  }
 }
 
 img.v65-left {
-  float: left;
   padding: 0;
-  margin: 0 1em 1em 0;
+  margin: 0 0 1em 0;
+}
+@media screen and (min-width: 481px) {
+  img.v65-left {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
 }
 
 img.v65-border {
@@ -337,6 +366,13 @@ caption {
     min-width: 36px;
   }
 }
+@media screen break-max-mobile {
+  /* adjust this to the width of the content wrapper minus padding */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 /*   ===================================================================================================                                                                
     2. Top Menu 
 ======================================================================================================== */
@@ -397,7 +433,7 @@ caption {
 }
 .v65-product-pagination li, .v65-Paging li {
   display: inline;
-  padding-left: 5px;
+  padding-left: 2px;
 }
 .v65-product-pagination li a, .v65-Paging li a {
   text-decoration: none;
@@ -406,7 +442,7 @@ caption {
   .v65-product-pagination li a, .v65-Paging li a {
     background-color: #ccc;
     display: inline-block;
-    padding: 0 15px;
+    padding: 0 12px;
     border-radius: 5px;
     margin: 5px 0;
   }
@@ -416,8 +452,8 @@ caption {
 }
 @media screen and (max-width: 767px) {
   .v65-product-pagination li.border:first-child, .v65-Paging li.border:first-child {
-    margin: 5px;
-    padding: 7px 20px;
+    margin: 5px 2px;
+    padding: 7px 16px;
   }
 }
 .v65-product-pagination li.border, .v65-Paging li.border {
@@ -430,7 +466,7 @@ caption {
     border: 0;
     display: inline-block;
     border-radius: 5px;
-    margin: 5px 0 5px 5px;
+    margin: 5px 0 5px 2px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -505,7 +541,6 @@ caption {
 -------------------------------------------------------------- */
 .v65-blogPostWrapper {
   position: relative;
-  border-bottom: 1px solid #999;
   margin-bottom: 1.5em;
   padding: 0;
 }
@@ -649,9 +684,21 @@ caption {
 /* b. Recipe Drilldown
 -------------------------------------------------------------- */
 .v65-recipe-drilldown-left {
-  float: left;
-  width: 385px;
-  margin-right: 20px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .v65-recipe-drilldown-left {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .v65-recipe-drilldown-left {
+    float: left;
+    width: 385px;
+    margin-right: 20px;
+  }
 }
 
 .v65-recipe-drilldown-subtitle {
@@ -660,31 +707,45 @@ caption {
 }
 
 .v65-recipe-drilldown-right {
-  float: left;
-  width: 225px;
+  width: 100%;
 }
-
-.v65-recipe-drilldown-photo {
+@media screen and (min-width: 768px) {
+  .v65-recipe-drilldown-right {
+    float: left;
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .v65-recipe-drilldown-right {
+    width: 225px;
+  }
+}
+.v65-recipe-drilldown-right .v65-recipe-drilldown-photo {
   margin-bottom: 1em;
 }
-
-.v65-recipe-drilldown-attributes {
+@media screen and (max-width: 480px) {
+  .v65-recipe-drilldown-right .v65-recipe-drilldown-photo {
+    text-align: center;
+  }
+}
+.v65-recipe-drilldown-right .v65-recipe-drilldown-attributes {
   margin-bottom: 2em;
 }
-
-.v65-recipe-attribute {
+.v65-recipe-drilldown-right .v65-recipe-attribute {
   margin-bottom: 0.5em;
 }
-
-.v65-recipe-attributeLabel {
+.v65-recipe-drilldown-right .v65-recipe-attribute .v65-recipe-attributeLabel {
   float: left;
   font-weight: bold;
   margin-right: 3%;
   text-align: right;
-  width: 47%;
 }
-
-.v65-recipe-attributeValue {
+@media screen and (min-width: 768px) {
+  .v65-recipe-drilldown-right .v65-recipe-attribute .v65-recipe-attributeLabel {
+    width: 47%;
+  }
+}
+.v65-recipe-drilldown-right .v65-recipe-attribute .v65-recipe-attributeValue {
   float: left;
   width: 50%;
 }
@@ -710,6 +771,7 @@ caption {
 }
 .v65-recipe-drilldown-related-product .v65-product-title {
   font-size: 1.3em;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 .v65-recipe-drilldown-related-product .v65-product-subtitle {
   font-size: 1.1em;
@@ -1554,6 +1616,12 @@ ul.ui-autocomplete li a span {
   font-size: 2em;
   line-height: 1em;
   margin-bottom: 0.3em;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+@media screen and (max-width: 480px) {
+  .v65-product-title {
+    font-size: 20px;
+  }
 }
 
 .v65-product-subtitle {
@@ -1846,52 +1914,52 @@ ul.ui-autocomplete li a span {
   display: none;
 }
 .v65-professionalReviews .cgProReview {
-  background: url(/images/store/ico-CG.png);
+  background: url(/assets/images/store/ico-CG.png);
   padding-left: 29px;
   width: 20px;
 }
 .v65-professionalReviews .jhProReview {
-  background: url(/images/store/ico-JH.png);
+  background: url(/assets/images/store/ico-JH.png);
   padding-left: 28px;
   width: 18px;
 }
 .v65-professionalReviews .rpProReview {
-  background: url(/images/store/ico-RP.png);
+  background: url(/assets/images/store/ico-RP.png);
   padding-left: 28px;
   width: 19px;
 }
 .v65-professionalReviews .stProReview {
-  background: url(/images/store/ico-ST.png);
+  background: url(/assets/images/store/ico-ST.png);
   padding-left: 29px;
   width: 18px;
 }
 .v65-professionalReviews .waProReview {
-  background: url(/images/store/ico-WA.png);
+  background: url(/assets/images/store/ico-WA.png);
   padding-left: 32px;
   width: 19px;
 }
 .v65-professionalReviews .wandsProReview {
-  background: url(/images/store/ico-WandS.png);
+  background: url(/assets/images/store/ico-WandS.png);
   padding-left: 38px;
   width: 20px;
 }
 .v65-professionalReviews .wbProReview {
-  background: url(/images/store/ico-WB.png);
+  background: url(/assets/images/store/ico-WB.png);
   padding-left: 32px;
   width: 19px;
 }
 .v65-professionalReviews .weProReview {
-  background: url(/images/store/ico-WE.png);
+  background: url(/assets/images/store/ico-WE.png);
   padding-left: 30px;
   width: 20px;
 }
 .v65-professionalReviews .wnProReview {
-  background: url(/images/store/ico-WN.png);
+  background: url(/assets/images/store/ico-WN.png);
   padding-left: 32px;
   width: 19px;
 }
 .v65-professionalReviews .wsProReview {
-  background: url(/images/store/ico-WS.png);
+  background: url(/assets/images/store/ico-WS.png);
   padding-left: 31px;
   width: 19px;
 }
@@ -1924,17 +1992,30 @@ ul.ui-autocomplete li a span {
   display: inline;
   float: none;
 }
-
-.v65-product-relatedProducts-title {
+.v65-product-relatedProducts .v65-product-relatedProducts-title {
   font-size: 2em;
   margin-bottom: 1em;
 }
-
-.v65-product-relatedProducts-product {
-  float: left;
+.v65-product-relatedProducts .v65-product-relatedProducts-product {
+  width: 100%;
   margin: 0 0 1.5em;
   text-align: center;
-  width: 25%;
+}
+@media screen and (min-width: 480px) {
+  .v65-product-relatedProducts .v65-product-relatedProducts-product {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 580px) {
+  .v65-product-relatedProducts .v65-product-relatedProducts-product {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .v65-product-relatedProducts .v65-product-relatedProducts-product {
+    width: 25%;
+  }
 }
 
 /* i. Product Tabs
@@ -1946,17 +2027,29 @@ ul.ui-autocomplete li a span {
   padding: 0;
   border-bottom: 1px solid #ccc;
 }
+@media screen and (max-width: 767px) {
+  .v65-product-tabs {
+    height: 45px;
+  }
+}
 .v65-product-tabs li {
   float: left;
+  height: 27px;
+  line-height: 27px;
 }
 .v65-product-tabs li a {
   background: #eee;
   border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
   display: inline-block;
-  height: 27px;
-  line-height: 27px;
   padding: 0 15px;
+}
+@media screen and (max-width: 767px) {
+  .v65-product-tabs li a {
+    height: 44px;
+    line-height: 44px;
+    padding: 0 10px;
+  }
 }
 .v65-product-tabs li a:hover {
   background: #f8f8f8;
@@ -2079,6 +2172,17 @@ ul.ui-autocomplete li a span {
   /* Product Add To Cart */
   /*Product Review Stats*/
 }
+@media screen and (max-width: 600px) {
+  .v65-product3Up {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .v65-product3Up {
+    width: 100%;
+    margin: 0;
+  }
+}
 .v65-product3Up .v65-product-photo img {
   max-width: 45%;
 }
@@ -2114,6 +2218,27 @@ ul.ui-autocomplete li a span {
   width: 18%;
   /* Product Add To Cart */
   /*Product Review Stats*/
+}
+@media screen and (max-width: 840px) {
+  .v65-product5Up {
+    width: 23%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .v65-product5Up {
+    width: 31%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .v65-product5Up {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .v65-product5Up {
+    width: 100%;
+    margin: 0;
+  }
 }
 .v65-product5Up .v65-product-photo img {
   max-width: 65%;
@@ -2162,10 +2287,25 @@ ul.ui-autocomplete li a span {
   padding: 5px;
   text-align: left;
 }
+@media screen and (max-width: 767px) {
+  .v65-productList th:nth-child(3), .v65-productList th:nth-child(4), .v65-productList th:nth-child(5), .v65-productList th:nth-child(6) {
+    display: none;
+  }
+}
 .v65-productList td {
   border-bottom: 1px solid #bbb;
   padding: 0 5px;
   vertical-align: middle;
+}
+@media screen and (max-width: 480px) {
+  .v65-productList td {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .v65-productList td:nth-child(3), .v65-productList td:nth-child(4), .v65-productList td:nth-child(5), .v65-productList td:nth-child(6) {
+    display: none;
+  }
 }
 .v65-productList td a {
   color: #000;
@@ -2183,6 +2323,16 @@ ul.ui-autocomplete li a span {
 }
 .v65-productList tr.alternatRow:hover {
   background-color: #FFC;
+}
+.v65-productList .v65-product-addToCart {
+  border: none;
+}
+@media screen and (max-width: 480px) {
+  .v65-productList .v65-product-addToCart .v65-product-addToCart-quantity input {
+    height: 40px;
+    padding: 0;
+    margin-right: 3px;
+  }
 }
 
 /*   ===================================================================================================                                                                
@@ -2206,8 +2356,15 @@ ul.ui-autocomplete li a span {
   width: 37%;
   margin-right: 3%;
 }
+@media screen and (max-width: 700px) {
+  .v65-product1UpStore .v65-product-infoWrapper {
+    float: right;
+    width: 83%;
+    margin: 0;
+  }
+}
 .v65-product1UpStore .v65-product-title {
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 .v65-product1UpStore .v65-product-subtitle {
   font-size: 1em;
@@ -2246,6 +2403,12 @@ ul.ui-autocomplete li a span {
   float: left;
   width: 43%;
 }
+@media screen and (max-width: 700px) {
+  .v65-product1UpStore .v65-product-commerceWrapper {
+    float: right;
+    width: 83%;
+  }
+}
 
 .v65-productCharacteristics {
   margin-bottom: 1em;
@@ -2279,7 +2442,7 @@ ul.ui-autocomplete li a span {
 .v65-productGroup-products {
   float: left;
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
 
 .v65-productGroup-product {
@@ -2288,6 +2451,21 @@ ul.ui-autocomplete li a span {
   position: relative;
   width: 23%;
   /* Product Add To Cart */
+}
+@media screen and (max-width: 750px) {
+  .v65-productGroup-product {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .v65-productGroup-product {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .v65-productGroup-product {
+    width: 100%;
+  }
 }
 .v65-productGroup-product .v65-product-title {
   font-size: 1.3em;
@@ -2300,8 +2478,11 @@ ul.ui-autocomplete li a span {
   margin-bottom: 0.2em;
 }
 .v65-productGroup-product .v65-product-addToCart-priceWrapper {
-  display: inline;
+  display: block;
   margin-bottom: 5px;
+}
+.v65-productGroup-product .v65-product-reviewStats {
+  height: inherit;
 }
 
 /*   ===================================================================================================                                                                
@@ -2352,19 +2533,41 @@ ul.ui-autocomplete li a span {
 .v65-productSet-header {
   border-top: 3px double #111;
   border-bottom: 3px double #111;
-  height: 36px;
-  line-height: 36px;
   margin-bottom: 2em;
+  padding-bottom: 12px;
+  line-height: 54px;
+}
+@media screen and (min-width: 480px) {
+  .v65-productSet-header {
+    height: 54px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .v65-productSet-header {
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+  }
 }
 
 .v65-productSet-title {
   float: left;
   font-size: 20px;
 }
+@media screen and (max-width: 767px) {
+  .v65-productSet-title {
+    display: none;
+  }
+}
 
 .v65-productSet-priceSummary {
-  float: right;
   font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .v65-productSet-priceSummary {
+    float: right;
+  }
 }
 
 .v65-productSet-price {
@@ -2404,6 +2607,18 @@ ul.ui-autocomplete li a span {
   margin: 0 3% 0 0;
   width: 30%;
 }
+@media screen and (max-width: 640px) {
+  .v65-productSet-item {
+    width: 47%;
+    margin: 0 3% 0 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .v65-productSet-item {
+    width: 100%;
+    margin: 0;
+  }
+}
 
 .v65-productSet-itemTitle {
   border-bottom: 1px solid #ccc;
@@ -2414,10 +2629,20 @@ ul.ui-autocomplete li a span {
 
 .v65-productSet-footer {
   border-top: 3px double #111;
-  height: 36px;
-  line-height: 36px;
   margin-bottom: 1em;
-  text-align: right;
+  line-height: 54px;
+}
+@media screen and (min-width: 768px) {
+  .v65-productSet-footer {
+    height: 54px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .v65-productSet-footer {
+    text-align: right;
+    height: 36px;
+    line-height: 36px;
+  }
 }
 
 /*   ===================================================================================================                                                                
@@ -2425,36 +2650,75 @@ ul.ui-autocomplete li a span {
 ======================================================================================================== */
 .v65-product-quickView {
   display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 6px;
-  background-color: #fff;
-  font-size: 12px;
-  margin-top: -5%;
-  margin-left: -42px;
-  padding: 5px;
-  border: 2px solid #666;
-  min-width: 70px;
-  text-align: center;
-  cursor: pointer;
+}
+@media screen and (min-width: 650px) {
+  .v65-product-quickView {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 12px;
+    margin-top: -5%;
+    margin-left: -42px;
+    padding: 5px;
+    border: 2px solid #666;
+    min-width: 70px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 649px) {
+  .v65-product-quickView.hover, .v65-product-quickView:hover {
+    display: none;
+  }
 }
 
 .v65-quickView {
-  background: none repeat scroll 0 0 #fff;
-  border: 4px solid #666;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0 0 10px 3px #ccc;
   display: none;
-  left: 50%;
-  margin: -250px 0 0 -380px;
-  padding: 16px;
-  position: fixed;
-  top: 50%;
-  width: 800px;
-  z-index: 1000;
   /* Product Media */
   /* Related Products */
+}
+@media screen and (min-width: 650px) {
+  .v65-quickView {
+    position: absolute;
+    background: none repeat scroll 0 0 #fff;
+    border: 4px solid #666;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px 3px #ccc;
+    display: none;
+    padding: 16px;
+    margin: 0;
+    z-index: 1000;
+    top: 6%;
+    left: 2%;
+    width: 88%;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 700px) {
+  .v65-quickView {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .v65-quickView {
+    width: 92%;
+  }
+}
+@media screen and (min-width: 880px) {
+  .v65-quickView {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    margin: -250px 0 0 -420px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .v65-quickView {
+    margin: -250px 0 0 -380px;
+  }
 }
 .v65-quickView .v65-product-drilldownLink {
   bottom: 0;
@@ -2465,6 +2729,28 @@ ul.ui-autocomplete li a span {
   float: left;
   margin-right: 15px;
   width: 200px;
+}
+@media screen and (max-width: 880px) {
+  .v65-quickView .v65-product-photoWrapper {
+    width: 25%;
+    margin-right: 1%;
+  }
+}
+.v65-quickView .v65-product-photoWrapper .v65-product-photos-photo {
+  float: left;
+  text-align: center;
+  margin: 0 0 1.5em;
+  padding: 0 0 1.5em;
+  width: 50%;
+}
+@media screen and (min-width: 768px) {
+  .v65-quickView .v65-product-photoWrapper .v65-product-photos-photo {
+    width: 33%;
+    padding: 0;
+  }
+  .v65-quickView .v65-product-photoWrapper .v65-product-photos-photo img {
+    max-width: 100%;
+  }
 }
 .v65-quickView .v65-product-tab-active {
   max-height: 250px;
@@ -2484,6 +2770,11 @@ ul.ui-autocomplete li a span {
   margin: 0 0 1.5em;
   text-align: center;
   width: 33%;
+}
+@media screen and (max-width: 767px) {
+  .v65-quickView .v65-product-relatedProducts-product {
+    width: 50%;
+  }
 }
 .v65-quickView .v65-product-relatedProducts .v65-product-photo img {
   width: 40%;
@@ -2515,6 +2806,11 @@ ul.ui-autocomplete li a span {
   float: left;
   width: 585px;
 }
+@media screen and (max-width: 880px) {
+  .v65-quickView-right-content {
+    width: 72%;
+  }
+}
 .v65-quickView-right-content .v65-product-title {
   font-size: 2em;
   line-height: 1.2;
@@ -2532,9 +2828,34 @@ ul.ui-autocomplete li a span {
   float: left;
   width: 15%;
 }
+.v65-productStoreWrapper-Top .v65-product-leftCol .v65-product-photos {
+  margin: 0 0 1em;
+}
+@media screen and (max-width: 550px) {
+  .v65-productStoreWrapper-Top .v65-product-leftCol .v65-product-photos {
+    display: none;
+  }
+}
+.v65-productStoreWrapper-Top .v65-product-leftCol .v65-product-photos .v65-product-photos-photo {
+  float: left;
+  text-align: center;
+  margin: 0 0 1.5em;
+  padding: 0 0 1.5em;
+  width: 50%;
+}
+@media screen and (min-width: 768px) {
+  .v65-productStoreWrapper-Top .v65-product-leftCol .v65-product-photos .v65-product-photos-photo {
+    width: 33%;
+    padding: 0;
+  }
+  .v65-productStoreWrapper-Top .v65-product-leftCol .v65-product-photos .v65-product-photos-photo img {
+    max-width: 100%;
+  }
+}
 .v65-productStoreWrapper-Top .v65-product-rightCol {
   float: left;
   width: 80%;
+  margin-left: 2%;
 }
 .v65-productStoreWrapper-Top .v65-product-infoWrapper {
   float: left;
@@ -2575,6 +2896,11 @@ ul.ui-autocomplete li a span {
   float: left;
   margin-top: 0.5em;
   width: 50%;
+}
+@media screen and (max-width: 550px) {
+  .v65-productStoreWrapper-Top .v65-product-commerceWrapper {
+    width: 100%;
+  }
 }
 
 /*   ===================================================================================================                                                                
@@ -2632,6 +2958,7 @@ ul.ui-autocomplete li a span {
 @media screen and (min-width: 768px) {
   .v65-productWrapper .v65-product-photo-wrapper .v65-product-photos-photo {
     width: 33%;
+    padding: 0;
   }
   .v65-productWrapper .v65-product-photo-wrapper .v65-product-photos-photo img {
     max-width: 100%;
@@ -2660,6 +2987,7 @@ ul.ui-autocomplete li a span {
   font-size: 1.8em;
   margin: 0 0 1em;
   text-align: center;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 @media screen and (max-width: 767px) {
   .v65-productWrapper .v65-product-leftCol .v65-productDrilldown-specs .v65-wine-specs .v65-wine-specs-title {
@@ -2675,6 +3003,11 @@ ul.ui-autocomplete li a span {
   .v65-productWrapper .v65-product-leftCol .v65-productDrilldown-specs .v65-wine-specs .v65-product-attribute .v65-product-attributeValue {
     width: auto;
   }
+}
+.v65-productWrapper .v65-wine-profile .v65-wine-profile-title {
+  font-size: 1.8em;
+  margin: 0 0 1em;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 .v65-productWrapper .v65-product-rightCol {
   float: right;
@@ -2879,22 +3212,27 @@ ul.ui-autocomplete li a span {
     width: 100%;
   }
 }
+@media screen and (max-width: 620px) {
+  .v65-cartCheckOutButtons a {
+    margin: 5px 0;
+  }
+}
 
 /* b. Cart Table
 -------------------------------------------------------------- */
 #v65-cartTable {
   width: 100%;
-  margin: 0 0 12px 0;
+  margin: 0 0 1em;
   padding: 0;
 }
 #v65-cartTable th {
   font-weight: bold;
   background-color: #f9f7f3;
   border-top: 1px solid #ccc;
-  padding: 6px 8px;
+  padding: 0.5em 0.667em;
 }
 #v65-cartTable td {
-  padding: 6px 10px;
+  padding: 0.5em 0.667em;
 }
 #v65-cartTable .v65-cartShippingItem {
   background-color: #e2dfd7;
@@ -2907,6 +3245,34 @@ ul.ui-autocomplete li a span {
 #v65-cartTable .v65-cartShipping td {
   background-color: #f9f7f3;
   border-top: 0;
+}
+#v65-cartTable .v65-cartItemImage {
+  min-width: 44px;
+}
+#v65-cartTable th.v65-cartItemAmount, #v65-cartTable .v65-cartItemImage, #v65-cartTable .v65-cartItemAvailability, #v65-cartTable .cartItemImage, #v65-cartTable .v65-cartItemInStock,
+#v65-cartTable .v65-cartSubtotal-3, #v65-cartTable .v65-cartSubtotal-4, #v65-cartTable .v65-cartTax-3, #v65-cartTable .v65-cartTax-4, #v65-cartTable .v65-cartTotal-3, #v65-cartTable .v65-cartTotal-4 {
+  display: none;
+}
+@media screen and (max-width: 454px) {
+  #v65-cartTable .v65-cartRemoveButton {
+    display: none;
+  }
+}
+@media screen and (max-width: 454px) {
+  #v65-cartTable .right {
+    display: table-cell;
+  }
+}
+@media screen and (min-width: 455px) {
+  #v65-cartTable .right, #v65-cartTable th.v65-cartItemAmount, #v65-cartTable .v65-cartItemImage, #v65-cartTable .v65-cartItemImage, #v65-cartTable .v65-cartSubtotal-3, #v65-cartTable .v65-cartTax-3, #v65-cartTable .v65-cartTotal-3 {
+    display: table-cell;
+  }
+}
+@media screen and (min-width: 545px) {
+  #v65-cartTable .v65-cartItemAvailability, #v65-cartTable .v65-cartItemInStock,
+  #v65-cartTable .v65-cartSubtotal-3, #v65-cartTable .v65-cartSubtotal-4, #v65-cartTable .v65-cartTax-3, #v65-cartTable .v65-cartTax-4, #v65-cartTable .v65-cartTotal-3, #v65-cartTable .v65-cartTotal-4 {
+    display: table-cell;
+  }
 }
 
 .v65-cartItem td {
@@ -2923,14 +3289,13 @@ ul.ui-autocomplete li a span {
 }
 
 .v65-cartItemAmount {
-  width: 80px;
   text-align: center;
   overflow: hidden;
 }
 .v65-cartItemAmount .v65-qtyField {
   text-align: center;
-  margin: 0 0 4px;
-  width: 25px;
+  margin: 0 0 0.333em;
+  width: 2em;
 }
 .v65-cartItemAmount button {
   margin: 0;
@@ -2946,7 +3311,7 @@ ul.ui-autocomplete li a span {
 }
 
 .v65-cartRemoveButton {
-  margin-top: 5px;
+  margin-top: 0.5em;
 }
 
 #v65-cartSubtotal td {
@@ -2973,13 +3338,6 @@ ul.ui-autocomplete li a span {
 }
 
 /*state drop down select box*/
-/* Cart Footer */
-#v65-cartFooter {
-  overflow: hidden;
-  margin: 0;
-  padding: 0 0 10px 0;
-}
-
 #v65-cartPaymentOptions {
   float: left;
   padding-top: 4px;
@@ -3048,10 +3406,31 @@ ul.ui-autocomplete li a span {
   overflow: hidden;
   clear: both;
 }
+@media screen and (max-width: 640px) {
+  #v65-checkoutFooter .floatRight {
+    float: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  #v65-checkoutFooter button {
+    width: 100%;
+  }
+}
 
 #v65-checkoutSecure {
   float: left;
   width: 300px;
+}
+@media screen and (max-width: 640px) {
+  #v65-checkoutSecure {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  form.v65ProcessOrder button {
+    width: 100%;
+  }
 }
 
 #v65-continueOrder {
@@ -3205,155 +3584,193 @@ ul.ui-autocomplete li a span {
 #v65-checkoutFormWrapper form {
   width: 100%;
 }
+
+@media screen and (min-width: 768px) {
+  #v65-checkBilling {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #v65-checkBilling {
+    width: 400px;
+  }
+}
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-checkBilling select[name="BillBirthDay"], #v65-checkoutFormWrapper #v65-checkBilling select[name="BillBirthYear"],
-  #v65-checkoutFormWrapper #v65-checkBilling select[name="BillBirthMonth"] {
+  #v65-checkBilling select[name="BillBirthDay"], #v65-checkBilling select[name="BillBirthYear"],
+  #v65-checkBilling select[name="BillBirthMonth"] {
     width: 32%;
   }
 }
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-checkBilling select[name="BillBirthDay"] {
+  #v65-checkBilling select[name="BillBirthDay"] {
     margin: 0 1%;
   }
 }
-#v65-checkoutFormWrapper #v65-fieldset-wholesalerInfo {
-  width: 400px;
-}
-#v65-checkoutFormWrapper #v65-fieldset-billingInfo {
-  width: 400px;
-}
-#v65-checkoutFormWrapper #v65-fieldset-shippingInfo {
-  width: 400px;
-}
-#v65-checkoutFormWrapper #v65-fieldset-shippingOptions {
-  width: 400px;
-}
-#v65-checkoutFormWrapper #v65-fieldset-sourceCode {
+
+#v65-fieldset-wholesalerInfo, #v65-fieldset-billingInfo,
+#v65-fieldset-shippingInfo, #v65-fieldset-shippingOptions,
+#v65-fieldset-paymentMethod, #v65-fieldset-sourceCode,
+#v65-fieldset-usernamePassword {
   width: 400px;
 }
 @media screen and (max-width: 950px) {
-  #v65-checkoutFormWrapper #v65-fieldset-billingInfo, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo,
-  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod, #v65-checkoutFormWrapper #v65-fieldset-sourceCode {
+  #v65-fieldset-wholesalerInfo, #v65-fieldset-billingInfo,
+  #v65-fieldset-shippingInfo, #v65-fieldset-shippingOptions,
+  #v65-fieldset-paymentMethod, #v65-fieldset-sourceCode,
+  #v65-fieldset-usernamePassword {
     float: left;
     width: 50%;
   }
 }
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-fieldset-billingInfo, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo,
-  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod, #v65-checkoutFormWrapper #v65-fieldset-sourceCode {
+  #v65-fieldset-wholesalerInfo, #v65-fieldset-billingInfo,
+  #v65-fieldset-shippingInfo, #v65-fieldset-shippingOptions,
+  #v65-fieldset-paymentMethod, #v65-fieldset-sourceCode,
+  #v65-fieldset-usernamePassword {
     margin: 0 0 1em;
     width: 99%;
   }
-  #v65-checkoutFormWrapper #v65-fieldset-billingInfo input, #v65-checkoutFormWrapper #v65-fieldset-shippingInfo input,
-  #v65-checkoutFormWrapper #v65-fieldset-shippingOptions input, #v65-checkoutFormWrapper #v65-fieldset-paymentMethod input, #v65-checkoutFormWrapper #v65-fieldset-sourceCode input {
+  #v65-fieldset-wholesalerInfo input, #v65-fieldset-billingInfo input,
+  #v65-fieldset-shippingInfo input, #v65-fieldset-shippingOptions input,
+  #v65-fieldset-paymentMethod input, #v65-fieldset-sourceCode input,
+  #v65-fieldset-usernamePassword input {
     width: 99% !important;
   }
 }
-#v65-checkoutFormWrapper #v65-fieldset-paymentMethod div {
+
+#v65-fieldset-paymentMethod div {
   clear: both;
 }
-#v65-checkoutFormWrapper #v65-checkBilling legend {
+
+#v65-checkBilling legend {
   font-size: 1.4em;
   letter-spacing: 1px;
 }
 @media screen and (max-width: 950px) {
-  #v65-checkoutFormWrapper #v65-checkBilling .v65-additionalComments {
+  #v65-checkBilling .v65-additionalComments {
     width: 95%;
     clear: both;
   }
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=BillBirthMonth] {
+#v65-checkBilling select[name=BillBirthMonth] {
   width: 80px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=BillBirthDay], #v65-checkoutFormWrapper #v65-checkBilling select[name=BillBirthYear] {
+@media screen and (max-width: 480px) {
+  #v65-checkBilling select[name=BillBirthMonth] {
+    width: 32%;
+  }
+}
+#v65-checkBilling select[name=BillBirthDay], #v65-checkBilling select[name=BillBirthYear] {
   width: 60px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=BillStateCode] {
+@media screen and (max-width: 480px) {
+  #v65-checkBilling select[name=BillBirthDay], #v65-checkBilling select[name=BillBirthYear] {
+    width: 32%;
+  }
+}
+#v65-checkBilling select[name=BillStateCode] {
   width: 180px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=ShipBirthMonth] {
+#v65-checkBilling select[name=ShipBirthMonth] {
   width: 80px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=ShipBirthDay], #v65-checkoutFormWrapper #v65-checkBilling select[name=ShipBirthYear] {
+@media screen and (max-width: 480px) {
+  #v65-checkBilling select[name=ShipBirthMonth] {
+    width: 32%;
+  }
+}
+#v65-checkBilling select[name=ShipBirthDay], #v65-checkBilling select[name=ShipBirthYear] {
   width: 60px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=shipStateCode] {
+@media screen and (max-width: 480px) {
+  #v65-checkBilling select[name=ShipBirthDay], #v65-checkBilling select[name=ShipBirthYear] {
+    width: 32%;
+  }
+}
+#v65-checkBilling select[name=shipStateCode] {
   width: 180px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=Save] {
+#v65-checkBilling select[name=Save] {
   width: 250px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=sourceCode] {
+#v65-checkBilling select[name=sourceCode] {
   width: 175px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=CardExpiryMo] {
+#v65-checkBilling select[name=CardExpiryMo] {
   width: 120px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling select[name=CardExpiryYr] {
+#v65-checkBilling select[name=CardExpiryYr] {
   width: 80px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=BillFirstName], #v65-checkoutFormWrapper #v65-checkBilling input[name=BillLastName], #v65-checkoutFormWrapper #v65-checkBilling input[name=BillCompany], #v65-checkoutFormWrapper #v65-checkBilling input[name=BillCity], #v65-checkoutFormWrapper #v65-checkBilling input[name=BillMainPhone], #v65-checkoutFormWrapper #v65-checkBilling input[name=BillEmail] {
+#v65-checkBilling input[name=BillFirstName], #v65-checkBilling input[name=BillLastName], #v65-checkBilling input[name=BillCompany], #v65-checkBilling input[name=BillCity], #v65-checkBilling input[name=BillMainPhone], #v65-checkBilling input[name=BillEmail] {
   width: 175px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=BillAddress] {
+#v65-checkBilling input[name=BillAddress] {
   width: 250px;
   margin-bottom: 8px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=BillAddress2] {
+#v65-checkBilling input[name=BillAddress2] {
   width: 250px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=BillZipCode] {
+#v65-checkBilling input[name=BillZipCode] {
   width: 100px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=NickName], #v65-checkoutFormWrapper #v65-checkBilling input[name=ShipFirstName], #v65-checkoutFormWrapper #v65-checkBilling input[name=ShipLastName], #v65-checkoutFormWrapper #v65-checkBilling input[name=ShipCompany], #v65-checkoutFormWrapper #v65-checkBilling input[name=ShipCity], #v65-checkoutFormWrapper #v65-checkBilling input[name=ShipMainPhone], #v65-checkoutFormWrapper #v65-checkBilling input[name=ShipEmail] {
+#v65-checkBilling input[name=NickName], #v65-checkBilling input[name=ShipFirstName], #v65-checkBilling input[name=ShipLastName], #v65-checkBilling input[name=ShipCompany], #v65-checkBilling input[name=ShipCity], #v65-checkBilling input[name=ShipMainPhone], #v65-checkBilling input[name=ShipEmail] {
   width: 175px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=ShipAddress] {
+#v65-checkBilling input[name=ShipAddress] {
   width: 250px;
   margin-bottom: 8px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=ShipAddress2] {
+#v65-checkBilling input[name=ShipAddress2] {
   width: 250px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=ShipZipCode] {
+#v65-checkBilling input[name=ShipZipCode] {
   width: 100px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling input[name=CVV2] {
+#v65-checkBilling input[name=CVV2] {
   width: 100px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling textarea[name=OrderNotes] {
+#v65-checkBilling textarea[name=OrderNotes] {
   width: 250px;
   height: 75px;
 }
-#v65-checkoutFormWrapper #v65-checkBilling textarea[name=giftMessage] {
+#v65-checkBilling textarea[name=giftMessage] {
   width: 250px;
   height: 75px;
 }
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-checkBilling select[name="BillStateCode"] {
+  #v65-checkBilling select[name="BillStateCode"] {
     width: 99.9% !important;
   }
 }
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-checkBilling select[name="CardExpiryMo"] {
+  #v65-checkBilling select[name="CardExpiryMo"] {
     width: 49% !important;
   }
 }
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper #v65-checkBilling select[name="CardExpiryYr"] {
+  #v65-checkBilling select[name="CardExpiryYr"] {
     float: right;
     width: 49% !important;
   }
 }
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper form#v65-checkBilling .v65-additionalComments {
+  form#v65-checkBilling .v65-additionalComments {
     margin-left: 0;
     padding: 15px 5px 0;
     width: auto;
   }
 }
+
 @media screen and (max-width: 725px) {
-  #v65-checkoutFormWrapper [v65js="v65-creditCardInfo"], #v65-checkoutFormWrapper [v65js="v65creditCard"] {
+  [v65js="v65-creditCardInfo"], [v65js="v65creditCard"] {
     padding: 5px 0 !important;
   }
 }
@@ -3392,6 +3809,68 @@ ul.ui-autocomplete li a span {
   overflow: hidden;
 }
 
+/* c. Print Receipt
+-------------------------------------------------------------- */
+.printBody {
+  background-color: #FFF;
+  background-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+.printWrapper {
+  margin: 0 auto;
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printWrapper {
+    width: 90%;
+    padding: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .printWrapper {
+    font-size: 15px;
+    line-height: 1.5em;
+  }
+}
+
+.printHeader {
+  height: 150px;
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printHeader {
+    width: 100%;
+    height: auto;
+  }
+  .printHeader img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.printContent {
+  text-align: left;
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  .printContent {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .printContent #v65-cartTable td {
+    padding: 6px 4px;
+  }
+}
+.printContent #v65-cartTable .center {
+  display: block;
+}
+.printContent #v65-cartTable .v65-cartSubtotal-3, .printContent #v65-cartTable .v65-cartTax-3, .printContent #v65-cartTable .v65-cartTotal-3 {
+  display: table-cell;
+}
+
 /*   ===================================================================================================                                                                
      26. Club
 ======================================================================================================== */
@@ -3406,6 +3885,11 @@ ul.ui-autocomplete li a span {
   margin-bottom: 12px;
   padding: 0 0 12px 10px;
   border-bottom: 1px solid #ccc;
+}
+@media screen and (max-width: 480px) {
+  .v65-clubTeaser {
+    padding: 0 0 12px 0;
+  }
 }
 
 #v65-clubHelp {
@@ -3427,10 +3911,6 @@ ul.ui-autocomplete li a span {
 }
 
 #v65-fieldset-clubOptions {
-  width: 400px;
-}
-
-#v65-fieldset-usernamePassword {
   width: 400px;
 }
 
@@ -3474,11 +3954,21 @@ ul.ui-autocomplete li a span {
 #v65-checkBilling select[name=cardExpiryYr] {
   width: 80px;
 }
-#v65-checkBilling select[name=ShipBirthMonth] {
+#v65-checkBilling select[name=BirthMonth], #v65-checkBilling select[name=ShipBirthMonth] {
   width: 80px;
 }
-#v65-checkBilling select[name=ShipBirthDay], #v65-checkBilling select[name=ShipBirthYear] {
+@media screen and (max-width: 480px) {
+  #v65-checkBilling select[name=BirthMonth], #v65-checkBilling select[name=ShipBirthMonth] {
+    width: 32%;
+  }
+}
+#v65-checkBilling select[name=BirthDay], #v65-checkBilling select[name=BirthYear], #v65-checkBilling select[name=ShipBirthDay], #v65-checkBilling select[name=ShipBirthYear] {
   width: 60px;
+}
+@media screen and (max-width: 480px) {
+  #v65-checkBilling select[name=BirthDay], #v65-checkBilling select[name=BirthYear], #v65-checkBilling select[name=ShipBirthDay], #v65-checkBilling select[name=ShipBirthYear] {
+    width: 32%;
+  }
 }
 #v65-checkBilling select[name=shipStateCode] {
   width: 180px;
@@ -3491,14 +3981,27 @@ ul.ui-autocomplete li a span {
 /* c. Sign Up Screen
 -------------------------------------------------------------- */
 #v65-signUpClubSummaryWrapper {
-  position: absolute;
-  top: 9px;
-  right: 1px;
-  padding: 10px;
-  width: 350px;
+  margin: 0 0 1em;
+  width: 90%;
+  padding: 5%;
   background-color: #f7f7f7;
   border: 1px solid #eeeeee;
   overflow: hidden;
+  clear: both;
+}
+@media screen and (min-width: 725px) {
+  #v65-signUpClubSummaryWrapper {
+    width: 42%;
+    position: absolute;
+    top: 9px;
+    right: 1px;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #v65-signUpClubSummaryWrapper {
+    width: 350px;
+  }
 }
 
 fieldset#v65-fieldset-choices .v65-clubChoices {
@@ -3563,6 +4066,19 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   margin: 0;
   overflow: hidden;
 }
+@media screen and (max-width: 970px) {
+  #v65-clubBillingSummary {
+    width: 44%;
+    padding: 2%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-clubBillingSummary {
+    float: inherit;
+    width: 90%;
+    padding: 5%;
+  }
+}
 
 #v65-clubShippingSummary {
   float: left;
@@ -3570,6 +4086,19 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+@media screen and (max-width: 970px) {
+  #v65-clubShippingSummary {
+    width: 45%;
+    padding: 2.5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-clubShippingSummary {
+    float: inherit;
+    width: 90%;
+    padding: 5%;
+  }
 }
 
 #v65-reviewClubSummaryWrapper {
@@ -3581,6 +4110,13 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   border: 1px solid #eee;
   overflow: hidden;
   font-size: 0.95em;
+}
+@media screen and (max-width: 970px) {
+  #v65-reviewClubSummaryWrapper {
+    float: inherit;
+    width: 90%;
+    padding: 5%;
+  }
 }
 
 /*   ===================================================================================================                                                                
@@ -3616,10 +4152,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 #v65-memberFormWrapper form {
   text-align: left;
+  width: 400px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 480px) {
   #v65-memberFormWrapper form {
-    width: 400px;
+    width: 100%;
   }
 }
 #v65-memberFormWrapper legend {
@@ -3670,6 +4207,16 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   }
   #v65-memberFormWrapper select[name=CardExpiryYr] {
     width: 80px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 480px) {
+  #v65-memberFormWrapper select[name=BirthMonth] {
+    width: 32%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 480px) {
+  #v65-memberFormWrapper select[name=BirthDay], #v65-memberFormWrapper select[name=BirthYear] {
+    width: 32%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3735,7 +4282,6 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 #v65-memberAddressBook {
   margin-bottom: 1em;
 }
-
 #v65-memberAddressBook th {
   background-color: #ccc;
   color: #333;
@@ -3744,32 +4290,32 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 3px;
   border-bottom: 1px solid #bbb;
 }
-
+@media screen and (max-width: 480px) {
+  #v65-memberAddressBook th {
+    font-size: 0.8em;
+    padding: 0;
+  }
+}
 #v65-memberAddressBook td {
   font-size: 0.95em;
   padding: 3px;
   border-bottom: 1px solid #bbb;
 }
-
-#v65-memberAddressBook td.a {
+#v65-memberAddressBook td a {
   color: #000;
   text-decoration: none;
 }
-
-#v65-memberAddressBook td.a:hover {
+#v65-memberAddressBook td a:hover {
   color: #000;
   text-decoration: none;
 }
-
 #v65-memberAddressBook tr:hover {
   background-color: #FFC;
 }
-
-#v65-memberAddressBook tr.alt {
+#v65-memberAddressBook tr .alt {
   background-color: #efefef;
 }
-
-#v65-memberAddressBook tr.alt:hover {
+#v65-memberAddressBook tr .alt:hover {
   background-color: #FFC;
 }
 
@@ -3778,7 +4324,6 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 #v65-memberOrders {
   margin-bottom: 1em;
 }
-
 #v65-memberOrders th {
   background-color: #ccc;
   color: #333;
@@ -3787,32 +4332,50 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 3px;
   border-bottom: 1px solid #bbb;
 }
-
+@media screen and (max-width: 480px) {
+  #v65-memberOrders th:nth-child(1), #v65-memberOrders th:nth-child(4), #v65-memberOrders th:nth-child(5), #v65-memberOrders th:nth-child(6) {
+    display: none;
+  }
+}
 #v65-memberOrders td {
   font-size: 0.95em;
-  padding: 2px;
+  padding: 2px 0;
   border-bottom: 1px solid #bbb;
 }
-
-#v65-memberOrders td.a {
+@media screen and (max-width: 480px) {
+  #v65-memberOrders td:nth-child(1), #v65-memberOrders td:nth-child(4), #v65-memberOrders td:nth-child(5), #v65-memberOrders td:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-memberOrders td:nth-child(2) {
+    width: 21%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #v65-memberOrders td:nth-child(8) {
+    width: 50%;
+  }
+  #v65-memberOrders td:nth-child(8) a {
+    width: 43%;
+    margin: 5% 0;
+  }
+}
+#v65-memberOrders td a {
   color: #000;
   text-decoration: none;
 }
-
-#v65-memberOrders td.a:hover {
+#v65-memberOrders td a:hover {
   color: #000;
   text-decoration: none;
 }
-
 #v65-memberOrders tr:hover {
   background-color: #FFC;
 }
-
-#v65-memberOrders tr.alt {
+#v65-memberOrders tr .alt {
   background-color: #efefef;
 }
-
-#v65-memberOrders tr.alt:hover {
+#v65-memberOrders tr .alt:hover {
   background-color: #FFC;
 }
 
@@ -3858,18 +4421,28 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 
 .v65-memberAllocationImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 120px;
   text-align: center;
   overflow: hidden;
 }
+@media screen and (min-width: 768px) {
+  .v65-memberAllocationImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+  }
+}
 
 .v65-memberAllocationTeaser {
-  position: relative;
-  margin: 0 0 0 140px;
-  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .v65-memberAllocationTeaser {
+    position: relative;
+    margin: 0 0 0 140px;
+    padding: 0;
+    width: inherit;
+  }
 }
 
 .v65-storeAllocationSKU {
@@ -3885,29 +4458,29 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   font-size: 10px;
   width: 250px;
 }
-
+@media screen and (max-width: 480px) {
+  .v65-memberAllocationTable {
+    width: 100%;
+  }
+}
 .v65-memberAllocationTable th {
   font-weight: bold;
   vertical-align: bottom;
   text-align: center;
 }
-
 .v65-memberAllocationTable td {
   padding: 5px;
   border-bottom: 1px solid #eee;
   vertical-align: middle;
   text-align: center;
 }
-
-.v65-memberAllocationTable td.label {
+.v65-memberAllocationTable td .label {
   font-weight: bold;
   text-align: right;
 }
-
-.v65-memberAllocationTable td.lastRow {
+.v65-memberAllocationTable td .lastRow {
   border-bottom: 0;
 }
-
 .v65-memberAllocationTable input {
   text-align: center;
 }
@@ -3958,7 +4531,6 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   padding: 6px;
   font-size: 10px;
 }
-
 .v65-memberAllocationHistoryTable th {
   padding: 5px;
   border-bottom: 1px solid #ccc;
@@ -3968,20 +4540,17 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   background-color: #efefef;
   color: #555;
 }
-
 .v65-memberAllocationHistoryTable td {
   padding: 5px;
   border-bottom: 1px solid #eee;
   vertical-align: middle;
   text-align: center;
 }
-
-.v65-memberAllocationHistoryTable td.label {
+.v65-memberAllocationHistoryTable td .label {
   font-weight: bold;
   text-align: right;
 }
-
-.v65-memberAllocationHistoryTable td.lastRow {
+.v65-memberAllocationHistoryTable td .lastRow {
   border-bottom: 0;
 }
 
@@ -3997,6 +4566,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   z-index: 10000;
   text-align: left;
 }
+@media screen and (max-width: 767px) {
+  #v65-modalContainer {
+    position: absolute;
+  }
+}
 
 #v65-modalViel {
   background-color: #fff;
@@ -4004,11 +4578,15 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 1000%;
   z-index: 102;
-  opacity: 0.75;
-  filter: alpha(opacity=75);
-  -moz-opacity: 0.75;
+}
+@media screen and (min-width: 768px) {
+  #v65-modalViel {
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    -moz-opacity: 0.75;
+  }
 }
 
 #v65-modalContentWrapper {
@@ -4065,6 +4643,16 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
     width: 100%;
   }
 }
+@media screen and (max-width: 767px) {
+  #v65-modalContent form {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  #v65-modalContent input[type=text], #v65-modalContent input[type=Password] {
+    width: 100% !important;
+  }
+}
 
 /*Modal Site Login*/
 #v65-siteLoginForm {
@@ -4094,8 +4682,14 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 ======================================================================================================== */
 /* This wrapper provides: Outline, position, margin, padding, alignment to a form built using the formbuilder */
 .v65-form {
+  width: 250px;
   margin: 0 0 1em;
   /*Margin + Block are there for checkout area.*/
+}
+@media screen and (max-width: 480px) {
+  .v65-form {
+    width: 100%;
+  }
 }
 .v65-form fieldset {
   display: block;
@@ -4104,6 +4698,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   border: 1px solid #ccc;
   /*default width is 225px;*/
   /* Forms - Label Beside Variant */
+}
+@media screen and (max-width: 480px) {
+  .v65-form fieldset {
+    padding: 0;
+  }
 }
 .v65-form fieldset div {
   overflow: hidden;
@@ -4126,6 +4725,11 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   line-height: 1.5;
   width: 155px;
   font-size: 1em;
+}
+@media screen and (max-width: 480px) {
+  .v65-form fieldset .formatBeside textarea, .v65-form fieldset .formatBeside select {
+    width: 99%;
+  }
 }
 .v65-form legend {
   font-size: 1.17em;
@@ -4150,11 +4754,21 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
   margin: 0;
   width: 220px;
 }
+@media screen and (max-width: 480px) {
+  .v65-form input[type=text], .v65-form input[type=password] {
+    width: 99%;
+  }
+}
 .v65-form textarea, .v65-form select {
   font-family: Tahoma, Geneva, sans-serif;
   line-height: 1.5;
   width: 225px;
   font-size: 1em;
+}
+@media screen and (max-width: 480px) {
+  .v65-form textarea, .v65-form select {
+    width: 99%;
+  }
 }
 
 .v65-formLeft {
@@ -4164,9 +4778,15 @@ fieldset#v65-fieldset-choices .v65-clubChoices {
 }
 
 .v65-formRight {
-  float: right;
-  margin: 0 0 1em 1em;
-  width: 250px;
+  margin: 0 0 1em 0;
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  .v65-formRight {
+    float: right;
+    margin: 0 0 1em 1em;
+    width: 250px;
+  }
 }
 
 .v65-formCenter {
@@ -4267,7 +4887,7 @@ a.largeLinkBtn, a.linkBtn, a.modalLinkBtn, a.linkAltBtn, a.modalLinkAltBtn {
 }
 @media screen and (max-width: 480px) {
   a.largeLinkBtn, a.linkBtn, a.modalLinkBtn, a.linkAltBtn, a.modalLinkAltBtn {
-    width: 100%;
+    width: 99%;
   }
 }
 a.largeLinkBtn span, a.linkBtn span, a.modalLinkBtn span, a.linkAltBtn span, a.modalLinkAltBtn span {
