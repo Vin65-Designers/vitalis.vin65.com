@@ -14,9 +14,9 @@
         
 	<cf_vin65GlobalAssets>   
 	
-	<cf_js files="/assets/js/scripts-homepage.js,/assets/nivo/jquery.nivo.slider.pack.js">
+	<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
 	
-	<cf_css files="/assets/css/vin65-res.css,/assets/nivo/nivo-slider.css,/assets/css/screen.css">
+	<cf_css files="/assets/nivo/nivo-slider.css,/assets/css/screen.min.css">
 	<!--[if lte IE 7]><cf_css files="/assets/css/ie7.css"><![endif]-->
 	<!--[if IE 8]><cf_css files="/assets/css/ie8.css"><![endif]-->
 	
@@ -37,6 +37,12 @@
 			<cf_login>
 		</div>
 		<!--/user-tools-->
+		
+		<!--search
+		<div id="productSearch">
+			<cf_productSearch>
+		</div>
+		<!--search-->
 		
 		<!--logo-->
 		<a href="/" accesskey="h" class="logo"><img src="/assets/images/logo.png" alt="<cf_websiteName>"></a>
@@ -63,11 +69,6 @@
 		
 		<div class="homepageProductGroup">
 			<cf_product_group code="HomepageProductGroup">
-		</div>
-		
-		<div class="twitterWrapper">
-		<h3>Join the Conversation</h3>
-			<cf_twitterFeed maxRows="2" searchQuery="@vin65team">
 		</div>
 		
 	</div>

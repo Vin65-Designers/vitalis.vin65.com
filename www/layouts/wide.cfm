@@ -12,9 +12,9 @@
     
 	<cf_vin65GlobalAssets>   
 	
-	<cf_js files="/assets/js/scripts-homepage.js,/assets/nivo/jquery.nivo.slider.pack.js">
+	<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
 	
-	<cf_css files="/assets/css/vin65-res.css,/assets/nivo/nivo-slider.css,/assets/css/screen.css">
+	<cf_css files="/assets/nivo/nivo-slider.css,/assets/css/screen.min.css">
 	<!--[if lte IE 7]><cf_css files="/assets/css/ie7.css"><![endif]-->
 	<!--[if IE 8]><cf_css files="/assets/css/ie8.css"><![endif]-->
 	
@@ -53,6 +53,12 @@
 	<!--content-->
 	<div class="contentWide v65-group">		
 		<cf_mainContent>
+
+		<div class="subMenu">
+			<a name="footerNav"></a> 
+			<h3><cf_leftNavSectionTitle depth="2"></h3>
+			<cf_layoutLeftNav>
+		</div>
 		
 	</div>
 	<!--/content-->
