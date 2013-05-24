@@ -623,14 +623,20 @@ hr {
 }
 
 .wrapper {
-  max-width: 970px;
+  max-width: 990px;
   margin: 0 auto;
   width: 100%;
 }
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 990px) {
   .wrapper {
     padding: 0 2%;
     width: 96%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    padding: 0;
+    width: 100%;
   }
 }
 
@@ -672,8 +678,15 @@ hr {
 }
 @media screen and (max-width: 580px) {
   #user-tools {
+    background: black;
     height: 4em;
     line-height: 4em;
+  }
+  #user-tools a {
+    color: white;
+  }
+  #user-tools a:hover, #user-tools a:focus, #user-tools a:active {
+    color: white;
   }
 }
 
@@ -955,7 +968,7 @@ hr {
 }
 @media screen and (max-width: 767px) {
   .subMenu ul {
-    border-top: 1px solid #999;
+    border-top: 1px solid #cccccc;
   }
 }
 @media screen and (min-width: 768px) {
@@ -967,24 +980,20 @@ hr {
 .subMenu ul li {
   margin: 0;
   padding: 0;
+  height: 3em;
+  line-height: 3em;
 }
 @media screen and (max-width: 767px) {
   .subMenu ul li {
     border-bottom: 1px solid #cccccc;
     text-align: center;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .subMenu ul li {
-    line-height: 2;
-    display: list-item;
+    height: 4em;
+    line-height: 4em;
   }
 }
 @media screen and (max-width: 767px) {
   .subMenu ul li a {
     display: block;
-    font-size: 1em;
-    line-height: 3em;
   }
 }
 .subMenu ul li ul {
@@ -1016,26 +1025,6 @@ hr {
 /*   ===================================================================================================
      5. Content
 ======================================================================================================== */
-.wrapper {
-  margin: 0 auto;
-  position: relative;
-}
-@media screen and (max-width: 1023px) {
-  .wrapper {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .wrapper {
-    width: 90%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .wrapper {
-    width: 950px;
-  }
-}
-
 /* ----- a. Homepage Styles ----- */
 .homepageContent {
   background: white;
@@ -1136,10 +1125,10 @@ hr {
   box-shadow: 0 0 20px #cccccc;
   padding: 30px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 950px) {
   .content {
     box-shadow: none;
-    padding: 0;
+    padding: 0 10px;
     border-top: 2px solid #cccccc;
   }
 }

@@ -50,6 +50,8 @@ $headingColor: #333;
 $headingAltColor: #000;
 
 $userToolsColor: #000;
+$userToolsColorMobile: #fff;
+$userToolsBackgroundColorMobile: #000;
 
 $navColor: #000;
 $navColorHover: #333;
@@ -91,6 +93,8 @@ $buttonFontFamily: sans-serif;
 //$headingAltColor: #000;
 
 //$userToolsColor: #000;
+//$userToolsColorMobile: #fff;
+//$userToolsBackgroundColorMobile: #000;
 
 //$navColor: #000;
 //$navColorHover: #333;
@@ -132,6 +136,8 @@ $buttonFontFamily: sans-serif;
 //$headingAltColor: #000;
 
 //$userToolsColor: #fff;
+//$userToolsColorMobile: #fff;
+//$userToolsBackgroundColorMobile: #000;
 
 //$navColor: #eee;
 //$navColorHover: #fff;
@@ -173,6 +179,8 @@ $buttonFontFamily: sans-serif;
 //$headingAltColor: #000;
 
 //$userToolsColor: #fff;
+//$userToolsColorMobile: #fff;
+//$userToolsBackgroundColorMobile: #000;
 
 //$navColor: #eee;
 //$navColorHover: #fff;
@@ -318,13 +326,18 @@ hr {
 }
 
 .wrapper {
-	max-width: 970px;
+	max-width: 990px;
 	margin: 0 auto;
 	width: 100%;
 
-	@media screen and (max-width : 970px) {
+	@media screen and (max-width : 990px) {
 		padding: 0 2%;
 		width: 96%;
+	}
+
+	@media screen and (max-width : 600px) {
+		padding: 0;
+		width: 100%;
 	}
 }
 
@@ -369,8 +382,17 @@ hr {
 	}
 
 	@media screen and (max-width : 580px) {
+		background: $userToolsBackgroundColorMobile;
 		height: 4em; 
 		line-height: 4em;
+
+		a {
+			color: $userToolsColorMobile;
+			
+			&:hover, &:focus, &:active{
+				color: $userToolsColorMobile;
+			}
+		}
 	}
 
 }
@@ -624,10 +646,11 @@ hr {
 }
 
 /* ----- b. Sub Menu ----- */
-.subMenu{
+.subMenu {
 	height:100%;
 	width: 100%;
 	clear: both;
+
 	@media screen and (min-width : 768px) {
 		border-right: 1px solid $subNavBorder;
 		float: left;
@@ -637,41 +660,41 @@ hr {
 		clear: left;
 	}
 
-	ul{
+	ul {
 		margin:0;
 		padding:0;
 		list-style: none;
-		width: 100%; // 160px
-		@media screen and (max-width : 767px){border-top:1px solid #999;}	
+		width: 100%;
+
+		@media screen and (max-width : 767px){
+			border-top: 1px solid $subNavBorder;
+		}	
+
 		@media screen and (min-width : 768px) {
-			margin: 0 0 2% 1%; //0 0 1em 10px
+			margin: 0 0 2% 1%;
 			padding: 0;
-			}
-		li{
+		}
+
+		li {
 			margin:0;
 			padding:0;
+			height: 3em;
+			line-height: 3em;
+
 			@media screen and (max-width : 767px){
-				border-bottom:1px solid $subNavBorder; 
+				border-bottom: 1px solid $subNavBorder; 
 				text-align: center;
-			}
-			@media screen and (min-width : 1024px){
-				line-height: 2;
-				display: list-item;
+				height: 4em;
+				line-height: 4em;
 			}
 
-			a{ 
+			a { 
 				@media screen and (max-width : 767px){
 					display:block;
-					font-size:1em; 
-					line-height:3em;
-				}
-
-
-				&:hover{
-
 				}
 			}
-			ul{
+
+			ul {
 				margin:0;
 				padding:0;
 				list-style: none;
@@ -703,216 +726,205 @@ hr {
      5. Content
 ======================================================================================================== */
 
+/* ----- a. Homepage Styles ----- */
+.homepageContent{
+	background: $contentBackground;
+	box-shadow: 0 0 20px $boxShadowColor;
+}
 
-.wrapper{
-	margin: 0 auto;
-	position: relative;
+.homepageText{
+  	@media screen  and (max-width : 480px){
+	  	padding: 3%;
+	  	margin: 0;
+  	}
+  	@media screen and (max-width : 1023px){
+	  	padding: 3%;
+	  	margin: 0;
+  	}
+  	@media screen and (min-width : 768px) and (max-width : 1023px){
+	  	float: left;
+		width: 55%;
+		padding: 3% 3% 3% 2%;
+  	}
+  	@media screen and (min-width : 1024px){
+	  	float: left;
+		width: 470px;
+		padding: 30px 30px 30px 20px;
+		margin: 0 0 20px;
+  	}
+}
+
+.homepageProductGroup { 
+	border-left: 1px solid $subNavBorder;
+	margin: 75px 0 20px;
+	
+	@media screen  and (max-width : 480px){
+  		padding:3%;
+  		margin: 0;
+  	}
+
+  	@media screen and (max-width : 1023px){
+  		padding:3%;
+  	}
+
+  	@media screen and (min-width : 768px) and (max-width : 1023px){
+  		float: left;
+		width: 33%;
+		padding: 0 3%;
+  	}
+
+  	@media screen and (min-width : 1024px){
+  		float: left;
+		width: 400px;
+		padding: 0 0 30px 20px;
+  	}		
+
+	.v65-product-photo {
+		width: auto;
+		text-align: left;
+		margin:0 auto 2em auto; 
+		
 		@media screen and (max-width : 1023px){
-		width:100%;
-	  	}
-	  	@media screen and (min-width : 768px) and (max-width : 1023px){
-		width:90%;
-	  	}
-	  	@media screen and (min-width : 1024px){
-		width:950px;
-	  	}
+			float:left;
+		}
+		
+		@media screen and (min-width : 1024px){
+			float:left;
+			text-align: center;
+		}
+
+		img {
+			max-width: 60%;
+		}
+	}
+
+	.v65-addToCartCase{
+		@media screen  and (max-width : 480px){
+			display:none;
+		}
+	}
 
 }
 
-
-/* ----- a. Homepage Styles ----- */
-	.homepageContent{
-		background: $contentBackground;
-		box-shadow: 0 0 20px $boxShadowColor;
-	}
-
-	.homepageText{
-		  	@media screen  and (max-width : 480px){
-		  	padding: 3%;
-		  	margin: 0;
-		  	}
-		  	@media screen and (max-width : 1023px){
-		  	padding: 3%;
-		  	margin: 0;
-		  	}
-		  	@media screen and (min-width : 768px) and (max-width : 1023px){
-		  	float: left;
-			width: 55%;
-			padding: 3% 3% 3% 2%;
-		  	}
-		  	@media screen and (min-width : 1024px){
-		  	float: left;
-			width: 470px;
-			padding: 30px 30px 30px 20px;
-			margin: 0 0 20px;
-		  	}
-	}
-
-	.homepageProductGroup { 
-		border-left: 1px solid $subNavBorder;
-		margin: 75px 0 20px;
-			@media screen  and (max-width : 480px){
-		  	padding:3%;
-		  	margin: 0;
-		  	}
-		  	@media screen and (max-width : 1023px){
-		  	padding:3%;
-		  	}
-		  	@media screen and (min-width : 768px) and (max-width : 1023px){
-		  	float: left;
-			width: 33%;
-			padding: 0 3%;
-		  	}
-		  	@media screen and (min-width : 1024px){
-		  	float: left;
-			width: 400px;
-			padding: 0 0 30px 20px;
-		  	}		
-	
-		.v65-product-photo {
-			width: auto;
-			text-align: left;
-			margin:0 auto 2em auto; 
-			@media screen and (max-width : 1023px){
-				float:left;
-			}
-			
-			@media screen and (min-width : 1024px){
-				float:left;
-				text-align: center;
-			}
-
-			img {
-				max-width: 60%;
-			}
-		}
-
-		.v65-addToCartCase{
-			@media screen  and (max-width : 480px){
-				display:none;
-			}
-		}
-
-	}
-
-	#slider{
-		height: 100%;
-		overflow: hidden;
-		width: 100%;
-	}
+#slider{
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
 
 /* ----- b. Page Styles ----- */
+.content {
+	background: $contentBackground;
+	box-shadow: 0 0 20px $boxShadowColor;
+	padding: 30px;
+	
+	@media screen and (max-width : 950px){
+		box-shadow: none;
+		padding: 0 10px;
+		border-top: 2px solid $subNavBorder;
+	}
 
-	.content{
-		background: $contentBackground;
-		box-shadow: 0 0 20px $boxShadowColor;
-		padding: 30px;
+}
+
+.contentWide {
+	background: #fff;
+	box-shadow: 0 0 20px $boxShadowColor;
+	padding: 30px;
+	@media screen and (max-width : 767px){
+		box-shadow: none;
+		padding:3%;
+		border-top: 2px solid $subNavBorder;
+
+	}
+
+	.subMenu{
+		@media screen and (min-width : 768px) {
+			display:none;
+		}
+	}
+}
+
+.contentCart{
+	background: #fff;
+	box-shadow: 0 0 20px $boxShadowColor;
+	padding: 30px;
+	@media screen and (max-width : 767px){
+		box-shadow: none;
+		padding:0.2em;
+		border-top: 2px solid $subNavBorder;
+
+	}
+}
+
+.pageContent{
+	float: right;
+	width: 75%; //650px
 		@media screen and (max-width : 767px){
-			box-shadow: none;
-			padding:0;
-			border-top: 2px solid $subNavBorder;
+		width:94%;
+		padding:3%;
 		}
+}
+
+.colWrapper {
+	margin-bottom: 2em;
+	width: 100%;
+}
+
+	.colWrapper:before,.colWrapper:after { content:""; display:table; }
+	.colWrapper:after { clear:both; }
+
+
+	.col2 { 
+		float: left;
+		margin-left: 6%;
+		width: 47%;
 	}
 
-	.contentWide{
-		background: #fff;
-		box-shadow: 0 0 20px $boxShadowColor;
-		padding: 30px;
-		@media screen and (max-width : 767px){
-			box-shadow: none;
-			padding:3%;
-			border-top: 2px solid $subNavBorder;
-
-		}
-
-		.subMenu{
-			@media screen and (min-width : 768px) {
-				display:none;
-			}
-		}
+	.col2:first-child { 
+		float: left;
+		margin-left: 0%;
+		width: 47%;
 	}
 
-	.contentCart{
-		background: #fff;
-		box-shadow: 0 0 20px $boxShadowColor;
-		padding: 30px;
-		@media screen and (max-width : 767px){
-			box-shadow: none;
-			padding:0.2em;
-			border-top: 2px solid $subNavBorder;
-
-		}
+	.col3 { 
+		float: left;
+		margin-left: 5%;
+		width: 30%;
 	}
 
-	.pageContent{
-		float: right;
-		width: 75%; //650px
-			@media screen and (max-width : 767px){
-			width:94%;
-			padding:3%;
-			}
+	.col3:first-child { 
+		float: left;
+		margin-left: 0%;
+		width: 30%;
 	}
 
-	.colWrapper {
-		margin-bottom: 2em;
-		width: 100%;
-	}
-
-		.colWrapper:before,.colWrapper:after { content:""; display:table; }
-		.colWrapper:after { clear:both; }
-
+	@media screen and (max-width: 580px) {
 
 		.col2 { 
-			float: left;
-			margin-left: 6%;
-			width: 47%;
+			float: none;
+			margin-left: 0;
+			margin-bottom: 1.5em;
+			width: 100%;
 		}
 
 		.col2:first-child { 
-			float: left;
-			margin-left: 0%;
-			width: 47%;
+			float: none;
+			width: 100%;
 		}
 
 		.col3 { 
-			float: left;
-			margin-left: 5%;
-			width: 30%;
+			float: none;
+			margin-left: 0;
+			margin-bottom: 1.5em;
+			width: 100%;
 		}
 
 		.col3:first-child { 
-			float: left;
-			margin-left: 0%;
-			width: 30%;
+			float: none;
+			width: 100%;
 		}
 
-		@media screen and (max-width: 580px) {
-
-			.col2 { 
-				float: none;
-				margin-left: 0;
-				margin-bottom: 1.5em;
-				width: 100%;
-			}
-
-			.col2:first-child { 
-				float: none;
-				width: 100%;
-			}
-
-			.col3 { 
-				float: none;
-				margin-left: 0;
-				margin-bottom: 1.5em;
-				width: 100%;
-			}
-
-			.col3:first-child { 
-				float: none;
-				width: 100%;
-			}
-
-		}
+	}
 
 /*   ===================================================================================================
      6. Blog Template
