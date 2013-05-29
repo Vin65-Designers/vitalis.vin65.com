@@ -1,18 +1,4 @@
 ###
-# ECLIPSE IDE project files
-##
-.project
-.cache
-.cache/*
-.settings
-.settings/*
-
-###
-# Dreamweaver
-###
-_notes
-
-###
 # system SWAP, TMP and BACKUP files
 ###
 *~
@@ -31,47 +17,16 @@ Thumbs.db
 *._
 
 ###
-# Fusebox
-###
-parsed/
-
-###
 # System
 ###
+_gsdata_
 
-settings.ini
-config.rb
-sass-cache/
-*.scssc
+###
+# Sublime
+###
+sftp-config.json
 
-*.scssc
-
-www/assets/images/photogallery/images/adminpanelthumbs/Photo2.jpg
-
-www/assets/images/photogallery/images/adminpanelthumbs/Photo2.jpg
-
-www/assets/images/photogallery/images/adminpanelthumbs/Photo3.jpg
-
-www/assets/images/photogallery/images/adminpanelthumbs/Photo3.jpg
-
-www/assets/images/photogallery/images/large/Photo2.jpg
-
-www/assets/images/photogallery/images/large/Photo2.jpg
-
-www/assets/images/photogallery/images/large/Photo3.jpg
-
-www/assets/images/photogallery/images/large/Photo3.jpg
-
-www/assets/images/photogallery/images/original/Photo2.jpg
-
-www/assets/images/photogallery/images/original/Photo3.jpg
-
-www/assets/images/photogallery/images/original/Photo3.jpg
-
-www/assets/images/photogallery/images/thumbnail/Photo2.jpg
-
-www/assets/images/photogallery/images/thumbnail/Photo2.jpg
-
-www/assets/images/photogallery/images/thumbnail/Photo3.jpg
-
-www/assets/images/photogallery/images/thumbnail/Photo3.jpg
+###
+#   SCSS Files
+###
+.sass-cache/*
