@@ -3,9 +3,7 @@
 <head>
 
 	<meta charset="utf-8">
-
 	<v65:metaTags></v65:metaTags>
-
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon">
@@ -15,11 +13,9 @@
 	<script type="text/javascript" src="http://quicklaunch.vin65.com/quicklaunch.js"></script>
 	<!--//Vin65 QuickLaunch//-->
 
-	<link rel="stylesheet" href="//s3.amazonaws.com/assetss3.vin65.com/css/vin65-responsive.min.css" type="text/css">
 	<v65:css files="/assets/css/screen.min.css"></v65:css>
 	
 	<!--[if lt IE 9]>
-		<script src="/assets/js/html5shiv.js"></script>
 		<script src="/assets/js/html5shiv-printshiv.js"></script>
 		<script src="/assets/js/respond.min.js"></script>
 	<![endif]-->
@@ -27,10 +23,8 @@
 </head>
 <body>
 
-<div class="wrapper v65-group">
-
 	<!--header-->
-	<div class="header">
+	<header>
 
 		<!--user-tools-->
 		<div id="user-tools">
@@ -44,25 +38,25 @@
 		<!--/logo-->
 		
 		<!--mainMenu-->
-		<div class="mainMenu">
+		<nav>
 			<a href="#footerNav" class="menuLink"><i class="icon-menu"></i></a>
 			<v65:layoutHeaderNav depth="2"></v65:layoutHeaderNav>
-		</div>
+		</nav>
 		<!--/mainMenu-->
 		
-	</div>
+	</header>
 	<!--/header-->
 	
 	<!--content-->
-	<div class="content v65-group">
+	<section class="content v65-group">
 		
 		<div class="backtotop">	
 			<a href="#"><i class="icon-up-bold"></i>TOP</a>
 		</div>
 
-		<div class="pageContent">
+		<article class="pageContent">
 			<v65:mainContent></v65:mainContent>
-		</div>
+		</article>
 		
 		<div class="subMenu">
 			<a name="footerNav"></a> 
@@ -70,11 +64,11 @@
 			<v65:layoutLeftNav></v65:layoutLeftNav>
 		</div>
 		
-	</div>
+	</section>
 	<!--/content-->
 	
 	<!--footer-->
-	<div class="footer">
+	<footer>
 		
 		<!--footer_nav-->
 		<div class="footerNav"> 
@@ -95,11 +89,7 @@
 		</div>
 		<!--/footer_tools-->	
 
-	</div>
-	<!--/footer-->
-
-</div>
-<!--/wrapper-->
+	</footer>
 
 	<v65:js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js"></v65:js>
 

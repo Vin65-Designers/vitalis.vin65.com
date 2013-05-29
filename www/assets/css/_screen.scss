@@ -217,6 +217,20 @@ body{
 	background-color: $backgroundColor;
 	color: $fontColor;
 	font-family: $fontFamily;
+
+	max-width: 990px;
+	margin: 0 auto;
+	width: 100%;
+
+	@media screen and (max-width : 990px) {
+		padding: 0 2%;
+		width: 96%;
+	}
+
+	@media screen and (max-width : 600px) {
+		padding: 0;
+		width: 100%;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -325,22 +339,6 @@ hr {
 	height: 1px;
 }
 
-.wrapper {
-	max-width: 990px;
-	margin: 0 auto;
-	width: 100%;
-
-	@media screen and (max-width : 990px) {
-		padding: 0 2%;
-		width: 96%;
-	}
-
-	@media screen and (max-width : 600px) {
-		padding: 0;
-		width: 100%;
-	}
-}
-
 .backtotop {
 	display: none;
 
@@ -401,7 +399,7 @@ hr {
      3. Header
 ======================================================================================================== */
 
-.header{
+header{
 	width: 100%;
 	z-index: 100;
 	@media screen and (min-width : 768px) {
@@ -502,7 +500,7 @@ hr {
 
 /* ----- a. Main Menu ----- */
 
-.mainMenu{
+nav {
 	font-size: 13px;
 	height:100%;
 	width: 100%;
@@ -1113,7 +1111,7 @@ a{
      9. Footer	
 ======================================================================================================== */
 
-.footer{
+footer{
 
 	width: 100%;
 
