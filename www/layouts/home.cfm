@@ -1,35 +1,27 @@
 <cfoutput> <!DOCTYPE html>
-
 <html>
 <head>
-  
+
 	<meta charset="utf-8">
-	
 	<cf_metaTags>
-	
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    
+
 	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-        
-	<cf_vin65GlobalAssets>   
+
+	<cf_vin65GlobalAssets>
+
+	<cf_css files="/assets/css/screen.min.css">
 	
-	<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
-	
-	<cf_css files="/assets/nivo/nivo-slider.css,/assets/css/screen.min.css">
-	<!--[if lte IE 7]><cf_css files="/assets/css/ie7.css"><![endif]-->
-	<!--[if IE 8]><cf_css files="/assets/css/ie8.css"><![endif]-->
-	
-	<!--//Respond.js is a polyfill so  media queries work on IE8 and older browers//-->  
-	<script src="/assets/js/respond.min.js"></script>
-	
+	<!--[if lt IE 9]>
+		<script src="/assets/js/html5shiv-printshiv.js"></script>
+		<script src="/assets/js/respond.min.js"></script>
+	<![endif]-->
+
 </head>
 <body>
 
-<div class="wrapper v65-group">
-
-	<!--header-->
-	<div class="header">
+	<header>
 
 		<!--user-tools-->
 		<div id="user-tools">
@@ -38,40 +30,31 @@
 		</div>
 		<!--/user-tools-->
 		
-		<!--search
-		<div id="productSearch">
-			<cf_productSearch>
-		</div>
-		<!--search-->
-		
 		<!--logo-->
 		<a href="/" accesskey="h" class="logo"><img src="/assets/images/logo.png" alt="<cf_websiteName>"></a>
 		<!--/logo-->
 		
-		<!--mainMenu-->
-		<div class="mainMenu">
+		<nav>
 			<a href="##footerNav" class="menuLink">&##9776;</a>
 			<cf_layoutHeaderNav depth="2">
-		</div>
-		<!--/mainMenu-->
+		</nav>
 		
-	</div>
-	<!--/header-->
+	</header>
 	
 	<!--homepageContent-->
-	<div class="homepageContent v65-group">
+	<section class="homepageContent v65-group">
 	
 		<div id="slider"></div>
 				
-		<div class="homepageText">
+		<article class="homepageText">
 			<cf_mainContent>
-		</div>
+		</article>
 		
 		<div class="homepageProductGroup">
 			<cf_product_group code="HomepageProductGroup">
 		</div>
 		
-	</div>
+	</section>
 	<!--/homepageContent-->
 	
 	<!--footer-->
@@ -95,8 +78,14 @@
 			</ul>
 		</div>
 		<!--/footer_tools-->
+
+	</div>
+	<!--/footer-->
 		
 </div>
+<!--/wrapper-->
+
+<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
 
 <cf_vin65GlobalFooterAssets>
 
