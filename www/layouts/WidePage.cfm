@@ -1,5 +1,4 @@
-<cfoutput> 
-<!DOCTYPE html>
+<cfoutput> <!DOCTYPE html>
 <html>
 <head>
 
@@ -35,32 +34,39 @@
 		<a href="/" accesskey="h" class="logo"><img src="/assets/images/logo.png" alt="<cf_websiteName>"></a>
 		<!--/logo-->
 		
+		<!--mainMenu-->
 		<nav>
+			<a href="##footerNav" class="menuLink"><i class="icon-menu"></i></a>
 			<cf_layoutHeaderNav depth="2">
 		</nav>
+		<!--/mainMenu-->
 		
 	</header>
 	
-	<!--homepageContent-->
-	<section class="homepageContent v65-group">
-	
-		<div id="slider"></div>
-				
-		<article class="homepageText">
+	<!--content-->
+	<div class="contentWide v65-group">	
+		
+		<div class="backtotop">	
+			<a href="##"><i class="icon-up-bold"></i>TOP</a>
+		</div>
+
+		<article class="pageWideText">
 			<cf_mainContent>
 		</article>
+
+		<section class="subMenu subMenuWidePage">
+			<a name="footerNav"></a>
+			<cf_layoutSubMenu>
+		</section>
 		
-		<div class="homepageProductGroup">
-			<cf_product_group code="HomepageProductGroup">
-		</div>
-		
-	</section>
-	<!--/homepageContent-->
+	</div>
+	<!--/content-->
 	
+	<!--footer-->
 	<footer>
 		
 		<!--footer_nav-->
-		<div class="footerNav">
+		<div class="footerNav"> 
 			<a name="footerNav"></a> 
 			<cf_layoutFooterNav>
 		</div>
@@ -82,14 +88,11 @@
 		<!--/footer_tools-->
 
 	</footer>
-		
-</div>
-<!--/wrapper-->
+	<!--/footer-->
 
-<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
+	<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
 
-<cf_vin65GlobalFooterAssets>
+	<cf_vin65GlobalFooterAssets>
 
 </body>
-</html>
- </cfoutput>
+</html> </cfoutput>

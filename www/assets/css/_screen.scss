@@ -227,7 +227,7 @@ body{
 		width: 96%;
 	}
 
-	@media screen and (max-width : 600px) {
+	@media screen and (max-width : 580px) {
 		padding: 0;
 		width: 100%;
 	}
@@ -482,7 +482,7 @@ header{
 .menuLink {
 	display:none;
 
-	@media screen and (max-width : 767px){
+	@media screen and (max-width : 580px){
 		display: block;
 		float: left;
 		font-size: 16px;
@@ -728,78 +728,55 @@ nav {
 .homepageContent{
 	background: $contentBackground;
 	box-shadow: 0 0 20px $boxShadowColor;
+
+	@media screen and (max-width : 768px){
+		box-shadow: none;
+		border-top: 2px solid $subNavBorder;
+	}
 }
 
 .homepageText{
-  	@media screen  and (max-width : 480px){
-	  	padding: 3%;
+  	float: left;
+	margin: 0 0 2em;
+	padding: 0 4% 4% 4%;
+	width: 52%;
+
+	@media screen  and (max-width : 600px){
+	  	float: none;
 	  	margin: 0;
+	  	padding: 0 4%;
+	  	width: 92%;
   	}
-  	@media screen and (max-width : 1023px){
-	  	padding: 3%;
-	  	margin: 0;
-  	}
-  	@media screen and (min-width : 768px) and (max-width : 1023px){
-	  	float: left;
-		width: 55%;
-		padding: 3% 3% 3% 2%;
-  	}
-  	@media screen and (min-width : 1024px){
-	  	float: left;
-		width: 470px;
-		padding: 30px 30px 30px 20px;
-		margin: 0 0 20px;
-  	}
+
 }
 
 .homepageProductGroup { 
-	border-left: 1px solid $subNavBorder;
-	margin: 75px 0 20px;
-	
-	@media screen  and (max-width : 480px){
-  		padding:3%;
-  		margin: 0;
-  	}
+	float: left;
+	margin: 0 0 20px;
+	padding: 0 0 30px 20px;
+	width: 33%;
 
-  	@media screen and (max-width : 1023px){
-  		padding:3%;
+  	@media screen  and (max-width : 600px){
+	  	float: none;
+	  	margin: 0;
+	  	padding: 0 4%;
+	  	width: 92%;
   	}
-
-  	@media screen and (min-width : 768px) and (max-width : 1023px){
-  		float: left;
-		width: 33%;
-		padding: 0 3%;
-  	}
-
-  	@media screen and (min-width : 1024px){
-  		float: left;
-		width: 400px;
-		padding: 0 0 30px 20px;
-  	}		
 
 	.v65-product-photo {
+		float:left;
+		text-align: center;
 		width: auto;
 		text-align: left;
-		margin:0 auto 2em auto; 
-		
-		@media screen and (max-width : 1023px){
-			float:left;
-		}
-		
-		@media screen and (min-width : 1024px){
-			float:left;
-			text-align: center;
-		}
+		margin: 0 auto 2em auto; 
 
 		img {
 			max-width: 60%;
 		}
 	}
 
-	.v65-addToCartCase{
-		@media screen  and (max-width : 480px){
-			display:none;
-		}
+	.v65-productGroup-title {
+		margin: 0.25em 0 0.5em;
 	}
 
 }
@@ -814,11 +791,11 @@ nav {
 .content {
 	background: $contentBackground;
 	box-shadow: 0 0 20px $boxShadowColor;
-	padding: 30px;
+	padding: 3em;
 	
-	@media screen and (max-width : 950px){
+	@media screen and (max-width : 600px){
 		box-shadow: none;
-		padding: 0 10px;
+		padding: 1em;
 		border-top: 2px solid $subNavBorder;
 	}
 
@@ -828,6 +805,7 @@ nav {
 	background: #fff;
 	box-shadow: 0 0 20px $boxShadowColor;
 	padding: 30px;
+	
 	@media screen and (max-width : 767px){
 		box-shadow: none;
 		padding:3%;
@@ -928,74 +906,94 @@ nav {
      6. Blog Template
 ======================================================================================================== */
 
-	.blogContent{	
-		padding: 5%;
-		width: 90%;
-		@media screen and (min-width : 768px){
-		width: 65%;
-		padding: 5%;
-		float: left;
-		}
-		@media screen and (min-width : 1024px){
-		width: 520px;
-		padding: 20px 25px 0 0;
-		float: left;
-		}
-	
+/*   ===================================================================================================
+     6. Blog Template
+======================================================================================================== */
+
+.blogContent{
+	float: left;
+	padding: 20px 4% 0 0;
+	width: 56%;
+
+	@media screen and (max-width : 600px) {
+		padding: 20px 4% 0 0;
+		width: 66%;
 	}
 
-	.blogRightWrapper { 
-		display:none;
-		@media screen and (min-width : 768px) {
-			display: block;
-			width: 20%;
-			padding: 20px 0 0 0;
-			float: right;
-		}
-		@media screen and (min-width : 1024px){
-			float: right;
-			padding: 20px 0 0 0;
-			width: 325px;
-		}
-
-		ul{
-			list-style: none;
-			margin: 0 0 1em;
-			padding: 0;
-
-			li{
-				font-size: 11px;
-				margin: 0 0 0 10px;
-			}
-		}
+	@media screen and (max-width : 580px) {
+		float: none;
+		margin: 0 0 2em 0;
+		padding: 0;
+		width: 96%;
 	}
+
+}
+
+.blogRightWrapper {
+	float: right;
+	padding: 20px 0 0 0;
+	width: 40%;
+
+	ul{
+		list-style: none;
+		margin: 0 0 1em;
+		padding: 0;
+	}
+
+	li{
+		font-size: 11px;
+		margin: 0 0 0 10px;
+	}
+
+	@media screen and (max-width : 600px) {
+		float: left;
+		margin: 0 0 2em 0;
+		padding: 0;
+		width: 30%;
+	}
+
+	@media screen and (max-width : 580px) {
+		float: none;
+		margin: 0 0 2em 0;
+		padding: 0;
+		width: 100%;
+	}
+
+}
 
 	.blogFilterLeft {
-		display:none;
-		padding:0;
-		@media screen and (min-width : 768px) {
-			width:auto;
-			display: block;
+		float: left;
+		padding-right: 4%;
+		width: 48%;
+
+		@media screen and (max-width : 600px) {
+			float: none;
+			margin: 0 0 2em 0;
+			width: 100%;
 		}
-		@media screen and (min-width : 1024px){
-			display: block;
+
+		@media screen and (max-width : 580px) {
 			float: left;
-			padding: 0 25px 0 0;
-			width: 150px;
-		}			
+			padding-right: 4%;
+			width: 48%;
+		}
+
 	}
 
-	.blogFilterRight { 
-		display:none;
-		@media screen and (min-width : 768px) {
-			width:auto;
-			display: block;
-		} 
-		@media screen and (min-width : 1024px){
-			display: block;
+	.blogFilterRight {
+		float: left;
+		width: 48%;
+
+		@media screen and (max-width : 600px) {
+			float: none;
+			margin: 0 0 2em 0;
+			width: 100%;
+		}
+
+		@media screen and (max-width : 580px) {
 			float: left;
-			width: 150px;
-		}		
+			width: 48%;
+		}
 	}
 
 /*   ===================================================================================================
@@ -1111,145 +1109,99 @@ a{
      9. Footer	
 ======================================================================================================== */
 
-footer{
-
+footer {
+	color: $footerColor;
+	padding: 1.5em 0;
+	text-align: center;
 	width: 100%;
 
-	@media screen and (min-width : 768px) {
-		color: $footerColor;
-		padding: 1.5em 0;
-		text-align: center;
-		}
+	@media screen and (max-width : 580px){
+		padding-top: 0;
+	}
 
-		a {
-			color:$footerColor;
+	a {
+		color:$footerColor;
 
-			&:hover{
-				color: $footerColorHover;
-			} 
-		}
+		&:hover{
+			color: $footerColorHover;
+		} 
+	}
 
 }
 			
 /* Footer Nav
 -----------------------------------------------*/
 .footerNav {
-	
 	width: 100%;
-	@media screen and (max-width : 767px){
-		background: none;	
-	}  
 
-	ul{ 
+	ul { 
 		list-style: none;
-		width: 100%;
 		margin: 0;
 		padding: 0;
-		
-		@media screen and (min-width : 768px){
-			border: none;
-			text-align: center;	
-			} 
+		text-align: center;
+		width: 100%;
+
+		@media screen and (max-width : 580px){
+			margin-bottom: 2em;
+		}
 
 		li { 
-			margin: 0;
+			display: inline-block;
+			margin: 0 1.5em;
 			padding: 0;
 			text-align: center;
-			width: 100%;
-			
-			@media screen and (min-width : 768px){
-				display: inline;
-				padding:0 5px;
-				border:none;
-				}
 
-			a { 
-				font-size: 1em;
-				line-height: 3em;
-				display: block;
-				
-				@media screen and (min-width : 768px){
-					color: $footerColor;
-					display: inline-block;
-					font-size: 0.917em;
-					position: relative;
-
-					&:hover{
-						color: $footerColorHover;
-					}  
-
-				}
+			@media screen and (max-width : 580px){
+				border-bottom: 1px solid #999;
+				line-height: 4em;
+				margin: 0;
+				width: 100%;
 			}
+
 		}
 	}
 } 
 
-/* Mobile Footer Tools
+/* Footer Tools
 -----------------------------------------------*/
 .footerTools {
-	background: #000;
+
 	width: 100%;
 
-	ul{ 
-		border-top: 1px solid #555;
+	ul { 
 		list-style: none;
-		margin: 0;
 		padding: 0;
 		width: 100%;
-		 	@media screen and (min-width : 768px){
-		 		border:none;
-		 	}
 
-		li{ 
-			line-height: 2.5em; 
+		li { 
+			line-height: 3em; 
 			margin: 0;
 			padding: 0;
 			text-align: center;
 			width: 100%;
-				@media screen and (min-width : 768px){
-		 		border:none;
-		 		} 
 
-				img {
-					vertical-align:text-top;
-				}
 
-				a { 
-					line-height: 2.5em;
-					display: block;
-						@media screen and (min-width : 768px){
-							display:inline-block;
-						} 
-				} 
+			a { 
+				line-height: 2.5em;
+				display: block;
 
+			} 
+
+		}
+
+		.phone, .email, .map { 
+			display: none;
+
+			@media screen and (max-width : 580px){
+				display:block;
 			}
 
-		li.phone, li.email, li.map{ 
-			@media screen and (min-width : 768px){
-				display:none;}
-			}
+		}		
 
-		li.legal {
-			border-bottom: 0;
-			font-size: 0.875em;
-			line-height: 3em;
-				@media screen and (min-width : 768px) {
-					float:left;
-					display: block;
-				}
-			}
+	}
 
-		li.accolade {
-			font-size: 0.875em;
-			line-height: 3em;
-				
-				@media screen and (min-width : 768px){
-					float:left;
-					display: block;
-				}
-
-			}
-
+	.legal {
+		font-size: 0.835em;
 	}
 
 }

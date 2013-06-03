@@ -37,7 +37,7 @@
 		<!--/logo-->
 
 		<nav>
-			<a href="##footerNav" class="menuLink">&##9776;</a>
+			<a href="##footerNav" class="menuLink"><i class="icon-menu"></i></a>
 			<cf_layoutHeaderNav depth="2">
 		</nav>
 		
@@ -96,13 +96,16 @@
 
 		<!--footer_tool-->
 		<div class="footerTools"> 
-			<ul>
+				<ul>
 				<li class="phone"><a href="tel:1-8999-999-9999">Call Us Toll Free: <strong>1-999-999-9999</strong> <i class="icon-phone-1"></i></li>			
-				<li class="email"><a href="mailto:info@template9.com">info@template9.com</a></li>			
-				<li class="map"><a href="http://maps.google.com">Box 0000, City, State PostalCode</li>
-				<li class="legal"><cf_copyright></li>			
-				<li class="accolade"><cf_vin65Accolade></li>			
+				<li class="email"><a href="mailto:info@generic.com">info@generic.com <i class="icon-mail"></i></a></li>			
+				<li class="map"><a href="http://maps.google.com">Box 0000, City, State ZipCode <i class="icon-location"></i></a></li>		
 			</ul>
+
+			<p class="legal">
+				<cf_copyright><br>
+				<cf_vin65Accolade>
+			</p>
 		</div>
 		<!--/footer_tools-->
 	
