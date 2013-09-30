@@ -44,6 +44,11 @@
 				$("html, body").animate({ scrollTop: 0 }, 400);
 				return false;
 			});
+
+			$('a[href="#footerNav"]').click(function() {
+				$("html, body").animate({ scrollTop: $('a[name="footerNav"]').position().top }, 400);
+				return false;
+			});
 		}
 	},
 

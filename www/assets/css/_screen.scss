@@ -38,7 +38,8 @@ $backtoTopBorder: #ccc;
 //	Default Theme
 // =====================================================================================================
 
-$backgroundColor: #efefef;
+$backgroundColor: #F5F5F5;
+$backgroundPattern: image-url('background.jpg');
 $linkColor: #369;
 
 $fontColor: #111;
@@ -48,6 +49,8 @@ $headingFontFamily: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", L
 
 $headingColor: #333;
 $headingAltColor: #000;
+
+$topLineColor: #84C89A;
 
 $userToolsColor: #000;
 $userToolsColorMobile: #fff;
@@ -66,8 +69,6 @@ $contentBackground: #fff;
 
 $footerColor: #000;
 $footerColorHover: #333;
-
-$boxShadowColor: #ccc;
 
 $buttonColor: #369;
 $buttonFontColor: #fff;
@@ -110,8 +111,6 @@ $buttonFontFamily: sans-serif;
 //$footerColor: #000;
 //$footerColorHover: #333;
 
-//$boxShadowColor: #ccc;
-
 //$buttonColor: #369;
 //$buttonFontColor: #fff;
 
@@ -152,8 +151,6 @@ $buttonFontFamily: sans-serif;
 
 //$footerColor: #eee;
 //$footerColorHover: #fff;
-
-//$boxShadowColor: #5d0e0f;
 
 //$buttonColor: #790102;
 //$buttonFontColor: #fff;
@@ -196,8 +193,6 @@ $buttonFontFamily: sans-serif;
 //$footerColor: #eee;
 //$footerColorHover: #fff;
 
-//$boxShadowColor: #666;
-
 //$buttonColor: #333;
 //$buttonFontColor: #fff;
 
@@ -210,15 +205,17 @@ $buttonFontFamily: sans-serif;
      1. Typography - These get copied into the admin.css
 ======================================================================================================== */
 html {
+	border-top: 5px solid $topLineColor;
     font-size: 75%;
 }
 
 body{
 	background-color: $backgroundColor;
+	background: $backgroundPattern;
 	color: $fontColor;
 	font-family: $fontFamily;
 
-	max-width: 990px;
+	max-width: 960px;
 	margin: 0 auto;
 	width: 100%;
 
@@ -383,6 +380,7 @@ hr {
 		background: $userToolsBackgroundColorMobile;
 		height: 4em; 
 		line-height: 4em;
+		-ms-box-sizing: border-box;
 
 		a {
 			color: $userToolsColorMobile;
@@ -398,12 +396,11 @@ hr {
 /*   ===================================================================================================
      3. Header
 ======================================================================================================== */
-
 header{
 	width: 100%;
 	z-index: 100;
 	@media screen and (min-width : 768px) {
-		height: 180px;
+		height: 220px;
 		position: relative;	
 	}
 }
@@ -413,17 +410,19 @@ header{
 		display: block;
 		text-align: center;
 		width:40%;
-		margin:0 auto;
+		margin:1em auto;
 			@media screen and (min-width : 768px) and (max-width : 1023px) {
-				height: 160px;
+				height: 140px;
 				float: left;
-				width: 240px;
+				margin: 3em 0 0;
+				width: 140px;
 				text-align:left;	
 			}
 			@media screen and (min-width : 1024px) {
-				height: 160px;
+				height: 140px;
 				float: left;
-				width: 240px;
+				margin: 3em 0 0;
+				width: 140px;
 				text-align:left;	
 			}
 
@@ -501,33 +500,40 @@ header{
 /* ----- a. Main Menu ----- */
 
 nav {
+	border-bottom: 2px solid;
+	border-top: 2px solid;
 	font-size: 13px;
 	height:100%;
+	padding: 2px 0;
 	width: 100%;
 	z-index: 101;
-		@media screen and (max-width : 767px){
-			clear:both;
-			text-align: center;
-			}
-		@media screen and (min-width : 768px) and (max-width : 1023px){
-			float:right;
-			height: 24px;
-			width: 65%;//640px
-			position: relative;
-			margin: 80px 0 30px;//27px if product search at top
-			}
-		@media screen and (min-width : 1024px){
-			float:right;
-			height: 24px;
-			width: 640px;
-			position: relative;
-			margin: 80px 0 30px;
+
+	@media screen and (max-width : 767px){
+		clear:both;
+		text-align: center;
+	}
+	@media screen and (min-width : 768px) and (max-width : 1023px){
+		float:right;
+		height: 30px;
+		width: 65%;//640px
+		position: relative;
+		margin: 80px 0 30px;//27px if product search at top
 		}
+	@media screen and (min-width : 1024px){
+		float:right;
+		height: 30px;
+		width: 640px;
+		position: relative;
+		margin: 80px 0 30px;
+	}
 
 	ul{
+		border-bottom: 1px solid;
+		border-top: 1px solid;
 		margin: 0;
 		padding: 0;
 		display: inline;
+		width: 100%;
 			@media screen and (min-width : 768px) {
 				float:right;
 				margin:0;
@@ -664,7 +670,7 @@ nav {
 		list-style: none;
 		width: 100%;
 
-		@media screen and (max-width : 767px){
+		@media screen and (max-width : 767px){	
 			border-top: 1px solid $subNavBorder;
 		}	
 
@@ -676,13 +682,13 @@ nav {
 		li {
 			margin:0;
 			padding:0;
-			height: 3em;
+			min-height: 3em;
 			line-height: 3em;
 
 			@media screen and (max-width : 767px){
 				border-bottom: 1px solid $subNavBorder; 
 				text-align: center;
-				height: 4em;
+				min-height: 4em;
 				line-height: 4em;
 			}
 
@@ -727,7 +733,6 @@ nav {
 /* ----- a. Homepage Styles ----- */
 .homepageContent{
 	background: $contentBackground;
-	box-shadow: 0 0 20px $boxShadowColor;
 
 	@media screen and (max-width : 768px){
 		box-shadow: none;
@@ -790,7 +795,6 @@ nav {
 /* ----- b. Page Styles ----- */
 .content {
 	background: $contentBackground;
-	box-shadow: 0 0 20px $boxShadowColor;
 	padding: 3em;
 	
 	@media screen and (max-width : 600px){
@@ -803,7 +807,6 @@ nav {
 
 .contentWide {
 	background: #fff;
-	box-shadow: 0 0 20px $boxShadowColor;
 	padding: 30px;
 	
 	@media screen and (max-width : 767px){
@@ -822,7 +825,6 @@ nav {
 
 .contentCart{
 	background: #fff;
-	box-shadow: 0 0 20px $boxShadowColor;
 	padding: 30px;
 	@media screen and (max-width : 767px){
 		box-shadow: none;
@@ -920,7 +922,7 @@ nav {
 		width: 66%;
 	}
 
-	@media screen and (max-width : 580px) {
+	@media screen and (max-width : 900px) { //580
 		float: none;
 		margin: 0 0 2em 0;
 		padding: 0;
@@ -952,7 +954,7 @@ nav {
 		width: 30%;
 	}
 
-	@media screen and (max-width : 580px) {
+	@media screen and (max-width : 900px) { //580
 		float: none;
 		margin: 0 0 2em 0;
 		padding: 0;
@@ -1228,4 +1230,23 @@ footer {
 		width: 100%;
 	}
 
+/* ---- b. 5 Up Display ----- */
+.v65-product5Up {
+	width: 18%;
 
+	@media screen and (max-width: 930px) {
+		width: 23%;
+	}
+}
+
+.v65-formRight {
+	width: 100%;
+
+	input {
+		width: 95% !important;
+	}
+
+	textarea {
+		width: 99% !important;
+	}
+}

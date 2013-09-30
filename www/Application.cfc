@@ -1,13 +1,13 @@
 <cfcomponent output="false" extends="k1technology.baseApplication">
 	<!---Remember to modify the robots.txt file when setting up this file--->
-	<cfset this.name = "Vin65Template9">
+	<cfset this.name = "Vin65Template9Redesign">
 	<cfset this.sessionManagement = true>
 	<cfset this.sessionTimeout = createTimeSpan(0,0,20,0)>
 	<cfset this.customTagPaths = expandpath('../../../../platform/_base2/customtags')>
 	
 	<cffunction name="onApplicationStart" returnType="boolean" output="false">
 		<cfset application.self="/index.cfm">
-		<cfset application.websiteID="CDC65415-BC91-CEE3-6B10-1185A1F40EA1">
+		<cfset application.websiteID="5EFE9D3F-E5F1-EB26-4C8F-737474C6983E">
 		<cfset super.onApplicationStart()>
 
 		<cfreturn true>
