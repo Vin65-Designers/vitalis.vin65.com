@@ -40,12 +40,12 @@ $backtoTopBorder: #ccc;
 
 $backgroundColor: #F5F5F5;
 $backgroundPattern: image-url('background.jpg');
-$linkColor: #369;
+$linkColor: #55736D;
 
-$fontColor: #111;
-$fontFamily: sans-serif;
+$fontColor: #666;
+$fontFamily: Helvetica, sans-serif;
 
-$headingFontFamily: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+$headingFontFamily: Garamond, Georgia, serif;
 
 $headingColor: #333;
 $headingAltColor: #000;
@@ -56,27 +56,27 @@ $userToolsColor: #000;
 $userToolsColorMobile: #fff;
 $userToolsBackgroundColorMobile: #000;
 
-$navColor: #000;
-$navColorHover: #333;
-$navDropDownBackgroundColor: #fff;
-$navDropDownBorderColor: #ccc;
-$navDropDownColor: #333;
+$navColor: #666;
+$navColorHover: #000;
+$navDropDownBackgroundColor: #FAFAFA;
+$navDropDownBorderColor: #666;
+$navDropDownColor: #666;
 $navDropDownColorHover: #000;
 
 $subNavBorder: #ccc;
 
-$contentBackground: #fff;
+$contentBackground: none;
 
 $footerColor: #000;
 $footerColorHover: #333;
 
-$buttonColor: #369;
+$buttonColor: #84C89A;
 $buttonFontColor: #fff;
 
 $altButtonColor: #aaa;
 $altButtonFontColor: #fff;
 
-$buttonFontFamily: sans-serif;
+$buttonFontFamily: Helvetica, sans-serif;
 
 //  ===================================================================================================
 //	Cream
@@ -205,7 +205,7 @@ $buttonFontFamily: sans-serif;
      1. Typography - These get copied into the admin.css
 ======================================================================================================== */
 html {
-	border-top: 5px solid $topLineColor;
+	border-top: 7px solid $topLineColor;
     font-size: 75%;
 }
 
@@ -230,10 +230,9 @@ body{
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+#{headings(1,6)}{
    	color: $headingColor;
 	font-family: $headingFontFamily;
-	font-style: italic;
 	font-weight: normal;
     margin: 0;
 }
@@ -278,9 +277,8 @@ h6 {
     font-size: 2em; // 2 * 12 = 24px
     line-height: 1; // 1 * 24 = 24px
     margin-bottom: 0.5em; // 0.5 * 24 = 12px
-   	color: $headingColor;
+   	color: $headingColor !important;
 	font-family: $headingFontFamily;
-	font-style: italic;
 	font-weight: normal;
 }
 
@@ -391,6 +389,10 @@ hr {
 		}
 	}
 
+	@media screen and (min-width: 768px) {
+		margin: 25px 0 0;
+	}
+
 }
 
 /*   ===================================================================================================
@@ -411,25 +413,25 @@ header{
 		text-align: center;
 		width:40%;
 		margin:1em auto;
-			@media screen and (min-width : 768px) and (max-width : 1023px) {
-				height: 140px;
-				float: left;
-				margin: 3em 0 0;
-				width: 140px;
-				text-align:left;	
-			}
-			@media screen and (min-width : 1024px) {
-				height: 140px;
-				float: left;
-				margin: 3em 0 0;
-				width: 140px;
-				text-align:left;	
-			}
+		@media screen and (min-width : 768px) and (max-width : 1023px) {
+			height: 140px;
+			float: left;
+			margin: 3em 0 0;
+			width: 140px;
+			text-align:left;	
+		}
+		@media screen and (min-width : 1024px) {
+			height: 140px;
+			float: left;
+			margin: 3em 0 0;
+			width: 140px;
+			text-align:left;	
+		}
 
-			img{
-				max-width: 100%;
-				@media screen and (max-width : 767px){ }
-			}
+		img{
+			max-width: 100%;
+			@media screen and (max-width : 767px){ }
+		}
 	}
 
 	.cart {
@@ -489,22 +491,22 @@ header{
 		line-height: 45px;
 		padding-left: 15px;
 		text-shadow: 0 1px 3px rgba(220, 220, 220, 0.5)
-		}
-
-		&:hover, &:focus, &:active{
-			text-decoration: none;
-			}
 	}
+
+	&:hover, &:focus, &:active{
+		text-decoration: none;
+	}
+}
 
 
 /* ----- a. Main Menu ----- */
 
 nav {
-	border-bottom: 2px solid;
-	border-top: 2px solid;
-	font-size: 13px;
+	border-bottom: 2px solid #666;
+	border-top: 2px solid #666;
+	font-family: $headingFontFamily;
+	font-size: 18px;
 	height:100%;
-	padding: 2px 0;
 	width: 100%;
 	z-index: 101;
 
@@ -514,50 +516,52 @@ nav {
 	}
 	@media screen and (min-width : 768px) and (max-width : 1023px){
 		float:right;
-		height: 30px;
-		width: 65%;//640px
+		height: 40px;
+		width: auto;//640px //65%
+		padding: 2px 0;
 		position: relative;
-		margin: 80px 0 30px;//27px if product search at top
-		}
+		margin: 30px 0;//27px if product search at top
+	}
 	@media screen and (min-width : 1024px){
 		float:right;
-		height: 30px;
-		width: 640px;
+		height: 40px;
+		margin: 30px 0;
+		padding: 2px 0;
+		width: auto;
 		position: relative;
-		margin: 80px 0 30px;
 	}
 
 	ul{
-		border-bottom: 1px solid;
-		border-top: 1px solid;
 		margin: 0;
 		padding: 0;
 		display: inline;
 		width: 100%;
-			@media screen and (min-width : 768px) {
-				float:right;
-				margin:0;
-				text-align: left;
-			}
+		@media screen and (min-width : 768px) {
+			border-bottom: 1px solid #666;
+			border-top: 1px solid #666;
+			float:right;
+			height: 38px;
+			margin:0;
+			text-align: left;
+		}
 
 		li{
 			margin: 0;
 			padding: 0;
-			height: 45px;
-			line-height: 45px;
+			height: 35px;
+			line-height: 35px;
 			display: inline-block;
 			@media screen and (min-width : 768px) {
 				float:left;
-				height: 28px;
-				line-height: 28px;
-				margin: 0 25px;
-				margin: 0 0 0 35px;
+				height: 38px;
+				line-height: 38px;
+				margin: 0 20px;
 				position:relative;
 				display: inline;
 			}
 			@media screen and (min-width : 1024px){
 				float:left;
-				margin: 0 0 0 55px;
+				margin: 0 25px;
 				position:relative;
 				display: inline;
 			}
@@ -565,8 +569,8 @@ nav {
 			a{
 				color: $navColor;
 				display:block;
-				height: 44px;
-				line-height: 44px;
+				height: 35px;
+				line-height: 35px;
 				margin: 0 8px;
 				padding: 0 6px;
 				position: relative;
@@ -577,7 +581,7 @@ nav {
 					display: inline-block;
 					margin: 0;
 					padding: 0;
-					}
+				}
 
 				&:hover{
 					color: $navColorHover;
@@ -589,17 +593,20 @@ nav {
 				display:none;
 				background-color: $navDropDownBackgroundColor;
 				border: 1px solid $navDropDownBorderColor;
-				font-size: 12px;
+				font-size: 14px;
 				@media screen and (min-width : 768px) {
 					display: block;
 				}
 			}
 			ul{
 				background-color: $navDropDownBackgroundColor;
+				border: 1px solid #666;
 				display: none;
+				font-size: 16px;
+				height: auto;
 				left: -10px;
 				position: absolute;
-				top: 32px;
+				top: 38px;
 				width: 180px;
 
 				li{
@@ -633,18 +640,15 @@ nav {
 
 		}
 			/*home link is hidden for mobile*/
-			li.v65-home {
+			.v65-home {
 				display: none;
 				@media screen and (min-width : 1024px){display:inline-block;}
 			}
-			li.v65-pageAParent{
+			.v65-pageAParent{
 				color: $navColorHover;
-				font-weight: bold;
 			}
-			li.v65-selected{
+			.v65-selected{
 				color: $navColorHover;
-				font-weight: bold;
-				text-decoration: underline;
 			}
 	}
 }
@@ -743,7 +747,7 @@ nav {
 .homepageText{
   	float: left;
 	margin: 0 0 2em;
-	padding: 0 4% 4% 4%;
+	padding: 4%;
 	width: 52%;
 
 	@media screen  and (max-width : 600px){
@@ -758,7 +762,7 @@ nav {
 .homepageProductGroup { 
 	float: left;
 	margin: 0 0 20px;
-	padding: 0 0 30px 20px;
+	padding: 4% 3%;
 	width: 33%;
 
   	@media screen  and (max-width : 600px){
@@ -781,7 +785,7 @@ nav {
 	}
 
 	.v65-productGroup-title {
-		margin: 0.25em 0 0.5em;
+		display: none;
 	}
 
 }
