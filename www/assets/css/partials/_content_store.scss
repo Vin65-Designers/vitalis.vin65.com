@@ -1,0 +1,13 @@
+//Enter content here
+.v65-product5Up {
+	float: left;
+	margin: 0 2% 1.5em 0;
+	width: 23%;
+	@media screen and (max-width: 720px) {
+		width: 48%;
+	}
+	@media screen and (max-width: 580px) {
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+}

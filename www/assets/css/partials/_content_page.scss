@@ -1,0 +1,117 @@
+.content {
+	background: $contentBackground;
+	padding: 3em;
+	max-width:950px;
+	margin:0 auto;
+	
+	@media screen and (max-width : 600px){
+		box-shadow: none;
+		padding: 1em 1em 0 1em;
+	}
+
+}
+
+.contentWide {
+	background: #fff;
+	padding: 30px;
+	max-width:950px;
+	margin:0 auto;
+	
+	@media screen and (max-width : 767px){
+		box-shadow: none;
+		padding:3%;
+	}
+
+	.subMenu{
+		@media screen and (min-width : 768px) {
+			display:none;
+		}
+	}
+}
+
+.contentCart{
+	background: #fff;
+	padding: 30px;
+	@media screen and (max-width : 767px){
+		box-shadow: none;
+		padding:0.2em;
+		border-top: 2px solid $subNavBorder;
+
+	}
+}
+
+.pageContent{
+	float: right;
+	width: 75%; //650px
+		@media screen and (max-width : 767px){
+		width:94%;
+		padding:3%;
+		}
+}
+
+.v65-pagingBottom {
+	@media screen and (max-width : 580px) {
+		display:none;
+	}
+}
+
+.colWrapper {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+	.colWrapper:before,.colWrapper:after { content:""; display:table; }
+	.colWrapper:after { clear:both; }
+
+
+	.col2 { 
+		float: left;
+		margin-left: 6%;
+		width: 47%;
+	}
+
+	.col2:first-child { 
+		float: left;
+		margin-left: 0%;
+		width: 47%;
+	}
+
+	.col3 { 
+		float: left;
+		margin-left: 5%;
+		width: 30%;
+	}
+
+	.col3:first-child { 
+		float: left;
+		margin-left: 0%;
+		width: 30%;
+	}
+
+	@media screen and (max-width: 580px) {
+
+		.col2 { 
+			float: none;
+			margin-left: 0;
+			margin-bottom: 1.5em;
+			width: 100%;
+		}
+
+		.col2:first-child { 
+			float: none;
+			width: 100%;
+		}
+
+		.col3 { 
+			float: none;
+			margin-left: 0;
+			margin-bottom: 1.5em;
+			width: 100%;
+		}
+
+		.col3:first-child { 
+			float: none;
+			width: 100%;
+		}
+
+	}

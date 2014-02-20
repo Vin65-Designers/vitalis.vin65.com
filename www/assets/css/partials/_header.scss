@@ -1,0 +1,113 @@
+header{
+	width: 100%;
+	max-width: 950px;
+	margin:0 auto;
+	z-index: 100;
+	@media screen and (min-width : 581px) and (max-width : 1025px) {
+		width:95%;
+	}
+	@media screen and (min-width : 768px) {
+		height: 200px;
+		position: relative;	
+	}
+}
+
+	.logo{
+		height: auto;
+		display: block;
+		text-align: center;
+		width:40%;
+		margin:1em auto;
+		@media screen and (min-width : 768px) and (max-width : 1023px) {
+			height: 140px;
+			float: left;
+			margin: 3em 0 0;
+			width: 140px;
+			text-align:left;	
+		}
+		@media screen and (min-width : 1024px) {
+			height: 140px;
+			float: left;
+			margin: 3em 0 0;
+			width: 140px;
+			text-align:left;	
+		}
+
+		img{
+			max-width: 100%;
+			@media screen and (max-width : 767px){ }
+		}
+	}
+
+	.cart {
+		@media screen and (max-width : 480px){
+			display: none;
+		}
+	}
+
+	#productSearch{
+		float:right;
+		margin:50px 0 0 0;
+		width:250px;
+
+		@media screen and (max-width : 767px){
+			width:100%;
+			margin:3% 0;
+		}
+
+		fieldset{
+			border:none;
+		}
+
+		#v65-searchWidgetInput{
+			input{
+				width:150px;
+				float:left;
+				margin:0 5px 0 0;
+
+				@media screen and (max-width : 767px){
+					width:65%;
+					margin:0 2%;
+				}
+			}
+		}
+
+		.defaultBtn{
+			@media screen and (max-width : 767px){
+				width:25%;
+			}
+		} 
+	}
+
+	
+#user-tools {
+	color: $userToolsColor;
+
+	a {
+		color: $userToolsColor;
+		
+		&:hover, &:focus, &:active{
+			color: $userToolsColor;
+		}
+	}
+
+	@media screen and (max-width : 580px) {
+		background: $userToolsBackgroundColorMobile;
+		height: 4em; 
+		line-height: 4em;
+		-ms-box-sizing: border-box;
+
+		a {
+			color: $userToolsColorMobile;
+			
+			&:hover, &:focus, &:active{
+				color: $userToolsColorMobile;
+			}
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		margin: 25px 0 0;
+	}
+
+}

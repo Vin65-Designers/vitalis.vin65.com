@@ -1,0 +1,248 @@
+/* ----- Link to footer navigation ----- */
+.menuLink {
+	display:none;
+
+	@media screen and (max-width : 580px){
+		display: block;
+		float: left;
+		font-size: 16px;
+		height: 45px;
+		line-height: 45px;
+		padding-left: 15px;
+		text-shadow: 0 1px 3px rgba(220, 220, 220, 0.5)
+	}
+
+	&:hover, &:focus, &:active{
+		text-decoration: none;
+	}
+}
+
+
+/* ----- a. Main Menu ----- */
+
+nav {
+	border-bottom: 2px solid #666;
+	border-top: 2px solid #666;
+	font-family: $headingFontFamily;
+	font-size: 18px;
+	height:100%;
+	width: 100%;
+	z-index: 101;
+
+	@media screen and (max-width : 767px){
+		clear:both;
+		text-align: center;
+	}
+	@media screen and (min-width : 768px) and (max-width : 1023px){
+		float:right;
+		height: 40px;
+		width: auto;//640px //65%
+		padding: 2px 0;
+		position: relative;
+		margin: 30px 0;//27px if product search at top
+	}
+	@media screen and (min-width : 1024px){
+		float:right;
+		height: 40px;
+		margin: 30px 0;
+		padding: 2px 0;
+		width: auto;
+		position: relative;
+	}
+
+	ul{
+		margin: 0;
+		padding: 0;
+		display: inline;
+		width: 100%;
+		@media screen and (min-width : 768px) {
+			border-bottom: 1px solid #666;
+			border-top: 1px solid #666;
+			float:right;
+			height: 38px;
+			margin:0;
+			text-align: left;
+		}
+		ul{
+				background-color: $navDropDownBackgroundColor;
+				border: 1px solid #666;
+				display: none;
+				font-size: 16px;
+				height: auto;
+				left: -10px;
+				position: absolute;
+				top: 42px;
+				width: 180px;
+			}
+	}
+
+	li{
+		margin: 0;
+		padding: 0;
+		height: 35px;
+		line-height: 35px;
+		display: inline-block;
+		@media screen and (min-width : 768px) {
+			float:left;
+			line-height: 42px;
+			margin: 0 20px;
+			position:relative;
+			display: inline;
+		}
+		@media screen and (min-width : 1024px){
+			float:left;
+			margin: 0 25px;
+			position:relative;
+			display: inline;
+		}
+
+		// Drop Down
+		&:hover ul{
+			display:none;
+			background-color: $navDropDownBackgroundColor;
+			border: 1px solid $navDropDownBorderColor;
+			font-size: 14px;
+			@media screen and (min-width : 768px) {
+				display: block;
+			}
+		}
+
+		li{
+					background-color: $navDropDownBackgroundColor;
+					display: block;
+					float: none;
+					margin: 0;		
+					text-align: left;
+					width: 180px;
+
+					a{
+						background-color: $navDropDownBackgroundColor;
+						color: $navDropDownColor;
+						display: block;
+						float: none;
+						height: 28px;
+						line-height: 28px;
+						margin: 0;
+						padding: 0 0 0 10px;
+						text-align: left;
+						text-transform: none;
+						width: 170px;
+
+						&:hover{
+							color: $navDropDownColorHover;
+						}
+					}
+				}
+	}
+
+	a{
+		color: $navColor;
+		display:block;
+		height: 35px;
+		line-height: 35px;
+		margin: 0 8px;
+		padding: 0 6px;
+		position: relative;
+		text-decoration: none;
+		@media screen and (min-width : 768px) {
+			height:42px;
+			line-height: 42px;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		&:hover{
+			color: $navColorHover;
+			text-decoration: none;
+		}
+	}
+			
+}
+/*home link is hidden for mobile*/
+.v65-home {
+	display: none;
+	@media screen and (min-width : 1024px){display:inline-block;}
+}
+.v65-pageAParent{
+	color: $navColorHover;
+}
+.v65-selected{
+	color: $navColorHover;
+}
+
+/* ----- b. Sub Menu ----- */
+.subMenu {
+	height:100%;
+	width: 100%;
+	clear: both;
+
+	@media screen and (min-width : 768px) {
+		border-right: 1px solid $subNavBorder;
+		float: left;
+		margin: 6% 4% 0 0;
+		padding-right: 2%;
+		width: 17.8%;
+		clear: left;
+	}
+
+	ul {
+		margin:0;
+		padding:0;
+		list-style: none;
+		width: 100%;
+
+		@media screen and (max-width : 767px){	
+			border-top: 1px solid $subNavBorder;
+		}	
+
+		@media screen and (min-width : 768px) {
+			margin: 0 0 2% 1%;
+			padding: 0;
+		}
+
+		li {
+			margin:0;
+			padding:0;
+			min-height: 3em;
+			line-height: 3em;
+
+			@media screen and (max-width : 767px){
+				border-bottom: 1px solid $subNavBorder; 
+				text-align: center;
+				min-height: 4em;
+				line-height: 4em;
+			}
+
+			a { 
+				@media screen and (max-width : 767px){
+					display:block;
+				}
+			}
+
+			ul {
+				margin:0;
+				padding:0;
+				list-style: none;
+				width: 100%; // 160px
+				border-bottom:3px solid $subNavBorder;		
+				@media screen and (min-width : 768px) {
+					margin-left: 10px;
+					width: 160px;
+					border:none;
+				}		
+			}
+
+			.v65-pageAParent {
+				font-weight: bold;
+			}
+			.v65-leftSelected{
+				font-weight: bold;
+			}
+		}
+	}
+
+	h3{
+		@media screen and (max-width : 767px){display:none;}
+	}
+}

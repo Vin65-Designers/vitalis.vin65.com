@@ -96,16 +96,7 @@
 				});
 			}
 		}
-	},
-	home : {
-		initPhotoGallery : function(){
-			if($("#slider").length){
-				$("#slider").v65PhotoGallery({
-					galleryId : "699344fd-9205-4085-9eab-f4fd56432cfa"	//	This is where you add the homepage photogallery id
-				});
-			}
-		}
-	},
+	}
 };
 
 //Photogallery Plugin and Equalize Plugin
@@ -113,7 +104,6 @@
 
 v65.global.init();
 v65.page.initPhotoGallery();
-v65.home.initPhotoGallery();
 
 $(window).load(function () {
   var browserSize = $(window).width();

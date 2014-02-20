@@ -1,0 +1,105 @@
+button {
+	&.defaultBtn,  &.modalBtn,  &.largeBtn{
+		background: $buttonColor;
+		border-radius: 0.385em;
+		font-family: $buttonFontFamily;
+		span{
+			color: $buttonFontColor;
+			border-radius: 0.385em;
+		}
+		&:hover{
+			background:lighten($buttonColor, 10%);
+		}
+	}
+
+	&.altBtn, &.altModalBtn, &.altLargeBtn{
+		background:$altButtonColor;
+		color: $buttonFontColor;
+		font-family: $buttonFontFamily;
+		span{
+			background:$altButtonColor;
+			color: $altButtonFontColor;
+			border-radius: 0.385em;
+		}
+		&:hover{
+			background: lighten($altButtonColor, 10%);
+			span{
+				background: lighten($altButtonColor, 10%);
+			}
+		}
+
+	}
+}
+
+a{
+	&.linkBtn, &.modalLinkBtn, &.largeLinkBtn, &.fullWidthBtn{
+		background:$buttonColor;
+		border-radius: 0.385em;
+		font-family: $buttonFontFamily;
+		span{
+			background:$buttonColor;
+			color: $buttonFontColor;
+			border-radius: 0.385em;
+		}
+		&:hover{
+			background:lighten($buttonColor, 10%);
+			text-decoration: none;
+
+			span{
+				background:lighten($buttonColor, 10%);
+			}
+		}
+	}
+
+	&.fullWidthBtn{
+		display: block;
+		font-size: 16px;
+		max-width: 100%;
+		text-align: center;
+		width: 100%;
+	}
+
+	&.linkAltBtn, &.modalLinkAltBtn, &.modalLinkAltBtn{
+		background:$altButtonColor;
+		border-radius: 0.385em; 
+		font-family: $buttonFontFamily;
+		span{
+			background:$altButtonColor;
+			border-radius: 0.385em; 
+			color: $altButtonFontColor;
+		}
+		&:hover{
+			background: lighten($altButtonColor, 10%);
+			span{
+				background: lighten($altButtonColor, 10%);
+			}
+		}
+	}
+
+	&.modalLinkBtn, &.modalLinkAltBtn, &.modalLinkAltBtn{
+		min-width: auto;
+	}
+}
+
+.v65-quickView-close {
+
+	a {
+		border-radius: 0.385em; 
+		background: lighten($altButtonColor, 10%);
+
+		&:hover{
+			background: lighten($altButtonColor, 10%);
+			
+		}
+		
+	}
+
+}
+#v65-couponFormWrapper, #v65-giftCardFormWrapper, #v65-cartCheckOutCoupons, .v65-cartItemAmount {
+	button span {
+		line-height:2em;
+		@media screen and (max-width : 580px){
+			line-height:4em;
+		}
+	}
+}

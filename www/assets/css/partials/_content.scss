@@ -1,0 +1,21 @@
+/* ----- a. Homepage Styles ----- */
+@import 'content_home';
+
+/* ----- b. Page Styles ----- */
+@import 'content_page';
+
+/* ----- c. Store Styles ----- */
+@import 'content_store';
+
+.mainWrapper {
+max-width: 970px;
+margin: auto;
+}
+
+.print {
+	@media screen and (max-width : 720px){
+	// padding:0 10px;
+	// box-sizing: border-box;
+	margin:0 10px;
+	}
+}

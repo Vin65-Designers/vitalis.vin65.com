@@ -1,0 +1,144 @@
+html {
+	border-top: 7px solid $topLineColor;
+    font-size: 75%;
+}
+
+body{
+	background: $backgroundColor;
+	color: $fontColor;
+	font-family: $fontFamily;
+	margin: 0 auto;
+
+	@media screen and (max-width : 580px) {
+		padding: 0;
+	}
+}
+
+#{headings(1,6)}{
+   	color: $headingColor;
+	font-family: $headingFontFamily;
+	font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3em;  // 3 * 12 = 36px
+    line-height: 1; // 1 * 36 = 36px
+    margin-bottom: 0.5em; // 0.5 * 36 = 18px
+}
+
+h2 {
+    font-size: 2.25em; // 2.25 * 12 = 27px
+    line-height: 1.3333333333333333; // 1.33 * 27px = 36px
+    margin-bottom: 0.6666666666666666em; // 0.66 * 27px = 18px
+}
+
+h3 {
+    font-size: 1.5em; // 1.5 * 12 = 18px
+    line-height: 1; // 1 * 18 = 18px
+    margin-bottom: 1em; // 1 * 18 = 18px
+}
+
+h4 {
+    font-size: 1.3125em; // 1.3125 * 12 = 15.75px
+    line-height: 1.1428571428571428; // 1.14 * 15.75 = 18px
+    margin-bottom: 1.1428571428571428em; // 1.14 * 15.75 = 18px
+}
+
+h5 {
+    font-size: 1.125em; // 1.125 * 12 = 13.5px
+    line-height: 1.3333333333333333; // 1.3333 * 13.5 = 18px
+    margin-bottom: 1.3333333333333333em; // 1.3333 * 13.5 = 18px
+}
+
+h6 {
+    font-size: 1em; // 1 * 12 = 12px
+    line-height: 1.5; // 1.5 * 12 = 18px
+    margin-bottom: 1.5em; // 1.5 * 12 = 18px
+}
+
+.v65-title { 
+    font-size: 2em; // 2 * 12 = 24px
+    line-height: 1; // 1 * 24 = 24px
+    margin-bottom: 0.5em; // 0.5 * 24 = 12px
+   	color: $headingColor !important;
+	font-family: $headingFontFamily;
+	font-weight: normal;
+}
+
+.v65-subtitle { //36px
+    font-size: 1.5em; //18px
+    line-height: 1; //18px
+    margin-bottom: 1em; //18px
+   	color: $headingColor;
+	font-family: $headingFontFamily;
+	font-weight: normal;
+}
+
+p, blockquote {
+    margin: 0 0 1.5em;
+    line-height: 1.5;
+}
+
+dl, ol, ul {
+    margin: 0 0 1.5em;
+}
+
+dd, dt, li {
+    line-height: 1.5;
+    margin: 0;
+}
+
+a{
+	color: $linkColor;
+	text-decoration: none;
+	&:hover, &:focus, &:active{
+		text-decoration: underline;
+	}
+}
+
+img{
+	border:none;
+	height: auto !important;
+	max-width: 100%;
+}
+
+form {
+	margin-bottom: 1em;
+}
+
+legend {
+	color: $fontColor;
+}
+
+hr {
+	background-color: $fontColor;
+	border: 0;
+	color: $fontColor;
+	height: 1px;
+}
+
+.backtotop {
+	display: none;
+
+	@media screen and (max-width : 680px) {
+		position: fixed;
+		bottom: 1em;
+		right: 1em;
+		z-index: 900;
+
+		a {
+			color: $backtoTopColor;
+			background: $backtoTopBackground;
+			border: 1px solid $backtoTopBorder;
+			border-radius: 50%;
+			display: block;
+			line-height: 5em;
+			height: 5em;
+			width: 5em;
+			text-align: center;
+			text-decoration: none;
+		}
+	}
+	
+}

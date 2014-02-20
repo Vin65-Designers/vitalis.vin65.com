@@ -1,0 +1,165 @@
+.homepageContent{
+	max-width: 950px;
+	margin:0 auto;
+	background: $contentBackground;
+	@media screen and (min-width : 581px) and (max-width : 1025px){
+		width:95%;
+	}
+
+	@media screen and (max-width : 767px){
+		margin-top:2em;
+		box-shadow: none;
+		border-top: 2px solid $subNavBorder;
+	}
+
+	@media screen and (max-width : 580px){
+		width:95%;
+	}
+}
+
+.homepageText{
+  	float: left;
+	margin: 4% 0;
+	padding: 0;
+	width: 60%;
+
+	@media screen  and (max-width : 600px){
+	  	float: none;
+	  	margin: 4% 0;
+	  	padding: 0;
+	  	width: 92%;
+  	}
+
+}
+
+.homepageProductGroup { 
+	float: right;
+	margin: 0 0 20px;
+	padding: 4% 3%;
+	width: 33%;
+
+  	@media screen  and (max-width : 600px){
+	  	float: none;
+	  	margin: 4em 0 0 0;
+	  	padding: 0 4%;
+	  	width: 92%;
+  	}
+
+	.v65-product-photo {
+		float:left;
+		text-align: center;
+		width: auto;
+		text-align: left;
+		margin: 0 auto 2em auto; 
+
+		img {
+			max-width: 60%;
+		}
+	}
+
+	.v65-productGroup-title {
+		display: none;
+	}
+
+	.v65-product-reviewStats-stars {
+		display:block;
+	}
+
+}
+
+#slider{
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+
+.homepageProductGroup {
+
+	@media screen and (min-width:601px) and (max-width:845px) {
+
+		.v65-product-photo {
+			width:100%;
+			margin:0 auto;
+			text-align: center;
+		}
+		.v65-title {
+			clear:both;
+		}
+		.v65-productGroup-product {
+			text-align: center;
+		}
+
+		.v65-product-addToCart-button {
+			display:inline;
+		}
+
+	}
+
+	.v65-productGroup-products{
+		text-align: left;
+		width: 100%;
+	}
+
+	.v65-product-photo {
+		@media screen and (min-width : 846px) {
+			padding:0 18px;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.v65-productGroup-teaser{
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	.v65-productGroup-product{
+		margin: 0 0 1em;
+		width: 100%;
+	}
+
+	.v65-product-addToCart-button {
+		@media screen and (min-width:601px) and (max-width:845px) {
+			display:block;
+			margin-top: 11px;
+		}
+		
+	}
+
+}
+
+/* ---- b. 5 Up Display ----- */
+.v65-product5Up {
+	width: 18%;
+
+	@media screen and (max-width: 930px) {
+		width: 23%;
+	}
+	@media screen and (max-width: 600px) {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+
+.v65-product3Up {
+	@media screen and (max-width: 600px) {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+.v65-formRight {
+	width: 100%;
+
+	input {
+		width: 95%;
+	}
+
+	textarea {
+		width: 99%;
+	}
+}

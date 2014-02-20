@@ -36,12 +36,9 @@
 		<a href="/" accesskey="h" class="logo"><img src="../assets/images/logo.png" alt="<v65:websiteName></v65:websiteName>"></a>
 		<!--/logo-->
 		
-		<!--mainMenu-->
 		<nav>
-			<a href="#footerNav" class="menuLink"><i class="icon-menu"></i></a>
 			<v65:layoutHeaderNav depth="2"></v65:layoutHeaderNav>
 		</nav>
-		<!--/mainMenu-->
 		
 	</header>
 	
@@ -64,33 +61,53 @@
 	</div>
 	<!--/content-->
 	
-	<!--footer-->
-	<footer>
-		
-		<!--footer_nav-->
-		<div class="footerNav"> 
-			<a name="footerNav"></a> 
-			<v65:layoutFooterNav></v65:layoutFooterNav>
-		</div>
-		<!--/footer_nav-->
+	<footer class="footercontainer">
 
-		<!--footer_tool-->
-		<div class="footerTools"> 
-				<ul>
-				<li class="phone"><a href="tel:1-8999-999-9999">Call Us Toll Free: <strong>1-999-999-9999</strong> <i class="icon-phone-1"></i></li>			
-				<li class="email"><a href="mailto:info@generic.com">info@generic.com <i class="icon-mail"></i></a></li>			
-				<li class="map"><a href="http://maps.google.com">Box 0000, City, State ZipCode <i class="icon-location"></i></a></li>		
-			</ul>
+			<div class="colWrapper v65-group footerBorder">
 
-			<p class="legal">
-				<v65:copyright></v65:copyright><br>
-				<v65:vin65Accolade></v65:vin65Accolade>
-			</p>
-		</div>
-		<!--/footer_tools-->
+				<div class="footerUpper">
 
-	</footer>
-	<!--/footer-->
+					<div class="contactInfo">
+						<v65:contentblock group="Footer Contact Details"></v65:contentblock>
+						<ul class="socialicons desktopOnly"><v65:contentblock group="Social Icons"></v65:contentblock></ul>
+					</div>
+					<!--contactInfo-->
+
+					<div class="newsletterSignup">
+						<v65:pods location="Newsletter Sign Up"></v65:pods>
+						<v65:subscribe contactType="Newsletter"></v65:subscribe>
+					</div>
+					<!--newsletterSignup-->
+
+				</div>
+				<!--footerUpper-->
+				
+				<!--footer_nav-->
+				<div class="footerNav">
+					<a name="footerNav"></a> 
+					<v65:layoutFooterNav></v65:layoutFooterNav>
+				</div>
+				<!--/footer_nav-->
+
+			</div>
+			<!--colWrapper-->
+
+			
+			<div class="footerTools"> 
+
+					<v65:contentblock group="Footer Contact Details"></v65:contentblock>
+					<ul class="socialicons mobileOnly"><v65:contentblock group="Social Icons"></v65:contentblock></ul>
+
+				<p class="legal">
+					<v65:copyright></v65:copyright><br>
+					<v65:vin65Accolade></v65:vin65Accolade>
+				</p>
+
+			</div>
+			<!--/footer_tools-->
+
+		</footer>
+	<!--footercontainer-->
 
 	<v65:js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js"></v65:js>
 
