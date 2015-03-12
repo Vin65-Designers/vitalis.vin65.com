@@ -58,7 +58,7 @@
 	</section>
 	<!--/homepageContent-->
 
-		<footer class="footercontainer">
+	<footer class="footercontainer">
 
 			<div class="colWrapper v65-group footerBorder">
 
@@ -66,7 +66,10 @@
 
 					<div class="contactInfo">
 						<v65:contentblock group="Footer Contact Details"></v65:contentblock>
-						<ul class="socialicons desktopOnly"><v65:contentblock group="Social Icons"></v65:contentblock></ul>
+						<ul class="socialicons desktopOnly">
+							<v65:customFile file="/v65html/_social.html"></v65:customFile>
+						</ul>
+						
 					</div>
 					<!--contactInfo-->
 
@@ -91,9 +94,9 @@
 
 			
 			<div class="footerTools"> 
-
-					<v65:contentblock group="Footer Contact Details"></v65:contentblock>
-					<ul class="socialicons mobileOnly"><v65:contentblock group="Social Icons"></v65:contentblock></ul>
+					<ul class="socialicons mobileOnly">
+						<v65:customFile file="/v65html/_social.html"></v65:customFile>
+					</ul>
 
 				<p class="legal">
 					<v65:copyright></v65:copyright><br>
