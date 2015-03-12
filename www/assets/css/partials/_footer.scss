@@ -1,4 +1,4 @@
-.socialicons {
+ul.socialicons {
 	list-style-type: none;
 	margin:0;
 	padding:0;
@@ -6,6 +6,11 @@
 	li {
 		display:inline;
 		font-size: 2em;
+		padding: 0 4px !important;
+
+		a:hover, a:focus, a:active {
+			text-decoration: none;
+		}
 	}
 }
 
