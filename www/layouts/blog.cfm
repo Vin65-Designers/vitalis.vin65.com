@@ -23,25 +23,27 @@
 </head>
 <body>
 
+	<!--header-->
 	<header>
 
 		<!--user-tools-->
 		<div id="user-tools">
-			<cf_modalCart>	
+			<cf_points>
 			<cf_login>
+			<cf_modalCart>	
 		</div>
 		<!--/user-tools-->
 		
 		<!--logo-->
 		<a href="/" accesskey="h" class="logo"><img src="/assets/images/logo.png" alt="<cf_websiteName>"></a>
 		<!--/logo-->
-
+		
 		<nav>
-			<a href="##footerNav" class="menuLink"><i class="icon-menu"></i></a>
 			<cf_layoutHeaderNav depth="2">
 		</nav>
 		
 	</header>
+	<!--/header-->
 	
 	<!--content-->
 	<div class="content v65-group">
@@ -84,33 +86,56 @@
 	</div>
 	<!--/content-->
 	
-	<!--footer-->
-	<footer>
-		
-		<!--footer_nav-->
-		<div class="footerNav"> 
-			<a name="footerNav"></a> 
-			<cf_layoutFooterNav>
-		</div>
-		<!--/footer_nav-->
+	<footer class="footercontainer">
 
-		<!--footer_tool-->
-		<div class="footerTools"> 
-				<ul>
-				<li class="phone"><a href="tel:1-8999-999-9999">Call Us Toll Free: <strong>1-999-999-9999</strong> <i class="icon-phone-1"></i></li>			
-				<li class="email"><a href="mailto:info@generic.com">info@generic.com <i class="icon-mail"></i></a></li>			
-				<li class="map"><a href="http://maps.google.com">Box 0000, City, State ZipCode <i class="icon-location"></i></a></li>		
-			</ul>
+			<div class="colWrapper v65-group footerBorder">
 
-			<p class="legal">
-				<cf_copyright><br>
-				<cf_vin65Accolade>
-			</p>
-		</div>
-		<!--/footer_tools-->
-	
-	</footer>
-	<!--/footer-->
+				<div class="footerUpper">
+
+					<div class="contactInfo">
+						<cf_contentblock group="Footer Contact Details">
+						<ul class="socialicons desktopOnly">
+							<cf_customFile file="/v65html/_social.html">
+						</ul>
+						
+					</div>
+					<!--contactInfo-->
+
+					<div class="newsletterSignup">
+						<cf_pods location="Newsletter Sign Up">
+						<cf_subscribe contactType="Newsletter">
+					</div>
+					<!--newsletterSignup-->
+
+				</div>
+				<!--footerUpper-->
+				
+				<!--footer_nav-->
+				<div class="footerNav">
+					<a name="footerNav"></a> 
+					<cf_layoutFooterNav>
+				</div>
+				<!--/footer_nav-->
+
+			</div>
+			<!--colWrapper-->
+
+			
+			<div class="footerTools"> 
+					<ul class="socialicons mobileOnly">
+						<cf_customFile file="/v65html/_social.html">
+					</ul>
+
+				<p class="legal">
+					<cf_copyright><br>
+					<cf_vin65Accolade>
+				</p>
+
+			</div>
+			<!--/footer_tools-->
+
+		</footer>
+	<!--footercontainer-->
 
 
 	<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">

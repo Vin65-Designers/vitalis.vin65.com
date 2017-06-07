@@ -1698,11 +1698,11 @@ a.modalLinkBtn, a.modalLinkAltBtn, a.modalLinkAltBtn {
   background: #c3c3c3;
 }
 
-#v65-couponFormWrapper button span, #v65-giftCardFormWrapper button span, #v65-cartCheckOutCoupons button span, .v65-cartItemAmount button span {
+#v65-couponFormWrapper button span, #v65-giftCardFormWrapper button span, #v65-cartCheckOutCoupons button span, .v65-cartItemAmount button span, #v65-loyaltyPointsFormWrapper button span {
   line-height: 2em;
 }
 @media screen and (max-width: 580px) {
-  #v65-couponFormWrapper button span, #v65-giftCardFormWrapper button span, #v65-cartCheckOutCoupons button span, .v65-cartItemAmount button span {
+  #v65-couponFormWrapper button span, #v65-giftCardFormWrapper button span, #v65-cartCheckOutCoupons button span, .v65-cartItemAmount button span, #v65-loyaltyPointsFormWrapper button span {
     line-height: 4em;
   }
 }
