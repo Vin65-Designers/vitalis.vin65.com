@@ -27,9 +27,8 @@
 
 		<!--user-tools-->
 		<div id="user-tools">
-			<v65:points></v65:points>
-			<v65:login></v65:login>
 			<v65:modalCart></v65:modalCart>	
+			<v65:login></v65:login>
 		</div>
 		<!--/user-tools-->
 		
@@ -44,14 +43,22 @@
 	</header>
 	
 	<!--content-->
-	<article class="contentWide v65-group">		
+	<div class="contentWide v65-group">	
+		
 		<div class="backtotop">	
 			<a href="#"><i class="icon-up-bold"></i>TOP</a>
 		</div>
 
-		<v65:mainContent></v65:mainContent>
+		<article class="pageWideText">
+			<v65:mainContent></v65:mainContent>
+		</article>
+
+		<section class="subMenu subMenuWidePage">
+			<a name="footerNav"></a>
+			<v65:layoutSubMenu></v65:layoutSubMenu>
+		</section>
 		
-	</article>
+	</div>
 	<!--/content-->
 	
 	<footer class="footercontainer">

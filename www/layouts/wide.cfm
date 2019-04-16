@@ -11,7 +11,7 @@
 
 	<cf_vin65GlobalAssets>
 
-	<cf_css files="/assets/css/screen.min.css">
+	<cf_css files="/assets/slick/slick-winedirect.css,/assets/slick/slick-theme-winedirect.css,/assets/css/screen.min.css">
 	
 	<!--[if lt IE 9]>
 		<script src="/assets/js/html5shiv-printshiv.js"></script>
@@ -32,7 +32,7 @@
 		<!--/user-tools-->
 		
 		<!--logo-->
-		<a href="/" accesskey="h" class="logo"><img src="/assets/images/logo.png" alt="<cf_websiteName>"></a>
+		<cf_logo>
 		<!--/logo-->
 		
 		<nav>
@@ -61,7 +61,7 @@
 					<div class="contactInfo">
 						<cf_contentblock group="Footer Contact Details">
 						<ul class="socialicons desktopOnly">
-							<cf_customFile file="/v65html/_social.html">
+							<cf_socialMediaLinks>
 						</ul>
 						
 					</div>
@@ -89,9 +89,9 @@
 			
 			<div class="footerTools"> 
 					<ul class="socialicons mobileOnly">
-						<cf_customFile file="/v65html/_social.html">
+						<cf_socialMediaLinks>
 					</ul>
-
+				<p class="footer-info"><cf_footerInfo></p>
 				<p class="legal">
 					<cf_copyright><br>
 					<cf_vin65Accolade>
@@ -103,7 +103,7 @@
 		</footer>
 	<!--footercontainer-->
 
-	<cf_js files="/assets/js/scripts.js,/assets/nivo/jquery.nivo.slider.pack.js">
+	<cf_js files="/assets/slick/slick-winedirect.js,/assets/js/scripts.js">
 
 	<cf_vin65GlobalFooterAssets>
 

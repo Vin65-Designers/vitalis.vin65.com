@@ -21,12 +21,14 @@
 </head>
 <body>
 
+	<!--header-->
 	<header>
 
 		<!--user-tools-->
 		<div id="user-tools">
-			<cf_modalCart>	
+			<cf_points>
 			<cf_login>
+			<cf_modalCart>	
 		</div>
 		<!--/user-tools-->
 		
@@ -34,31 +36,36 @@
 		<cf_logo>
 		<!--/logo-->
 		
+		<!--mainMenu-->
 		<nav>
+			<a href="##footerNav" class="menuLink"><i class="icon-menu"></i></a>
 			<cf_layoutHeaderNav depth="2">
 		</nav>
+		<!--/mainMenu-->
 		
 	</header>
+	<!--/header-->
 	
 	<!--content-->
-	<div class="contentWide v65-group">	
+	<section class="content v65-group">
 		
 		<div class="backtotop">	
 			<a href="##"><i class="icon-up-bold"></i>TOP</a>
 		</div>
 
-		<article class="pageWideText">
+		<article class="pageContent">
 			<cf_mainContent>
 		</article>
-
-		<section class="subMenu subMenuWidePage">
-			<a name="footerNav"></a>
-			<cf_layoutSubMenu>
-		</section>
 		
-	</div>
+		<div class="subMenu">
+			<a name="footerNav"></a> 
+			<h4><cf_leftNavSectionTitle></h4>
+			<cf_recipeCategories>
+		</div>
+		
+	</section>
 	<!--/content-->
-	
+
 	<footer class="footercontainer">
 
 			<div class="colWrapper v65-group footerBorder">
@@ -116,3 +123,4 @@
 
 </body>
 </html> </cfoutput>
+utput>
